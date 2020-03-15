@@ -15,3 +15,9 @@
 {
     background-color: rgba(32, 38, 44, .95);
 }
+
+.tab-body
+{
+    margin-left: 10vh;
+    margin-right: 10vh;
+}
