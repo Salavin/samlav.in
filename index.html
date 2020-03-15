@@ -7,17 +7,197 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="css/stylesheet.css">
     <title>Hello, world!</title>
 </head>
 <body>
+
 <div>
     <img src="img/background.png" id="background" alt="Background image of Yosemite with smaller image of Sam Lavin pictured in center.">
 </div>
+<div id="sticky">
+    <nav>
+        <div class="navbar navbar-dark bg-dark nav-pills nav-fill nav" id="navbar" role="tablist">
+            <a class="nav-item nav-link" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Home</a>
+            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</a>
+            <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>
+        </div>
+    </nav>
+</div>
+<div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+        <h1>Philosophi autem in suis lectulis plerumque moriuntur.</h1>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tu autem negas fortem esse quemquam posse, qui dolorem malum putet. Sit ista in Graecorum levitate perversitas, qui maledictis insectantur eos, a quibus de veritate dissentiunt. <code>Quare attende, quaeso.</code> <a href="http://loripsum.net/" target="_blank">Videsne quam sit magna dissensio?</a> Duo Reges: constructio interrete. </p>
+
+        <h3>Sed residamus, inquit, si placet.</h3>
+
+        <p>Sin te auctoritas commovebat, nobisne omnibus et Platoni ipsi nescio quem illum anteponebas? Qui cum praetor quaestionem inter sicarios exercuisset, ita aperte cepit pecunias ob rem iudicandam, ut anno proximo P. Aut, si esses Orestes, Pyladem refelleres, te indicares et, si id non probares, quo minus ambo una necaremini non precarere? Nos commodius agimus. <a href="http://loripsum.net/" target="_blank">Huius ego nunc auctoritatem sequens idem faciam.</a> Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres. Quis est autem dignus nomine hominis, qui unum diem totum velit esse in genere isto voluptatis? Eorum enim est haec querela, qui sibi cari sunt seseque diligunt. Quis negat? Quod et posse fieri intellegimus et saepe etiam videmus, et perspicuum est nihil ad iucunde vivendum reperiri posse, quod coniunctione tali sit aptius. </p>
+
+        <ol>
+            <li>Sed tamen omne, quod de re bona dilucide dicitur, mihi praeclare dici videtur.</li>
+            <li>Quicquid enim a sapientia proficiscitur, id continuo debet expletum esse omnibus suis partibus;</li>
+            <li>Itaque quantum adiit periculum! ad honestatem enim illum omnem conatum suum referebat, non ad voluptatem.</li>
+        </ol>
+
+
+        <ul>
+            <li>Tum Lucius: Mihi vero ista valde probata sunt, quod item fratri puto.</li>
+            <li>Quid, cum fictas fabulas, e quibus utilitas nulla elici potest, cum voluptate legimus?</li>
+            <li>Videamus igitur sententias eorum, tum ad verba redeamus.</li>
+        </ul>
+
+
+        <pre>Nam prius a se poterit quisque discedere quam appetitum
+earum rerum, quae sibi conducant, amittere.
+
+E quo efficitur, non ut nos non intellegamus quae vis sit
+istius verbi, sed ut ille suo more loquatur, nostrum
+neglegat.
+</pre>
+
+
+        <blockquote cite="http://loripsum.net">
+            Quem quidem vos, cum improbis poenam proponitis, inpetibilem facitis, cum sapientem semper boni plus habere vultis, tolerabilem.
+        </blockquote>
+
+
+        <dl>
+            <dt><dfn>Perge porro;</dfn></dt>
+            <dd>Quis non odit sordidos, vanos, leves, futtiles?</dd>
+            <dt><dfn>Easdemne res?</dfn></dt>
+            <dd>Itaque his sapiens semper vacabit.</dd>
+            <dt><dfn>Cur iustitia laudatur?</dfn></dt>
+            <dd>Ut in geometria, prima si dederis, danda sunt omnia.</dd>
+            <dt><dfn>Scrupulum, inquam, abeunti;</dfn></dt>
+            <dd>Nunc dicam de voluptate, nihil scilicet novi, ea tamen, quae te ipsum probaturum esse confidam.</dd>
+        </dl>
+
+
+        <h2>Neque solum ea communia, verum etiam paria esse dixerunt.</h2>
+
+        <p>Paulum, cum regem Persem captum adduceret, eodem flumine invectio? Scripta sane et multa et polita, sed nescio quo pacto auctoritatem oratio non habet. In parvis enim saepe, qui nihil eorum cogitant, si quando iis ludentes minamur praecipitaturos alicunde, extimescunt. Itaque et manendi in vita et migrandi ratio omnis iis rebus, quas supra dixi, metienda. Idemque diviserunt naturam hominis in animum et corpus. Et homini, qui ceteris animantibus plurimum praestat, praecipue a natura nihil datum esse dicemus? Multoque hoc melius nos veriusque quam Stoici. Sed haec ab Antiocho, familiari nostro, dicuntur multo melius et fortius, quam a Stasea dicebantur. Quis contra in illa aetate pudorem, constantiam, etiamsi sua nihil intersit, non tamen diligat? Quae hic rei publicae vulnera inponebat, eadem ille sanabat. </p>
+    </div>
+    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+        <h1>Quamquam id quidem, infinitum est in hac urbe;</h1>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo id est convenienter naturae vivere, a natura discedere. Quaesita enim virtus est, non quae relinqueret naturam, sed quae tueretur. <b>Hoc Hieronymus summum bonum esse dixit.</b> <a href="http://loripsum.net/" target="_blank">Duo Reges: constructio interrete.</a> Aliud est enim poëtarum more verba fundere, aliud ea, quae dicas, ratione et arte distinguere. <b>Polycratem Samium felicem appellabant.</b> In qua quid est boni praeter summam voluptatem, et eam sempiternam? </p>
+
+        <ul>
+            <li>Cur post Tarentum ad Archytam?</li>
+            <li>Equidem etiam Epicurum, in physicis quidem, Democriteum puto.</li>
+            <li>Hoc enim constituto in philosophia constituta sunt omnia.</li>
+            <li>Multa sunt dicta ab antiquis de contemnendis ac despiciendis rebus humanis;</li>
+        </ul>
+
+
+        <pre>Quae fere omnia appellantur uno ingenii nomine, easque
+virtutes qui habent, ingeniosi vocantur.
+
+Placet igitur tibi, Cato, cum res sumpseris non concessas,
+ex illis efficere, quod velis?
+</pre>
+
+
+        <ol>
+            <li>Quasi vero, inquit, perpetua oratio rhetorum solum, non etiam philosophorum sit.</li>
+            <li>De malis autem et bonis ab iis animalibus, quae nondum depravata sint, ait optime iudicari.</li>
+            <li>Qua ex cognitione facilior facta est investigatio rerum occultissimarum.</li>
+            <li>Eodem modo is enim tibi nemo dabit, quod, expetendum sit, id esse laudabile.</li>
+        </ol>
+
+
+        <blockquote cite="http://loripsum.net">
+            Nos beatam vitam non depulsione mali, sed adeptione boni iudicemus, nec eam cessando, sive gaudentem, ut Aristippus, sive non dolentem, ut hic, sed agendo aliquid considerandove quaeramus.
+        </blockquote>
+
+
+        <dl>
+            <dt><dfn>Quonam, inquit, modo?</dfn></dt>
+            <dd>Qui non moveatur et offensione turpitudinis et comprobatione honestatis?</dd>
+            <dt><dfn>Primum divisit ineleganter;</dfn></dt>
+            <dd>Hac videlicet ratione, quod ea, quae externa sunt, iis tuemur officiis, quae oriuntur a suo cuiusque genere virtutis.</dd>
+            <dt><dfn>Haec dicuntur inconstantissime.</dfn></dt>
+            <dd>Sit hoc ultimum bonorum, quod nunc a me defenditur;</dd>
+            <dt><dfn>Tu quidem reddes;</dfn></dt>
+            <dd>Nec vero alia sunt quaerenda contra Carneadeam illam sententiam.</dd>
+        </dl>
+
+
+        <h3>Non igitur de improbo, sed de callido improbo quaerimus, qualis Q.</h3>
+
+        <p>Illo enim addito iuste fit recte factum, per se autem hoc ipsum reddere in officio ponitur. <mark>Praeteritis, inquit, gaudeo.</mark> Ergo opifex plus sibi proponet ad formarum quam civis excellens ad factorum pulchritudinem? <b>Cave putes quicquam esse verius.</b> Egone non intellego, quid sit don Graece, Latine voluptas? Non quaero, quid dicat, sed quid convenienter possit rationi et sententiae suae dicere. <code>Et quod est munus, quod opus sapientiae?</code> <mark>Falli igitur possumus.</mark> </p>
+
+        <h2>Dat enim intervalla et relaxat.</h2>
+
+        <p>Servari enim iustitia nisi a forti viro, nisi a sapiente non potest. Illa videamus, quae a te de amicitia dicta sunt. <a href="http://loripsum.net/" target="_blank">Quod equidem non reprehendo;</a> Quodsi, ne quo incommodo afficiare, non relinques amicum, tamen, ne sine fructu alligatus sis, ut moriatur optabis. Quocirca intellegi necesse est in ipsis rebus, quae discuntur et cognoscuntur, invitamenta inesse, quibus ad discendum cognoscendumque moveamur. Nam si beatus umquam fuisset, beatam vitam usque ad illum a Cyro extructum rogum pertulisset. <b>Tum Triarius: Posthac quidem, inquit, audacius.</b> Estne, quaeso, inquam, sitienti in bibendo voluptas? </p>
+    </div>
+    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab"><h1>Qui-vere falsone, quaerere mittimus-dicitur oculis se privasse;</h1>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Portenta haec esse dicit, neque ea ratione ullo modo posse vivi; <i>Non potes, nisi retexueris illa.</i> <a href="http://loripsum.net/" target="_blank">Quippe: habes enim a rhetoribus;</a> Sed quid attinet de rebus tam apertis plura requirere? <i>Quid est enim aliud esse versutum?</i> Duo Reges: constructio interrete. </p>
+
+        <p>Quod autem principium officii quaerunt, melius quam Pyrrho; Sed vos squalidius, illorum vides quam niteat oratio. Piso, familiaris noster, et alia multa et hoc loco Stoicos irridebat: Quid enim? In primo enim ortu inest teneritas ac mollitia quaedam, ut nec res videre optimas nec agere possint. <code>Fortasse id optimum, sed ubi illud: Plus semper voluptatis?</code> </p>
+
+        <blockquote cite="http://loripsum.net">
+            Tum ille: Finem, inquit, interrogandi, si videtur, quod quidem ego a principio ita me malle dixeram hoc ipsum providens, dialecticas captiones.
+        </blockquote>
+
+
+        <dl>
+            <dt><dfn>Nunc agendum est subtilius.</dfn></dt>
+            <dd>Mihi enim erit isdem istis fortasse iam utendum.</dd>
+            <dt><dfn>Quis enim redargueret?</dfn></dt>
+            <dd>Nam et a te perfici istam disputationem volo, nec tua mihi oratio longa videri potest.</dd>
+            <dt><dfn>Ut pulsi recurrant?</dfn></dt>
+            <dd>Sed haec in pueris;</dd>
+            <dt><dfn>Reguli reiciendam;</dfn></dt>
+            <dd>Post enim Chrysippum eum non sane est disputatum.</dd>
+            <dt><dfn>Idemne, quod iucunde?</dfn></dt>
+            <dd>Concinnus deinde et elegans huius, Aristo, sed ea, quae desideratur, a magno philosopho, gravitas, in eo non fuit;</dd>
+            <dt><dfn>Scrupulum, inquam, abeunti;</dfn></dt>
+            <dd>Non igitur de improbo, sed de callido improbo quaerimus, qualis Q.</dd>
+            <dt><dfn>Moriatur, inquit.</dfn></dt>
+            <dd>Iam enim adesse poterit.</dd>
+        </dl>
+
+
+        <pre>De qua Epicurus quidem ita dicit, omnium rerum, quas ad
+beate vivendum sapientia comparaverit, nihil esse maius
+amicitia, nihil uberius, nihil iucundius.
+
+Nec vero pietas adversus deos nec quanta iis gratia debeatur
+sine explicatione naturae intellegi potest.
+</pre>
+
+
+        <ul>
+            <li>Ergo opifex plus sibi proponet ad formarum quam civis excellens ad factorum pulchritudinem?</li>
+            <li>Etenim semper illud extra est, quod arte comprehenditur.</li>
+            <li>Quis est tam dissimile homini.</li>
+            <li>Vitae autem degendae ratio maxime quidem illis placuit quieta.</li>
+            <li>Ergo et avarus erit, sed finite, et adulter, verum habebit modum, et luxuriosus eodem modo.</li>
+            <li>Ab hoc autem quaedam non melius quam veteres, quaedam omnino relicta.</li>
+        </ul>
+
+
+        <p>Bona autem corporis huic sunt, quod posterius posui, similiora. Non enim quaero quid verum, sed quid cuique dicendum sit. Expressa vero in iis aetatibus, quae iam confirmatae sunt. <b>Ita graviter et severe voluptatem secrevit a bono.</b> <i>Tu enim ista lenius, hic Stoicorum more nos vexat.</i> Miserum hominem! Si dolor summum malum est, dici aliter non potest. <b>Oratio me istius philosophi non offendit;</b> Quae est quaerendi ac disserendi, quae logikh dicitur, iste vester plane, ut mihi quidem videtur, inermis ac nudus est. Quod dicit Epicurus etiam de voluptate, quae minime sint voluptates, eas obscurari saepe et obrui. Theophrastum tamen adhibeamus ad pleraque, dum modo plus in virtute teneamus, quam ille tenuit, firmitatis et roboris. </p>
+
+        <ol>
+            <li>Sed tamen enitar et, si minus multa mihi occurrent, non fugiam ista popularia.</li>
+            <li>Erat enim Polemonis.</li>
+            <li>Atqui reperies, inquit, in hoc quidem pertinacem;</li>
+            <li>Omnium enim rerum principia parva sunt, sed suis progressionibus usa augentur nec sine causa;</li>
+            <li>Nobis Heracleotes ille Dionysius flagitiose descivisse videtur a Stoicis propter oculorum dolorem.</li>
+            <li>Nam prius a se poterit quisque discedere quam appetitum earum rerum, quae sibi conducant, amittere.</li>
+        </ol>
+    </div>
+</div>
+
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="js/jquery-3.1.0.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="js/javascript.js"></script>
 </body>
 </html>

@@ -1,0 +1,12 @@
+#background
+{
+    width: 100%;
+    height: calc(100vh - 56px);
+    object-fit: cover;
+}
+
+#sticky
+{
+    position: sticky;
+    top:0;
+}
