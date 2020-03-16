@@ -9,6 +9,7 @@
 {
     position: sticky;
     top:0;
+    z-index: 1;
 }
 
 #navbar
@@ -20,4 +21,16 @@
 {
     margin-left: 10vw;
     margin-right: 10vw;
+    margin-top: 28px;
+}
+
+#footer
+{
+    background-color: rgba(32, 38, 44, .95);
+    display: none;
+    color: slategrey;
+    margin-top: 28px;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: .75rem;
 }
