@@ -1,3 +1,8 @@
+//Enable tooltips:
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+})
+
 let darkModeButton = $("#darkMode");
 let carousel = $("#carousel");
 const darkmode = new Darkmode();
@@ -6,6 +11,8 @@ $(document).ready(function ()
     if (darkmode.isActivated())
     {
         darkModeButton.addClass("btn-light");
+        $(".card").addClass("text-white bg-dark");
+        $(".list-group-item").addClass("list-group-item-dark");
     }
 
     if (window.innerWidth < window.innerHeight)
@@ -37,6 +44,8 @@ darkModeButton.click(function ()
 {
     darkmode.toggle();
     darkModeButton.toggleClass("btn-light");
+    $(".card").toggleClass("text-white bg-dark");
+    $(".list-group-item").toggleClass("list-group-item-dark");
 });
 
 $(window).resize(function ()

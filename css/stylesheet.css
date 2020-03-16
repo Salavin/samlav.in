@@ -46,7 +46,17 @@
     color: mediumvioletred;
 }
 
+#facebook:hover
+{
+    color: #3b5998;
+}
+
 #github:hover
 {
     color: black;
 }
+
+#linkedIn:hover
+ {
+     color: #0e76a8
+ }
