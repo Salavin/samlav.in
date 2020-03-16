@@ -34,3 +34,19 @@
     margin-right: 0;
     font-size: .75rem;
 }
+
+.socialMedia, .fab
+{
+    text-decoration: none;
+    color: white;
+}
+
+#instagram:hover
+{
+    color: mediumvioletred;
+}
+
+#github:hover
+{
+    color: black;
+}
