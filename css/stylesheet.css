@@ -58,5 +58,20 @@
 
 #linkedIn:hover
  {
-     color: #0e76a8
+     color: #0e76a8;
  }
+
+.busFont
+{
+    font-size: 1.875em;
+}
+
+.timeFont
+{
+    font-size: 1.563em;
+}
+
+#darkMode
+{
+    color: white;
+}

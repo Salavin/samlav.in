@@ -11,8 +11,10 @@ $(document).ready(function ()
     if (darkmode.isActivated())
     {
         darkModeButton.addClass("btn-light");
+        darkModeButton.css("color", "black");
         $(".card").addClass("text-white bg-dark");
         $(".list-group-item").addClass("list-group-item-dark");
+        $(".download-item").removeClass("list-group-item-dark");
     }
 
     if (window.innerWidth < window.innerHeight)
@@ -44,8 +46,18 @@ darkModeButton.click(function ()
 {
     darkmode.toggle();
     darkModeButton.toggleClass("btn-light");
+    if (darkmode.isActivated())
+    {
+        darkModeButton.css("color", "black");
+    }
+    else
+    {
+        darkModeButton.css("color", "white");
+    }
     $(".card").toggleClass("text-white bg-dark");
+    $(".card-darkmode-ignore").toggleClass("text-white bg-dark");
     $(".list-group-item").toggleClass("list-group-item-dark");
+    $(".download-item").removeClass("list-group-item-dark");
 });
 
 $(window).resize(function ()
@@ -67,6 +79,9 @@ carousel.click(function ()
 {
     carousel.carousel('next');
 });
+
+let accordion = $("#accordion");
+accordion.collapse();
 
 $(".nav-item").click(function ()
 {
