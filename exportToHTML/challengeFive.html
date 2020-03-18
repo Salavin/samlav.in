@@ -1,0 +1,77 @@
+<html>
+<head>
+<title>challenge.js</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+.s3 { color: #6897bb;}
+.ln { color: #606366; font-weight: normal; font-style: normal; }
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<pre><span class="s0">function </span><span class="s1">validateFifth(input)</span>
+<a name="l473"><span class="ln">473  </span></a><span class="s1">{</span>
+<a name="l474"><span class="ln">474  </span></a>	<span class="s0">let </span><span class="s1">one = []</span><span class="s0">;</span>
+<a name="l475"><span class="ln">475  </span></a>	<span class="s0">let </span><span class="s1">twos = []</span><span class="s0">;</span>
+<a name="l476"><span class="ln">476  </span></a>	<span class="s0">let </span><span class="s1">array = input.trim().split(</span><span class="s2">&quot;</span><span class="s0">\n</span><span class="s2">&quot;</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l477"><span class="ln">477  </span></a>	<span class="s0">let </span><span class="s1">foundTwo = </span><span class="s0">false;</span>
+<a name="l478"><span class="ln">478  </span></a>	<span class="s0">let </span><span class="s1">foundOne = </span><span class="s0">false;</span>
+<a name="l479"><span class="ln">479  </span></a>	<span class="s1">console.log(</span><span class="s2">&quot;Parsing array&quot;</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l480"><span class="ln">480  </span></a>	<span class="s1">console.log(array)</span><span class="s0">;</span>
+<a name="l481"><span class="ln">481  </span></a>	<span class="s0">for </span><span class="s1">(</span><span class="s0">let </span><span class="s1">i = </span><span class="s3">0</span><span class="s0">; </span><span class="s1">i &lt; array.length</span><span class="s0">; </span><span class="s1">++i)</span>
+<a name="l482"><span class="ln">482  </span></a>	<span class="s1">{</span>
+<a name="l483"><span class="ln">483  </span></a>		<span class="s0">if </span><span class="s1">(array[i].length !== array[</span><span class="s3">0</span><span class="s1">].length)</span>
+<a name="l484"><span class="ln">484  </span></a>		<span class="s1">{</span>
+<a name="l485"><span class="ln">485  </span></a>			<span class="s1">console.log(</span><span class="s2">&quot;Invalid array&quot;</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l486"><span class="ln">486  </span></a>			<span class="s0">return </span><span class="s2">&quot;Arrays cannot have differing lengths.&quot;</span><span class="s0">;</span>
+<a name="l487"><span class="ln">487  </span></a>		<span class="s1">}</span>
+<a name="l488"><span class="ln">488  </span></a>		<span class="s0">for </span><span class="s1">(</span><span class="s0">let </span><span class="s1">j = </span><span class="s3">0</span><span class="s0">; </span><span class="s1">j &lt; array[i].length</span><span class="s0">; </span><span class="s1">++j)</span>
+<a name="l489"><span class="ln">489  </span></a>		<span class="s1">{</span>
+<a name="l490"><span class="ln">490  </span></a>			<span class="s0">if </span><span class="s1">(array[i][j] === </span><span class="s2">'2'</span><span class="s1">)</span>
+<a name="l491"><span class="ln">491  </span></a>			<span class="s1">{</span>
+<a name="l492"><span class="ln">492  </span></a>				<span class="s1">foundTwo = </span><span class="s0">true;</span>
+<a name="l493"><span class="ln">493  </span></a>				<span class="s1">console.log(</span><span class="s2">&quot;Found 2 at &quot; </span><span class="s1">+ [i</span><span class="s0">,</span><span class="s1">j])</span><span class="s0">;</span>
+<a name="l494"><span class="ln">494  </span></a>				<span class="s1">twos.push([i</span><span class="s0">,</span><span class="s1">j])</span><span class="s0">;</span>
+<a name="l495"><span class="ln">495  </span></a>			<span class="s1">}</span>
+<a name="l496"><span class="ln">496  </span></a>			<span class="s0">if </span><span class="s1">(array[i][j] === </span><span class="s2">'1'</span><span class="s1">)</span>
+<a name="l497"><span class="ln">497  </span></a>			<span class="s1">{</span>
+<a name="l498"><span class="ln">498  </span></a>				<span class="s0">if </span><span class="s1">(!foundOne)</span>
+<a name="l499"><span class="ln">499  </span></a>				<span class="s1">{</span>
+<a name="l500"><span class="ln">500  </span></a>					<span class="s1">console.log(</span><span class="s2">&quot;Found 1 at &quot; </span><span class="s1">+ [i</span><span class="s0">, </span><span class="s1">j])</span><span class="s0">;</span>
+<a name="l501"><span class="ln">501  </span></a>					<span class="s1">one = [i</span><span class="s0">, </span><span class="s1">j]</span><span class="s0">;</span>
+<a name="l502"><span class="ln">502  </span></a>					<span class="s1">foundOne = </span><span class="s0">true;</span>
+<a name="l503"><span class="ln">503  </span></a>				<span class="s1">}</span>
+<a name="l504"><span class="ln">504  </span></a>				<span class="s0">else</span>
+<a name="l505"><span class="ln">505  </span></a>				<span class="s1">{</span>
+<a name="l506"><span class="ln">506  </span></a>					<span class="s1">console.log(</span><span class="s2">&quot;Invalid array&quot;</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l507"><span class="ln">507  </span></a>					<span class="s0">return </span><span class="s2">&quot;Cannot have multiple ones in the array.&quot;</span><span class="s0">;</span>
+<a name="l508"><span class="ln">508  </span></a>				<span class="s1">}</span>
+<a name="l509"><span class="ln">509  </span></a>			<span class="s1">}</span>
+<a name="l510"><span class="ln">510  </span></a>		<span class="s1">}</span>
+<a name="l511"><span class="ln">511  </span></a>	<span class="s1">}</span>
+<a name="l512"><span class="ln">512  </span></a>	<span class="s0">if </span><span class="s1">(!foundOne)</span>
+<a name="l513"><span class="ln">513  </span></a>	<span class="s1">{</span>
+<a name="l514"><span class="ln">514  </span></a>		<span class="s1">console.log(</span><span class="s2">&quot;Invalid array&quot;</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l515"><span class="ln">515  </span></a>		<span class="s0">return </span><span class="s2">&quot;Missing '1'.&quot;</span><span class="s0">;</span>
+<a name="l516"><span class="ln">516  </span></a>	<span class="s1">}</span>
+<a name="l517"><span class="ln">517  </span></a>
+<a name="l518"><span class="ln">518  </span></a>	<span class="s0">let </span><span class="s1">minDistance = </span><span class="s0">null;</span>
+<a name="l519"><span class="ln">519  </span></a>	<span class="s0">for </span><span class="s1">(</span><span class="s0">let </span><span class="s1">i = </span><span class="s3">0</span><span class="s0">; </span><span class="s1">i &lt; twos.length</span><span class="s0">; </span><span class="s1">++i)</span>
+<a name="l520"><span class="ln">520  </span></a>	<span class="s1">{</span>
+<a name="l521"><span class="ln">521  </span></a>		<span class="s1">console.log(</span><span class="s2">&quot;Finding distance for &quot; </span><span class="s1">+ twos[i])</span><span class="s0">;</span>
+<a name="l522"><span class="ln">522  </span></a>		<span class="s0">let </span><span class="s1">x = Math.min(array[</span><span class="s3">0</span><span class="s1">].length - (Math.abs(one[</span><span class="s3">0</span><span class="s1">] - twos[i][</span><span class="s3">0</span><span class="s1">]))</span><span class="s0">, </span><span class="s1">(Math.abs(one[</span><span class="s3">0</span><span class="s1">] - twos[i][</span><span class="s3">0</span><span class="s1">])))</span><span class="s0">;</span>
+<a name="l523"><span class="ln">523  </span></a>		<span class="s1">console.log(</span><span class="s2">&quot;x distance: &quot; </span><span class="s1">+ x)</span><span class="s0">;</span>
+<a name="l524"><span class="ln">524  </span></a>		<span class="s0">let </span><span class="s1">y = Math.min(array[</span><span class="s3">0</span><span class="s1">].length - (Math.abs(one[</span><span class="s3">1</span><span class="s1">] - twos[i][</span><span class="s3">1</span><span class="s1">]))</span><span class="s0">, </span><span class="s1">(Math.abs(one[</span><span class="s3">1</span><span class="s1">] - twos[i][</span><span class="s3">1</span><span class="s1">])))</span><span class="s0">;</span>
+<a name="l525"><span class="ln">525  </span></a>		<span class="s1">console.log(</span><span class="s2">&quot;y distance: &quot; </span><span class="s1">+ y)</span><span class="s0">;</span>
+<a name="l526"><span class="ln">526  </span></a>		<span class="s0">if </span><span class="s1">((x + y &lt; minDistance) || !minDistance)</span>
+<a name="l527"><span class="ln">527  </span></a>		<span class="s1">{</span>
+<a name="l528"><span class="ln">528  </span></a>			<span class="s1">console.log(</span><span class="s2">&quot;New minDistance is &quot; </span><span class="s1">+ (x + y))</span><span class="s0">;</span>
+<a name="l529"><span class="ln">529  </span></a>			<span class="s1">minDistance = x + y</span><span class="s0">;</span>
+<a name="l530"><span class="ln">530  </span></a>		<span class="s1">}</span>
+<a name="l531"><span class="ln">531  </span></a>	<span class="s1">}</span>
+<a name="l532"><span class="ln">532  </span></a>	<span class="s0">return </span><span class="s1">minDistance</span><span class="s0">;</span>
+<a name="l533"><span class="ln">533  </span></a><span class="s1">}</span></pre>
+</body>
+</html>

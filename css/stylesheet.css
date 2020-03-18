@@ -75,3 +75,25 @@
 {
     color: white;
 }
+
+.maize td
+{
+    width: 1em;
+    height: 1em;
+    font-family: Consolas monospace;
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.maize
+{
+    width: 5em;
+    height: 5em;
+}
+
+.challengeCode
+{
+    width: 100%;
+    height: 50vh;
+}

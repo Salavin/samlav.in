@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>challenge.js</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #808080;}
+.s3 { color: #6a8759;}
+.s4 { color: #6897bb;}
+.ln { color: #606366; font-weight: normal; font-style: normal; }
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<pre><span class="s0">function </span><span class="s1">validateFirst(input)</span>
+<a name="l219"><span class="ln">219  </span></a><span class="s1">{</span>
+<a name="l220"><span class="ln">220  </span></a>	<span class="s0">let </span><span class="s1">result = </span><span class="s0">false;</span>
+<a name="l221"><span class="ln">221  </span></a>	<span class="s2">//Value and position</span>
+<a name="l222"><span class="ln">222  </span></a>	<span class="s0">let </span><span class="s1">first = []</span><span class="s0">;</span>
+<a name="l223"><span class="ln">223  </span></a>	<span class="s1">console.log(</span><span class="s3">&quot;Parsing string '&quot; </span><span class="s1">+ input + </span><span class="s3">&quot;'&quot;</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l224"><span class="ln">224  </span></a>	<span class="s0">for </span><span class="s1">(</span><span class="s0">let </span><span class="s1">i = </span><span class="s4">0</span><span class="s0">; </span><span class="s1">i &lt; input.length</span><span class="s0">; </span><span class="s1">++i)</span>
+<a name="l225"><span class="ln">225  </span></a>	<span class="s1">{</span>
+<a name="l226"><span class="ln">226  </span></a>		<span class="s0">let </span><span class="s1">tmp = parseInt(input[i])</span><span class="s0">;</span>
+<a name="l227"><span class="ln">227  </span></a>		<span class="s0">if </span><span class="s1">(!isNaN(tmp))</span>
+<a name="l228"><span class="ln">228  </span></a>		<span class="s1">{</span>
+<a name="l229"><span class="ln">229  </span></a>			<span class="s1">console.log(input[i] + </span><span class="s3">&quot;: Is a number&quot;</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l230"><span class="ln">230  </span></a>			<span class="s0">if </span><span class="s1">(first[</span><span class="s4">0</span><span class="s1">] &amp;&amp; (tmp + first[</span><span class="s4">0</span><span class="s1">] === </span><span class="s4">10</span><span class="s1">))</span>
+<a name="l231"><span class="ln">231  </span></a>			<span class="s1">{</span>
+<a name="l232"><span class="ln">232  </span></a>				<span class="s1">console.log(</span><span class="s3">&quot;first is not empty and tmp + first === 10 (&quot; </span><span class="s1">+ tmp + </span><span class="s3">&quot; + &quot; </span><span class="s1">+ first[</span><span class="s4">0</span><span class="s1">] + </span><span class="s3">&quot; === &quot; </span><span class="s1">+ (tmp + first[</span><span class="s4">0</span><span class="s1">]))</span><span class="s0">;</span>
+<a name="l233"><span class="ln">233  </span></a>				<span class="s1">console.log(</span><span class="s3">&quot;Finding questions...&quot;</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l234"><span class="ln">234  </span></a>				<span class="s2">//Iterate backwards to see how many question marks exist between the pair</span>
+<a name="l235"><span class="ln">235  </span></a>				<span class="s0">let </span><span class="s1">questions = </span><span class="s4">0</span><span class="s0">;</span>
+<a name="l236"><span class="ln">236  </span></a>				<span class="s0">for </span><span class="s1">(</span><span class="s0">let </span><span class="s1">j = i</span><span class="s0">; </span><span class="s1">j &gt; first[</span><span class="s4">1</span><span class="s1">]</span><span class="s0">; </span><span class="s1">--j)</span>
+<a name="l237"><span class="ln">237  </span></a>				<span class="s1">{</span>
+<a name="l238"><span class="ln">238  </span></a>					<span class="s0">if </span><span class="s1">(input[j] === </span><span class="s3">'?'</span><span class="s1">)</span>
+<a name="l239"><span class="ln">239  </span></a>					<span class="s1">{</span>
+<a name="l240"><span class="ln">240  </span></a>						<span class="s1">++questions</span><span class="s0">;</span>
+<a name="l241"><span class="ln">241  </span></a>						<span class="s1">console.log(input[j] + </span><span class="s3">&quot;: Is a question. question total is now &quot; </span><span class="s1">+ questions)</span><span class="s0">;</span>
+<a name="l242"><span class="ln">242  </span></a>					<span class="s1">}</span>
+<a name="l243"><span class="ln">243  </span></a>					<span class="s0">else</span>
+<a name="l244"><span class="ln">244  </span></a>					<span class="s1">{</span>
+<a name="l245"><span class="ln">245  </span></a>						<span class="s1">console.log(input[j] + </span><span class="s3">&quot;: Is not a question.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l246"><span class="ln">246  </span></a>					<span class="s1">}</span>
+<a name="l247"><span class="ln">247  </span></a>				<span class="s1">}</span>
+<a name="l248"><span class="ln">248  </span></a>				<span class="s0">if </span><span class="s1">(questions === </span><span class="s4">3</span><span class="s1">)</span>
+<a name="l249"><span class="ln">249  </span></a>				<span class="s1">{</span>
+<a name="l250"><span class="ln">250  </span></a>					<span class="s1">console.log(</span><span class="s3">&quot;questions === 3! result is now true.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l251"><span class="ln">251  </span></a>					<span class="s1">result = </span><span class="s0">true;</span>
+<a name="l252"><span class="ln">252  </span></a>				<span class="s1">}</span>
+<a name="l253"><span class="ln">253  </span></a>				<span class="s0">else</span>
+<a name="l254"><span class="ln">254  </span></a>				<span class="s1">{</span>
+<a name="l255"><span class="ln">255  </span></a>					<span class="s1">console.log(</span><span class="s3">&quot;questions !== 3. result is false and breaking.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l256"><span class="ln">256  </span></a>					<span class="s1">result = </span><span class="s0">false;</span>
+<a name="l257"><span class="ln">257  </span></a>					<span class="s0">break;</span>
+<a name="l258"><span class="ln">258  </span></a>				<span class="s1">}</span>
+<a name="l259"><span class="ln">259  </span></a>			<span class="s1">}</span>
+<a name="l260"><span class="ln">260  </span></a>			<span class="s1">first[</span><span class="s4">0</span><span class="s1">] = tmp</span><span class="s0">;</span>
+<a name="l261"><span class="ln">261  </span></a>			<span class="s1">first[</span><span class="s4">1</span><span class="s1">] = i</span><span class="s0">;</span>
+<a name="l262"><span class="ln">262  </span></a>		<span class="s1">}</span>
+<a name="l263"><span class="ln">263  </span></a>		<span class="s0">else</span>
+<a name="l264"><span class="ln">264  </span></a>		<span class="s1">{</span>
+<a name="l265"><span class="ln">265  </span></a>			<span class="s1">console.log(input[i] + </span><span class="s3">&quot;: Is not a number&quot;</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l266"><span class="ln">266  </span></a>		<span class="s1">}</span>
+<a name="l267"><span class="ln">267  </span></a>	<span class="s1">}</span>
+<a name="l268"><span class="ln">268  </span></a>	<span class="s0">return </span><span class="s1">result</span><span class="s0">;</span>
+<a name="l269"><span class="ln">269  </span></a><span class="s1">}</span></pre>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<html>
+<head>
+<title>challenge.js</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6897bb;}
+.s3 { color: #6a8759;}
+.s4 { color: #808080;}
+.ln { color: #606366; font-weight: normal; font-style: normal; }
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<pre><span class="s0">function </span><span class="s1">validateForth(input)</span>
+<a name="l346"><span class="ln">346  </span></a><span class="s1">{</span>
+<a name="l347"><span class="ln">347  </span></a>	<span class="s0">let </span><span class="s1">vals = []</span><span class="s0">;</span>
+<a name="l348"><span class="ln">348  </span></a>	<span class="s0">let </span><span class="s1">array = []</span><span class="s0">;</span>
+<a name="l349"><span class="ln">349  </span></a>	<span class="s0">if </span><span class="s1">(input.length &lt; </span><span class="s2">8</span><span class="s1">)</span>
+<a name="l350"><span class="ln">350  </span></a>	<span class="s1">{</span>
+<a name="l351"><span class="ln">351  </span></a>		<span class="s1">console.log(</span><span class="s3">&quot;Not long enough&quot;</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l352"><span class="ln">352  </span></a>		<span class="s1">$(</span><span class="s3">&quot;#forthText&quot;</span><span class="s1">).text(</span><span class="s3">&quot;Input must be at least 8 characters long.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l353"><span class="ln">353  </span></a>		<span class="s0">return false;</span>
+<a name="l354"><span class="ln">354  </span></a>	<span class="s1">}</span>
+<a name="l355"><span class="ln">355  </span></a>	<span class="s4">//Find all question marks first</span>
+<a name="l356"><span class="ln">356  </span></a>	<span class="s1">console.log(</span><span class="s3">&quot;Finding question marks in &quot; </span><span class="s1">+ input)</span><span class="s0">;</span>
+<a name="l357"><span class="ln">357  </span></a>	<span class="s0">let </span><span class="s1">found = </span><span class="s0">false;</span>
+<a name="l358"><span class="ln">358  </span></a>	<span class="s0">for </span><span class="s1">(</span><span class="s0">let </span><span class="s1">i = </span><span class="s2">0</span><span class="s0">; </span><span class="s1">i &lt; input.length</span><span class="s0">; </span><span class="s1">++i)</span>
+<a name="l359"><span class="ln">359  </span></a>	<span class="s1">{</span>
+<a name="l360"><span class="ln">360  </span></a>		<span class="s0">if </span><span class="s1">(input[i] === </span><span class="s3">'?'</span><span class="s1">)</span>
+<a name="l361"><span class="ln">361  </span></a>		<span class="s1">{</span>
+<a name="l362"><span class="ln">362  </span></a>			<span class="s1">found = </span><span class="s0">true;</span>
+<a name="l363"><span class="ln">363  </span></a>			<span class="s1">console.log(</span><span class="s3">&quot;Question mark found at &quot; </span><span class="s1">+ i)</span><span class="s0">;</span>
+<a name="l364"><span class="ln">364  </span></a>			<span class="s1">vals.push(i)</span><span class="s0">;</span>
+<a name="l365"><span class="ln">365  </span></a>			<span class="s1">array.push(</span><span class="s3">'r'</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l366"><span class="ln">366  </span></a>			<span class="s1">console.log(</span><span class="s3">&quot;vals now equals&quot;</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l367"><span class="ln">367  </span></a>			<span class="s1">console.log(vals)</span><span class="s0">;</span>
+<a name="l368"><span class="ln">368  </span></a>			<span class="s1">console.log(</span><span class="s3">&quot;array now equals&quot;</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l369"><span class="ln">369  </span></a>			<span class="s1">console.log(array)</span><span class="s0">;</span>
+<a name="l370"><span class="ln">370  </span></a>		<span class="s1">}</span>
+<a name="l371"><span class="ln">371  </span></a>		<span class="s0">else</span>
+<a name="l372"><span class="ln">372  </span></a>		<span class="s1">{</span>
+<a name="l373"><span class="ln">373  </span></a>			<span class="s1">console.log(</span><span class="s3">&quot;Adding &quot; </span><span class="s1">+ input[i])</span><span class="s0">;</span>
+<a name="l374"><span class="ln">374  </span></a>			<span class="s1">array.push(input[i])</span><span class="s0">;</span>
+<a name="l375"><span class="ln">375  </span></a>			<span class="s1">console.log(</span><span class="s3">&quot;array now equals&quot;</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l376"><span class="ln">376  </span></a>			<span class="s1">console.log(array)</span><span class="s0">;</span>
+<a name="l377"><span class="ln">377  </span></a>		<span class="s1">}</span>
+<a name="l378"><span class="ln">378  </span></a>	<span class="s1">}</span>
+<a name="l379"><span class="ln">379  </span></a>	<span class="s0">if </span><span class="s1">(!found)</span>
+<a name="l380"><span class="ln">380  </span></a>	<span class="s1">{</span>
+<a name="l381"><span class="ln">381  </span></a>		<span class="s1">console.log(</span><span class="s3">&quot;No question marks found.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l382"><span class="ln">382  </span></a>		<span class="s1">$(</span><span class="s3">&quot;#forthText&quot;</span><span class="s1">).text(</span><span class="s3">&quot;Input must include at least one question mark.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l383"><span class="ln">383  </span></a>		<span class="s0">return false;</span>
+<a name="l384"><span class="ln">384  </span></a>	<span class="s1">}</span>
+<a name="l385"><span class="ln">385  </span></a>	<span class="s0">let </span><span class="s1">total = Math.pow(</span><span class="s2">4</span><span class="s0">, </span><span class="s1">vals.length)</span><span class="s0">;</span>
+<a name="l386"><span class="ln">386  </span></a>	<span class="s0">for </span><span class="s1">(</span><span class="s0">let </span><span class="s1">i = </span><span class="s2">0</span><span class="s0">; </span><span class="s1">i &lt; total</span><span class="s0">; </span><span class="s1">++i)</span>
+<a name="l387"><span class="ln">387  </span></a>	<span class="s1">{</span>
+<a name="l388"><span class="ln">388  </span></a>		<span class="s0">if </span><span class="s1">(increase(array</span><span class="s0">, </span><span class="s1">vals))</span>
+<a name="l389"><span class="ln">389  </span></a>		<span class="s1">{</span>
+<a name="l390"><span class="ln">390  </span></a>			<span class="s0">return true;</span>
+<a name="l391"><span class="ln">391  </span></a>		<span class="s1">}</span>
+<a name="l392"><span class="ln">392  </span></a>	<span class="s1">}</span>
+<a name="l393"><span class="ln">393  </span></a>	<span class="s1">$(</span><span class="s3">&quot;#forthText&quot;</span><span class="s1">).text(</span><span class="s3">&quot;Not possible.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l394"><span class="ln">394  </span></a>	<span class="s0">return false;</span>
+<a name="l395"><span class="ln">395  </span></a><span class="s1">}</span>
+<a name="l396"><span class="ln">396  </span></a>
+<a name="l397"><span class="ln">397  </span></a><span class="s0">function </span><span class="s1">testMaize(input)</span>
+<a name="l398"><span class="ln">398  </span></a><span class="s1">{</span>
+<a name="l399"><span class="ln">399  </span></a>	<span class="s0">let </span><span class="s1">x = </span><span class="s2">0</span><span class="s0">, </span><span class="s1">y = </span><span class="s2">0</span><span class="s0">, </span><span class="s1">cells = document.getElementById(</span><span class="s3">&quot;maize&quot;</span><span class="s1">).getElementsByTagName(</span><span class="s3">&quot;td&quot;</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l400"><span class="ln">400  </span></a>	<span class="s1">fillMaize(</span><span class="s3">&quot;White&quot;</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l401"><span class="ln">401  </span></a>	<span class="s1">cells[</span><span class="s2">0</span><span class="s1">].style.backgroundColor = </span><span class="s3">&quot;Red&quot;</span><span class="s0">;</span>
+<a name="l402"><span class="ln">402  </span></a>	<span class="s0">let </span><span class="s1">r = </span><span class="s2">255</span><span class="s0">;</span>
+<a name="l403"><span class="ln">403  </span></a>	<span class="s0">let </span><span class="s1">g = </span><span class="s2">0</span><span class="s0">;</span>
+<a name="l404"><span class="ln">404  </span></a>	<span class="s0">let </span><span class="s1">diff = </span><span class="s2">255 </span><span class="s1">/ input.length</span><span class="s0">;</span>
+<a name="l405"><span class="ln">405  </span></a>	<span class="s0">for </span><span class="s1">(</span><span class="s0">let </span><span class="s1">i = </span><span class="s2">0</span><span class="s0">; </span><span class="s1">i &lt; input.length</span><span class="s0">; </span><span class="s1">++i)</span>
+<a name="l406"><span class="ln">406  </span></a>	<span class="s1">{</span>
+<a name="l407"><span class="ln">407  </span></a>		<span class="s0">switch </span><span class="s1">(input[i])</span>
+<a name="l408"><span class="ln">408  </span></a>		<span class="s1">{</span>
+<a name="l409"><span class="ln">409  </span></a>			<span class="s0">case </span><span class="s3">'r'</span><span class="s1">:</span>
+<a name="l410"><span class="ln">410  </span></a>				<span class="s1">++x</span><span class="s0">;</span>
+<a name="l411"><span class="ln">411  </span></a>				<span class="s0">break;</span>
+<a name="l412"><span class="ln">412  </span></a>			<span class="s0">case </span><span class="s3">'l'</span><span class="s1">:</span>
+<a name="l413"><span class="ln">413  </span></a>				<span class="s1">--x</span><span class="s0">;</span>
+<a name="l414"><span class="ln">414  </span></a>				<span class="s0">break;</span>
+<a name="l415"><span class="ln">415  </span></a>			<span class="s0">case </span><span class="s3">'u'</span><span class="s1">:</span>
+<a name="l416"><span class="ln">416  </span></a>				<span class="s1">++y</span><span class="s0">;</span>
+<a name="l417"><span class="ln">417  </span></a>				<span class="s0">break;</span>
+<a name="l418"><span class="ln">418  </span></a>			<span class="s0">case </span><span class="s3">'d'</span><span class="s1">:</span>
+<a name="l419"><span class="ln">419  </span></a>				<span class="s1">--y</span><span class="s0">;</span>
+<a name="l420"><span class="ln">420  </span></a>				<span class="s0">break;</span>
+<a name="l421"><span class="ln">421  </span></a>			<span class="s0">default</span><span class="s1">:</span>
+<a name="l422"><span class="ln">422  </span></a>				<span class="s0">return false;</span>
+<a name="l423"><span class="ln">423  </span></a>		<span class="s1">}</span>
+<a name="l424"><span class="ln">424  </span></a>		<span class="s0">if </span><span class="s1">((x &gt; </span><span class="s2">4</span><span class="s1">) || (x &lt; </span><span class="s2">0</span><span class="s1">) || (y &gt; </span><span class="s2">0</span><span class="s1">) || (y &lt; -</span><span class="s2">4</span><span class="s1">))</span>
+<a name="l425"><span class="ln">425  </span></a>		<span class="s1">{</span>
+<a name="l426"><span class="ln">426  </span></a>			<span class="s0">return false;</span>
+<a name="l427"><span class="ln">427  </span></a>		<span class="s1">}</span>
+<a name="l428"><span class="ln">428  </span></a>		<span class="s0">if </span><span class="s1">(cells[x + (</span><span class="s2">5 </span><span class="s1">* Math.abs(y))].style.backgroundColor !== </span><span class="s3">&quot;white&quot;</span><span class="s1">)</span>
+<a name="l429"><span class="ln">429  </span></a>		<span class="s1">{</span>
+<a name="l430"><span class="ln">430  </span></a>			<span class="s0">return false;</span>
+<a name="l431"><span class="ln">431  </span></a>		<span class="s1">}</span>
+<a name="l432"><span class="ln">432  </span></a>		<span class="s1">r -= diff</span><span class="s0">;</span>
+<a name="l433"><span class="ln">433  </span></a>		<span class="s1">g += diff</span><span class="s0">;</span>
+<a name="l434"><span class="ln">434  </span></a>		<span class="s1">cells[x + (</span><span class="s2">5 </span><span class="s1">* Math.abs(y))].style.backgroundColor = </span><span class="s3">&quot;rgb(&quot; </span><span class="s1">+ r + </span><span class="s3">&quot;,&quot; </span><span class="s1">+ g + </span><span class="s3">&quot;,&quot; </span><span class="s1">+ </span><span class="s2">0 </span><span class="s1">+ </span><span class="s3">&quot;)&quot;</span><span class="s0">;</span>
+<a name="l435"><span class="ln">435  </span></a>	<span class="s1">}</span>
+<a name="l436"><span class="ln">436  </span></a>	<span class="s0">return </span><span class="s1">(x === </span><span class="s2">4</span><span class="s1">) &amp;&amp; (y === -</span><span class="s2">4</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l437"><span class="ln">437  </span></a><span class="s1">}</span>
+<a name="l438"><span class="ln">438  </span></a>
+<a name="l439"><span class="ln">439  </span></a><span class="s0">function </span><span class="s1">increase(array</span><span class="s0">, </span><span class="s1">vals)</span>
+<a name="l440"><span class="ln">440  </span></a><span class="s1">{</span>
+<a name="l441"><span class="ln">441  </span></a>	<span class="s0">switch </span><span class="s1">(array[vals[</span><span class="s2">0</span><span class="s1">]])</span>
+<a name="l442"><span class="ln">442  </span></a>	<span class="s1">{</span>
+<a name="l443"><span class="ln">443  </span></a>		<span class="s0">case </span><span class="s3">'r'</span><span class="s1">:</span>
+<a name="l444"><span class="ln">444  </span></a>			<span class="s1">array[vals[</span><span class="s2">0</span><span class="s1">]] = </span><span class="s3">'l'</span><span class="s0">;</span>
+<a name="l445"><span class="ln">445  </span></a>			<span class="s0">break;</span>
+<a name="l446"><span class="ln">446  </span></a>		<span class="s0">case </span><span class="s3">'l'</span><span class="s1">:</span>
+<a name="l447"><span class="ln">447  </span></a>			<span class="s1">array[vals[</span><span class="s2">0</span><span class="s1">]] = </span><span class="s3">'u'</span><span class="s0">;</span>
+<a name="l448"><span class="ln">448  </span></a>			<span class="s0">break;</span>
+<a name="l449"><span class="ln">449  </span></a>		<span class="s0">case </span><span class="s3">'u'</span><span class="s1">:</span>
+<a name="l450"><span class="ln">450  </span></a>			<span class="s1">array[vals[</span><span class="s2">0</span><span class="s1">]] = </span><span class="s3">'d'</span><span class="s0">;</span>
+<a name="l451"><span class="ln">451  </span></a>			<span class="s0">break;</span>
+<a name="l452"><span class="ln">452  </span></a>		<span class="s0">case </span><span class="s3">'d'</span><span class="s1">:</span>
+<a name="l453"><span class="ln">453  </span></a>			<span class="s1">array[vals[</span><span class="s2">0</span><span class="s1">]] = </span><span class="s3">'r'</span><span class="s0">;</span>
+<a name="l454"><span class="ln">454  </span></a>			<span class="s0">break;</span>
+<a name="l455"><span class="ln">455  </span></a>	<span class="s1">}</span>
+<a name="l456"><span class="ln">456  </span></a>	<span class="s0">if </span><span class="s1">((array[vals[</span><span class="s2">0</span><span class="s1">]] === </span><span class="s3">'r'</span><span class="s1">) &amp;&amp; (vals.length &gt; </span><span class="s2">1</span><span class="s1">))</span>
+<a name="l457"><span class="ln">457  </span></a>	<span class="s1">{</span>
+<a name="l458"><span class="ln">458  </span></a>		<span class="s1">increase(array</span><span class="s0">, </span><span class="s1">vals.slice(</span><span class="s2">1</span><span class="s1">))</span>
+<a name="l459"><span class="ln">459  </span></a>	<span class="s1">}</span>
+<a name="l460"><span class="ln">460  </span></a>	<span class="s0">return </span><span class="s1">testMaize(array)</span><span class="s0">;</span>
+<a name="l461"><span class="ln">461  </span></a><span class="s1">}</span></pre>
+</body>
+</html>

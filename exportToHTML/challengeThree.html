@@ -1,0 +1,62 @@
+<html>
+<head>
+<title>challenge.js</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #808080;}
+.s3 { color: #6a8759;}
+.s4 { color: #6897bb;}
+.ln { color: #606366; font-weight: normal; font-style: normal; }
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<pre><span class="s0">function </span><span class="s1">validateThird(input)</span>
+<a name="l299"><span class="ln">299  </span></a><span class="s1">{</span>
+<a name="l300"><span class="ln">300  </span></a>	<span class="s2">//First, generate the array</span>
+<a name="l301"><span class="ln">301  </span></a>	<span class="s0">let </span><span class="s1">tmparray = input.trim().split(</span><span class="s3">&quot;</span><span class="s0">\n</span><span class="s3">&quot;</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l302"><span class="ln">302  </span></a>	<span class="s0">let </span><span class="s1">array = []</span><span class="s0">;</span>
+<a name="l303"><span class="ln">303  </span></a>	<span class="s1">array[</span><span class="s4">0</span><span class="s1">] = tmparray[</span><span class="s4">0</span><span class="s1">].split(</span><span class="s3">&quot;,&quot;</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l304"><span class="ln">304  </span></a>	<span class="s1">array[</span><span class="s4">1</span><span class="s1">] = tmparray[</span><span class="s4">1</span><span class="s1">].split(</span><span class="s3">&quot;,&quot;</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l305"><span class="ln">305  </span></a>	<span class="s1">console.log(</span><span class="s3">&quot;Parsing array&quot;</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l306"><span class="ln">306  </span></a>	<span class="s1">console.log(array)</span><span class="s0">;</span>
+<a name="l307"><span class="ln">307  </span></a>	<span class="s0">if </span><span class="s1">((array.length === </span><span class="s4">2</span><span class="s1">) &amp;&amp; (array[</span><span class="s4">0</span><span class="s1">].length === </span><span class="s4">2</span><span class="s1">))</span>
+<a name="l308"><span class="ln">308  </span></a>	<span class="s1">{</span>
+<a name="l309"><span class="ln">309  </span></a>		<span class="s0">let </span><span class="s1">diff = Math.abs(parseInt(array[</span><span class="s4">0</span><span class="s1">][</span><span class="s4">0</span><span class="s1">]) - parseInt(array[</span><span class="s4">0</span><span class="s1">][</span><span class="s4">1</span><span class="s1">]))</span><span class="s0">;</span>
+<a name="l310"><span class="ln">310  </span></a>		<span class="s1">console.log(</span><span class="s3">&quot;diff = &quot; </span><span class="s1">+ diff)</span><span class="s0">;</span>
+<a name="l311"><span class="ln">311  </span></a>		<span class="s2">//First, check to see if the weight is included:</span>
+<a name="l312"><span class="ln">312  </span></a>		<span class="s0">for </span><span class="s1">(</span><span class="s0">let </span><span class="s1">i = </span><span class="s4">0</span><span class="s0">; </span><span class="s1">i &lt; array[</span><span class="s4">1</span><span class="s1">].length</span><span class="s0">; </span><span class="s1">++i)</span>
+<a name="l313"><span class="ln">313  </span></a>		<span class="s1">{</span>
+<a name="l314"><span class="ln">314  </span></a>			<span class="s1">console.log(</span><span class="s3">&quot;Checking &quot; </span><span class="s1">+ parseInt(array[</span><span class="s4">1</span><span class="s1">][i]))</span><span class="s0">;</span>
+<a name="l315"><span class="ln">315  </span></a>			<span class="s0">if </span><span class="s1">(parseInt(array[</span><span class="s4">1</span><span class="s1">][i]) === diff)</span>
+<a name="l316"><span class="ln">316  </span></a>			<span class="s1">{</span>
+<a name="l317"><span class="ln">317  </span></a>				<span class="s0">return </span><span class="s1">[array[</span><span class="s4">1</span><span class="s1">][i]]</span><span class="s0">;</span>
+<a name="l318"><span class="ln">318  </span></a>			<span class="s1">}</span>
+<a name="l319"><span class="ln">319  </span></a>		<span class="s1">}</span>
+<a name="l320"><span class="ln">320  </span></a>		<span class="s2">//Finally, check to see if any weights added together will equal the diff</span>
+<a name="l321"><span class="ln">321  </span></a>		<span class="s0">for </span><span class="s1">(</span><span class="s0">let </span><span class="s1">i = </span><span class="s4">0</span><span class="s0">; </span><span class="s1">i &lt; array[</span><span class="s4">1</span><span class="s1">].length</span><span class="s0">; </span><span class="s1">++i)</span>
+<a name="l322"><span class="ln">322  </span></a>		<span class="s1">{</span>
+<a name="l323"><span class="ln">323  </span></a>			<span class="s0">let </span><span class="s1">tmp = parseInt(array[</span><span class="s4">1</span><span class="s1">][i])</span><span class="s0">;</span>
+<a name="l324"><span class="ln">324  </span></a>			<span class="s0">for </span><span class="s1">(</span><span class="s0">let </span><span class="s1">j = i + </span><span class="s4">1</span><span class="s0">; </span><span class="s1">j &lt; array[</span><span class="s4">1</span><span class="s1">].length</span><span class="s0">; </span><span class="s1">++j)</span>
+<a name="l325"><span class="ln">325  </span></a>			<span class="s1">{</span>
+<a name="l326"><span class="ln">326  </span></a>				<span class="s0">if </span><span class="s1">((tmp + parseInt(array[</span><span class="s4">1</span><span class="s1">][j]) === diff) || (Math.abs(tmp - parseInt(array[</span><span class="s4">1</span><span class="s1">][j])) === diff))</span>
+<a name="l327"><span class="ln">327  </span></a>				<span class="s1">{</span>
+<a name="l328"><span class="ln">328  </span></a>					<span class="s0">return </span><span class="s1">[array[</span><span class="s4">1</span><span class="s1">][i]</span><span class="s0">, </span><span class="s1">array[</span><span class="s4">1</span><span class="s1">][j]]</span><span class="s0">;</span>
+<a name="l329"><span class="ln">329  </span></a>				<span class="s1">}</span>
+<a name="l330"><span class="ln">330  </span></a>			<span class="s1">}</span>
+<a name="l331"><span class="ln">331  </span></a>		<span class="s1">}</span>
+<a name="l332"><span class="ln">332  </span></a>		<span class="s0">return </span><span class="s3">&quot;Not possible&quot;</span><span class="s0">;</span>
+<a name="l333"><span class="ln">333  </span></a>	<span class="s1">}</span>
+<a name="l334"><span class="ln">334  </span></a>	<span class="s0">else</span>
+<a name="l335"><span class="ln">335  </span></a>	<span class="s1">{</span>
+<a name="l336"><span class="ln">336  </span></a>		<span class="s0">return </span><span class="s3">&quot;Input must be two arrays; the first of which must be a length of two.&quot;</span>
+<a name="l337"><span class="ln">337  </span></a>	<span class="s1">}</span>
+<a name="l338"><span class="ln">338  </span></a><span class="s1">}</span>
+<a name="l339"><span class="ln">339  </span></a>
+<a name="l340"><span class="ln">340  </span></a><span class="s0">function </span><span class="s1">isVowel(char)</span>
+<a name="l341"><span class="ln">341  </span></a><span class="s1">{</span>
+<a name="l342"><span class="ln">342  </span></a>	<span class="s0">return </span><span class="s1">((char === </span><span class="s3">'a'</span><span class="s1">) || (char === </span><span class="s3">'e'</span><span class="s1">) || (char === </span><span class="s3">'i'</span><span class="s1">) || (char === </span><span class="s3">'o'</span><span class="s1">) || (char === </span><span class="s3">'u'</span><span class="s1">))</span><span class="s0">;</span>
+<a name="l343"><span class="ln">343  </span></a><span class="s1">}</span></pre>
+</body>
+</html>

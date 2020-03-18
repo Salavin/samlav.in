@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>challenge.js</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #808080;}
+.s3 { color: #6a8759;}
+.s4 { color: #6897bb;}
+.ln { color: #606366; font-weight: normal; font-style: normal; }
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<pre><span class="s0">function </span><span class="s1">validateSecond(input)</span>
+<a name="l270"><span class="ln">270  </span></a><span class="s1">{</span>
+<a name="l271"><span class="ln">271  </span></a>	<span class="s2">//First, generate the array</span>
+<a name="l272"><span class="ln">272  </span></a>	<span class="s0">let </span><span class="s1">array = input.trim().split(</span><span class="s3">&quot;</span><span class="s0">\n</span><span class="s3">&quot;</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l273"><span class="ln">273  </span></a>	<span class="s1">console.log(</span><span class="s3">&quot;Parsing array&quot;</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l274"><span class="ln">274  </span></a>	<span class="s1">console.log(array)</span><span class="s0">;</span>
+<a name="l275"><span class="ln">275  </span></a>	<span class="s0">for </span><span class="s1">(</span><span class="s0">let </span><span class="s1">i = </span><span class="s4">1</span><span class="s0">; </span><span class="s1">i &lt; array.length</span><span class="s0">; </span><span class="s1">++i)</span>
+<a name="l276"><span class="ln">276  </span></a>	<span class="s1">{</span>
+<a name="l277"><span class="ln">277  </span></a>		<span class="s0">if </span><span class="s1">(array[i].length !== array[</span><span class="s4">0</span><span class="s1">].length)</span>
+<a name="l278"><span class="ln">278  </span></a>		<span class="s1">{</span>
+<a name="l279"><span class="ln">279  </span></a>			<span class="s1">console.log(</span><span class="s3">&quot;Invalid array&quot;</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l280"><span class="ln">280  </span></a>			<span class="s0">return </span><span class="s3">&quot;Arrays cannot have differing lengths.&quot;</span><span class="s0">;</span>
+<a name="l281"><span class="ln">281  </span></a>		<span class="s1">}</span>
+<a name="l282"><span class="ln">282  </span></a>	<span class="s1">}</span>
+<a name="l283"><span class="ln">283  </span></a>
+<a name="l284"><span class="ln">284  </span></a>	<span class="s0">for </span><span class="s1">(</span><span class="s0">let </span><span class="s1">i = </span><span class="s4">0</span><span class="s0">; </span><span class="s1">i &lt; array.length - </span><span class="s4">1</span><span class="s0">; </span><span class="s1">++i)</span>
+<a name="l285"><span class="ln">285  </span></a>	<span class="s1">{</span>
+<a name="l286"><span class="ln">286  </span></a>		<span class="s0">for </span><span class="s1">(</span><span class="s0">let </span><span class="s1">j = </span><span class="s4">0</span><span class="s0">; </span><span class="s1">j &lt; array[i].length - </span><span class="s4">1</span><span class="s0">; </span><span class="s1">++j)</span>
+<a name="l287"><span class="ln">287  </span></a>		<span class="s1">{</span>
+<a name="l288"><span class="ln">288  </span></a>			<span class="s1">console.log(</span><span class="s3">&quot;Checking &quot; </span><span class="s1">+ array[i][j])</span><span class="s0">;</span>
+<a name="l289"><span class="ln">289  </span></a>			<span class="s0">if </span><span class="s1">(isVowel(array[i][j]) &amp;&amp; isVowel(array[i + </span><span class="s4">1</span><span class="s1">][j]) &amp;&amp; isVowel(array[i][j + </span><span class="s4">1</span><span class="s1">]) &amp;&amp; isVowel(array[i + </span><span class="s4">1</span><span class="s1">][j + </span><span class="s4">1</span><span class="s1">]))</span>
+<a name="l290"><span class="ln">290  </span></a>			<span class="s1">{</span>
+<a name="l291"><span class="ln">291  </span></a>				<span class="s0">return </span><span class="s1">[i</span><span class="s0">, </span><span class="s1">j]</span><span class="s0">;</span>
+<a name="l292"><span class="ln">292  </span></a>			<span class="s1">}</span>
+<a name="l293"><span class="ln">293  </span></a>		<span class="s1">}</span>
+<a name="l294"><span class="ln">294  </span></a>	<span class="s1">}</span>
+<a name="l295"><span class="ln">295  </span></a>	<span class="s0">return </span><span class="s3">&quot;None found.&quot;</span>
+<a name="l296"><span class="ln">296  </span></a><span class="s1">}</span></pre>
+</body>
+</html>
