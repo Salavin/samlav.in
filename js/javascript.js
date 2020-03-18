@@ -17,11 +17,6 @@ $(document).ready(function ()
         $(".download-item").removeClass("list-group-item-dark");
     }
 
-    if (window.innerWidth < window.innerHeight)
-    {
-        carousel.carousel('pause');
-    }
-
     let aboutMeTab = $("#nav-about-me-tab");
     let resumeTab = $("#nav-resume-tab");
     let projectsTab = $("#nav-projects-tab");
@@ -45,6 +40,16 @@ $(document).ready(function ()
     if (!(localStorage.getItem("modal") === "false"))
     {
         $(".modal").modal();
+    }
+});
+
+$(window).on('load', function()
+{
+    //Some of the pictures will be cut off, so we'll just turn this off
+    //This apparently has to be checked after the page has been fully loaded; doesn't work using $(document).ready
+    if ($(window).width() < $(window).height())
+    {
+        carousel.carousel('pause');
     }
 });
 
@@ -151,7 +156,7 @@ document.addEventListener('keydown', function(e)
     else if (presses.toString() === keys.toString())
     {
         presses = [];
-        alert("Re-enabled initial dialogue box.");
-        localStorage.setItem("modal", "true");
+        alert("Cleared local storage.");
+        localStorage.clear();
     }
 });
