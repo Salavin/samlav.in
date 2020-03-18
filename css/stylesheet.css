@@ -3,6 +3,7 @@
     width: 100%;
     height: calc(100vh - 56px);
     object-fit: cover;
+    z-index: 2;
 }
 
 #sticky
@@ -74,6 +75,16 @@
 #darkMode
 {
     color: white;
+    border-radius: 50%;
+}
+
+.float
+{
+    position: fixed;
+    left: unset;
+    right: 39px;
+    top: 39px;
+    z-index: 0;
 }
 
 .maize td
