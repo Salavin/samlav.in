@@ -1,7 +1,7 @@
 //Enable tooltips:
 $(function () {
-    $('[data-toggle="tooltip"]').tooltip()
-})
+    $('[data-toggle="tooltip"]').tooltip();
+});
 
 let darkModeButton = $("#darkMode");
 let carousel = $("#carousel");
@@ -28,20 +28,31 @@ $(document).ready(function ()
     // console.log(readCookie("selectedTab"));
     switch (readCookie("selectedTab"))
     {
-        case 1:
+        case "1":
             aboutMeTab.addClass("active");
             aboutMeTab.attr("aria-selected", true);
             break;
-        case 2:
+        case "2":
             resumeTab.addClass("active");
             resumeTab.attr("aria-selected", true);
             break;
-        case 3:
+        case "3":
             projectsTab.addClass("active");
             projectsTab.attr("aria-selected", true);
             break;
     }
+
+    if (!(localStorage.getItem("modal") === "false"))
+    {
+        $(".modal").modal();
+    }
 });
+
+$("#dontShowAgain").click(function()
+{
+    localStorage.setItem("modal", "false");
+});
+
 darkModeButton.click(function ()
 {
     darkmode.toggle();
@@ -62,15 +73,12 @@ darkModeButton.click(function ()
 
 $(window).resize(function ()
 {
-    console.log("resized!");
     if ($(window).width() < $(window).height())
     {
-        console.log("stopped carousel!");
         carousel.carousel(0);
         carousel.carousel('pause');
     } else
     {
-        console.log("resumed carousel!");
         carousel.carousel('cycle');
     }
 });
@@ -93,23 +101,23 @@ $(".nav-item").click(function ()
 
 $("#nav-about-me-tab").click(function ()
 {
-    createCookie("selectedTab", 1);
+    createCookie("selectedTab", "1");
 });
 
 $("#nav-resume-tab").click(function ()
 {
-    createCookie("selectedTab", 2);
+    createCookie("selectedTab", "2");
 });
 
 $("#nav-projects-tab").click(function ()
 {
-    createCookie("selectedTab", 3);
+    createCookie("selectedTab", "3");
 });
 
 function createCookie(key, value)
 {
     document.cookie = escape(key) + "=" + escape(value) + ";";
-    // console.log("Creating new cookie with key: " + key + " value: " + value);
+    console.log("Creating new cookie with key: " + key + " value: " + value);
 }
 
 function readCookie(name)
@@ -130,3 +138,20 @@ function readCookie(name)
     }
     return null;
 }
+
+let presses = [];
+let keys = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "KeyB", "KeyA"];
+document.addEventListener('keydown', function(e)
+{
+    presses.push(e.code);
+    if (keys[presses.length - 1] !== presses[presses.length - 1])
+    {
+        presses = [];
+    }
+    else if (presses.toString() === keys.toString())
+    {
+        presses = [];
+        alert("Re-enabled initial dialogue box.");
+        localStorage.setItem("modal", "true");
+    }
+});
