@@ -18,26 +18,6 @@ $(document).ready(function ()
         $(".download-item").removeClass("list-group-item-dark");
     }
 
-    let aboutMeTab = $("#nav-about-me-tab");
-    let resumeTab = $("#nav-resume-tab");
-    let projectsTab = $("#nav-projects-tab");
-    // console.log(readCookie("selectedTab"));
-    switch (readCookie("selectedTab"))
-    {
-        case "1":
-            aboutMeTab.addClass("active");
-            aboutMeTab.attr("aria-selected", true);
-            break;
-        case "2":
-            resumeTab.addClass("active");
-            resumeTab.attr("aria-selected", true);
-            break;
-        case "3":
-            projectsTab.addClass("active");
-            projectsTab.attr("aria-selected", true);
-            break;
-    }
-
     if (localStorage.getItem("modal") !== "false")
     {
         $(".modal").modal();
@@ -57,6 +37,33 @@ $(window).on('load', function()
     {
         darkModeButton.addClass("float");
     }
+
+    let aboutMeTab = $("#nav-about-me-tab");
+    let resumeTab = $("#nav-resume-tab");
+    let projectsTab = $("#nav-projects-tab");
+
+    if (window.sessionStorage.getItem("selectedTab") !== null)
+    {
+        switch (sessionStorage.getItem("selectedTab"))
+        {
+            case "1":
+                aboutMeTab.tab('show');
+                break;
+            case "2":
+                resumeTab.tab('show');
+                break;
+            case "3":
+                resumeTab.tab('show');
+                break;
+        }
+        $(document).scrollTop = sessionStorage.getItem("scrollValue");
+        $("#footer").show();
+    }
+});
+
+$(window).on('scroll', function()
+{
+    sessionStorage.setItem("scrollValue", $(document).scrollTop())
 });
 
 $("#dontShowAgain").click(function()
@@ -117,43 +124,18 @@ $(".nav-item").click(function ()
 
 $("#nav-about-me-tab").click(function ()
 {
-    createCookie("selectedTab", "1");
+    sessionStorage.setItem("selectedTab", "1");
 });
 
 $("#nav-resume-tab").click(function ()
 {
-    createCookie("selectedTab", "2");
+    sessionStorage.setItem("selectedTab", "2");
 });
 
 $("#nav-projects-tab").click(function ()
 {
-    createCookie("selectedTab", "3");
+    sessionStorage.setItem("selectedTab", "3");
 });
-
-function createCookie(key, value)
-{
-    document.cookie = escape(key) + "=" + escape(value) + ";";
-    console.log("Creating new cookie with key: " + key + " value: " + value);
-}
-
-function readCookie(name)
-{
-    let key = name + "=";
-    let cookies = document.cookie.split(';');
-    for (let i = 0; i < cookies.length; i++)
-    {
-        let cookie = cookies[i];
-        while (cookie.charAt(0) === ' ')
-        {
-            cookie = cookie.substring(1, cookie.length);
-        }
-        if (cookie.indexOf(key) === 0)
-        {
-            return cookie.substring(key.length, cookie.length);
-        }
-    }
-    return null;
-}
 
 let presses = [];
 let keys = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "KeyB", "KeyA"];
