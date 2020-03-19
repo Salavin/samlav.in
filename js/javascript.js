@@ -6,6 +6,23 @@ $(function () {
 let darkModeButton = $("#darkMode");
 let carousel = $("#carousel");
 const darkmode = new Darkmode();
+let aboutMeTab = $("#nav-about-me-tab");
+let resumeTab = $("#nav-resume-tab");
+let projectsTab = $("#nav-projects-tab");
+let smartDisplayCard = $("#smartDisplayCard");
+let websiteCard = $("#websiteCard");
+let otherCard = $("#otherCard");
+let webDevCard = $("#webDevCard");
+let collapseOne = $("#collapseOne");
+let collapseTwo = $("#collapseTwo");
+let collapseThree = $("#collapseThree");
+let collapseFour = $("#collapseFour");
+
+function scrollDown()
+{
+    $(document).scrollTop = sessionStorage.getItem("scrollValue");
+}
+
 $(document).ready(function ()
 {
     if (darkmode.isActivated())
@@ -38,25 +55,23 @@ $(window).on('load', function()
         darkModeButton.addClass("float");
     }
 
-    let aboutMeTab = $("#nav-about-me-tab");
-    let resumeTab = $("#nav-resume-tab");
-    let projectsTab = $("#nav-projects-tab");
-
     if (window.sessionStorage.getItem("selectedTab") !== null)
     {
         switch (sessionStorage.getItem("selectedTab"))
         {
             case "1":
                 aboutMeTab.tab('show');
+                scrollDown();
                 break;
             case "2":
                 resumeTab.tab('show');
+                scrollDown();
                 break;
             case "3":
-                resumeTab.tab('show');
+                projectsTab.tab('show');
+                openCard();
                 break;
         }
-        $(document).scrollTop = sessionStorage.getItem("scrollValue");
         $("#footer").show();
     }
 });
@@ -111,31 +126,73 @@ $(window).resize(function ()
 
 });
 
-let accordion = $("#accordion");
-accordion.collapse();
-
 $(".nav-item").click(function ()
 {
-    $('html, body').animate({
-        scrollTop: $("#nav-tabContent").offset().top - 56
-    }, 500);
     $("#footer").show();
+    scrollSlow();
 });
 
-$("#nav-about-me-tab").click(function ()
+aboutMeTab.click(function ()
 {
     sessionStorage.setItem("selectedTab", "1");
 });
 
-$("#nav-resume-tab").click(function ()
+resumeTab.click(function ()
 {
     sessionStorage.setItem("selectedTab", "2");
 });
 
-$("#nav-projects-tab").click(function ()
+projectsTab.click(function ()
 {
     sessionStorage.setItem("selectedTab", "3");
 });
+
+smartDisplayCard.click(function()
+{
+    sessionStorage.setItem("selectedCard", "1");
+});
+
+websiteCard.click(function ()
+{
+    sessionStorage.setItem("selectedCard", "2");
+});
+
+otherCard.click(function ()
+{
+    sessionStorage.setItem("selectedCard", "3");
+});
+
+webDevCard.click(function ()
+{
+    sessionStorage.setItem("selectedCard", "4");
+});
+
+function scrollSlow()
+{
+    $('html, body').animate({
+        scrollTop: $("#nav-tabContent").offset().top - 56
+    }, 500);
+}
+
+function openCard()
+{
+    switch (sessionStorage.getItem("selectedCard"))
+    {
+        case "1":
+            collapseOne.collapse('show');
+            break;
+        case "2":
+            collapseTwo.collapse('show');
+            break;
+        case "3":
+            collapseThree.collapse('show');
+            break;
+        case "4":
+            collapseFour.collapse('show');
+            break;
+    }
+    scrollSlow();
+}
 
 let presses = [];
 let keys = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "KeyB", "KeyA"];
@@ -149,7 +206,8 @@ document.addEventListener('keydown', function(e)
     else if (presses.toString() === keys.toString())
     {
         presses = [];
-        alert("Cleared local storage.");
+        alert("Cleared local storage and session storage.");
         localStorage.clear();
+        sessionStorage.clear();
     }
 });
