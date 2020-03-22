@@ -1,6 +1,15 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161562258-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-161562258-1');
+    </script>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -374,8 +383,8 @@
                             <p>&emsp;Ever since I started web development at ISU WebDev, I have always wanted to host my own website specifically for future employers to get to know me better. I wanted to write the entire thing myself, and not use sites that build a website for you. So one day, I registered this domain name, and attempted to get started on building this site. However, I was trying to use Laravel on the same Raspberry Pi Zero WH that I had used from the Smart Display project above, and Laravel was <u>not</u> having it. Basically, Laravel apparently requires more than 512MB of RAM to run, which is all the little Pi Zero had. So, I instead went out and rented some server space with a little more RAM, and attempted to start again. It was at this point that I learned Laravel was quite different from ZF2 (the framework that we used at WebDev), and I didn't have much time or motivation to ride that learning curve. On top of that, the company that I was renting server space from kept corrupting my OS, and so eventually this project was put on the backburner.</p>
                             <p>&emsp;Eventually, I realized that I didn't need an entire framework to do what I want. Instead, I can literally return a single html page that uses Bootstrap's navs to switch between pages. And so Spring break 2020, I sat down and wrote out this entire site in a matter of a couple days.</p>
                             <p>&emsp;This site runs purely off of HTML, CSS, and JavaScript. In conjunction with that, I am also using <a href="http://getbootstrap.com" target="_blank">Bootstrap</a> to help design the site, <a href="http://fontawesome.com" target="_blank">Font Awesome</a> for a few icons, and <a href="https://darkmodejs.learn.uno/" target="_blank">Darkmode.js</a> for an easy to implement darkmode (because <b>everything</b> should have a darkmode option). If you haven't figured out how to use it yet, just click the little <i class="fas fa-moon"></i> icon on the far right of the navbar above!</p>
-                            <p>&emsp;<em>//TODO: INSERT STUFF HERE ABOUT SETTING UP THIS SITE ON THE RASPBERRY PI</em></p>
-                            <p>&emsp;<em>//AND PROBABLY STUFF HERE TOO ABOUT HOW YOU LIKED THE PROJECT OR WHATEVER AND WHERE TO FIND IT ON GITHUB</em></p>
+                            <p>&emsp;Getting the site on the World Wide Web was relatively simple. I already owned the domain name, so I just had to do a fresh install of Raspbian for my Raspberry Pi Zero, get Apache set up, pull the repository, change a few configs, get an SSL certificate from <a href="https://letsencrypt.org/" target="_blank">Let's Encrypt</a>, and then point my domain to the Raspberry Pi Zero. </p>
+                            <p>&emsp;This project was incredibly fun for me to do. I've spent around 35-40 hours on it now, and I'm very proud of what the final product looks like. If you notice anything that could be improved (like something isn't working correctly, a typo on a page, or in general something that could be better), <u>please</u> let me know either by messaging me personally (my email is below!), or by creating a pull request on my <a href="https://github.com/Salavin/samlav" target="_blank">GitHub repository</a>!</p>
                         </div>
                     </div>
                 </div>
