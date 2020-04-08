@@ -20,7 +20,7 @@ let collapseFour = $("#collapseFour");
 
 function scrollDown()
 {
-    $(document).scrollTop = sessionStorage.getItem("scrollValue");
+    $(document).scrollTop(sessionStorage.getItem("scrollValue"));
 }
 
 $(document).ready(function ()
