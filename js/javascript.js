@@ -13,10 +13,12 @@ let smartDisplayCard = $("#smartDisplayCard");
 let websiteCard = $("#websiteCard");
 let otherCard = $("#otherCard");
 let webDevCard = $("#webDevCard");
+let ethicsCard = $("#ethicsCard");
 let collapseOne = $("#collapseOne");
 let collapseTwo = $("#collapseTwo");
 let collapseThree = $("#collapseThree");
 let collapseFour = $("#collapseFour");
+let collapseFive = $("#collapseFive");
 
 function scrollDown()
 {
@@ -185,6 +187,15 @@ webDevCard.click(function ()
     }, 500);
 });
 
+ethicsCard.click(function ()
+{
+    sessionStorage.setItem("selectedCard", "5");
+    sessionStorage.setItem("scrollToCard", "false");
+    $('html, body').animate({
+        scrollTop: smartDisplayCard.offset().top + 198
+    }, 500);
+});
+
 function openCard()
 {
     let tmp = sessionStorage.getItem("scrollValue"); //This value changes once we start showing the card, so we need to get it now
@@ -224,6 +235,16 @@ function openCard()
         case "4":
             collapseFour.collapse('show');
             collapseFour.on("shown.bs.collapse", function()
+            {
+                if (sessionStorage.getItem("scrollToCard") === "true")
+                {
+                    $(document).scrollTop(tmp);
+                }
+            });
+            break;
+        case "5":
+            collapseFive.collapse('show');
+            collapseFive.on("shown.bs.collapse", function()
             {
                 if (sessionStorage.getItem("scrollToCard") === "true")
                 {
