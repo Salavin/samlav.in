@@ -168,19 +168,12 @@
     <div class="tab-pane fade" id="nav-resume" role="tabcard" aria-labelledby="nav-resume-tab">
         <div class="tab-body">
             <div style="text-align: center">
-                <h1>Sam Lavin</h1>
+                <h1 class="display-2">Sam Lavin</h1>
                 <hr>
-                <p>Ames, IA | <a href="mailto:salavin12@gmail.com">salavin12@gmail.com</a></p>
+                <p class="font-weight-light">Ames, IA | <a href="mailto:salavin12@gmail.com">salavin12@gmail.com</a></p>
             </div>
-            <div class="card">
-                <div class="card-header">
-                    <h2>Summary</h2>
-                </div>
-                <div class="card-body">
-                    <p>Skilled and organized computer engineer with a long background of musical talent. Looking for jobs
-                        in the Audio Engineering/Music Production industry.</p>
-                </div>
-            </div>
+            <p class="lead">Skilled and organized computer engineer with a long background of musical talent. Looking for jobs
+                in the Audio Engineering/Music Production industry.</p>
             <br>
             <div class="card">
                 <div class="card-header">
@@ -290,13 +283,489 @@
             <br>
             <div class="card">
                 <div class="card-header">
+                    <h2>Projects</h2>
+                </div>
+                <div class="card-body">
+                    <div class="accordion" id="accordion">
+                        <div class="card">
+                            <div class="card-header" id="headingOne">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" id="smartDisplayCard">
+                                        Raspberry Pi Smart Display
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                                <div class="card-body">
+                                    <p>&emsp;Imagine that you're me, getting ready in the morning for classes, probably in a rush because you woke up late. You go to open the MyState app to see when the next bus is coming, only to be signed out of the app by some unknown bug. By the time you get signed in again, you see that you are too late for the bus, and will have to wait until the next one.</p>
+                                    <p>&emsp;These frustrations are what prompted me to design a smart display. This smart display would be something you can look at quickly in the morning to find out when your next bus is, what the weather will be like for the day, and more.</p>
+                                    <p>&emsp;I worked on this project in my CprE 186 class along with 2 others. We decided to use Python as the backbone for the project as we could install many third-party packages that would allow us to interface with the outside world (more specifically, the Internet of Things).</p>
+                                    <p>&emsp;The smart display would physically consist of only a few items: a Raspberry Pi WH to drive the display, a $5 monitor we found at the Surplus Store, and all the necessary cables to connect the two. On the display, we would display three different screens that each would have their own purpose. Those screens included:</p>
+                                    <ol>
+                                        <li>A CyRide bus prediction screen,</li>
+                                        <li>A weather screen,</li>
+                                        <li>And a multi-user Google Calendar page that also displayed what roommates are home based on their phone's location.</li>
+                                    </ol>
+                                    <p>&emsp;The GUI powering these screens would be TkInter. While this wasn't the most preferable choice, we didn't have much overhead or storage space to download a different GUI module, and TkInter is included with Python. Now, let's dive into each of these different screens. Unfortunately, none of us thought to grab screenshots of these in production, and getting the project to work now will be a massive pain as the API I used to grab CyRide data is now discontinued. However, I can do my best to describe them.</p>
+                                    <hr>
+                                    <h3>CyRide</h3>
+                                    <p>&emsp;The CyRide screen was essentially my part of the project (along with getting TkInter to work for our project). For this, I used the public CyRide API at the time to request an XML file, parse through that file, and grab the prediction times until the next bus for a certain stop. The bus stop itself was hard-coded in, however I could have programmed it to use a constant for the bus stop ID, and then by simply changing that constant, it could show different predictions.</p>
+                                    <p>&emsp;Here is an example of what this screen would have looked like:</p>
+                                    <div style="text-align: center">
+                                        <div class="card bg-dark card-darkmode-ignore darkmode-ignore border-light"
+                                             style="display: inline-block">
+                                            <div class="card-body"
+                                                 style="text-align: center; font-family: 'Helvetica', serif; color: white">
+                                                <p style="font-size: 2.5em">CyRide Predictions at Coover Hall:</p>
+                                                <p class="busFont" style="color: red">21 Cardinal:</p>
+                                                <p class="timeFont">2m 55s</p>
+                                                <p class="busFont" style="color: yellow">25 Gold:</p>
+                                                <p class="timeFont">2m 42s</p>
+                                                <p class="busFont" style="color: green">2 Green:</p>
+                                                <p class="timeFont">0m 55s</p>
+                                                <p class="busFont" style="color: brown">6 Brown:</p>
+                                                <p class="timeFont">1m 02s</p>
+                                                <p class="busFont" style="color: blue">3 Blue:</p>
+                                                <p class="timeFont">0m 26s</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h3>Weather</h3>
+                                    <p>&emsp;Next in the lineup is the weather screen. This screen showed the current temperature, the high and low for the day, an hourly forecast from the current hour, and a 5 day forecast. We had also planned to implement a temperature sensor onto a couple of the Raspberry Pi's GPIO pins, however we ended up running out of time before we could get to that. </p>
+                                    <p>&emsp;Unfortunately, I can't provide an example of what this screen looked like due to the fact that I am not as familiar with this screen as I didn't work on it, and also because from what I remember, the GUI for this screen was quite complex.</p>
+                                    <h3>Google Calendar</h3>
+                                    <p>&emsp;The last piece of our trilogy here is the Google Calendar. This screen displayed all of each user's upcoming events for the day (to help you plan for the day), and also showed whether each user was home or not. The latter was achieved by using a combination of IFTTT and Adafruit.io. Basically, whenever one of the users entered or left a geofenced area, IFTTT would send some data to a dashboard that we set up on Adafruit.io updating whether or not they were home. Then, our program would check that data and update the screen accordingly.</p>
+                                    <p>&emsp;I helped a little bit with the design of this last component, so I can give a rough idea of what it ended up looking like. Basically, there were 3 columns (for each of the 'roommates'), a header that had the user's name and whether they were home or not, and then the rest of the column was dedicated to any events the user had for the day. You can see a blurry version of what this screen looked like in the picture below!</p>
+                                    <hr>
+                                    <p>&emsp;Overall, we learned a lot through this project. The biggest things we learned about were:</p>
+                                    <ul>
+                                        <li>How to use different packages with Python.</li>
+                                        <li>How to use XML and ElementTree.</li>
+                                        <li>How to use Python Objectively.</li>
+                                        <li>How to use Git and collaborate with each other.</li>
+                                    </ul>
+                                    <p>&emsp;There are also some things we <em>definitely</em> could have improved on. I already mentioned improving how the bus stop was hard-coded, and also adding a temperature sensor for reporting indoor temperature along with the outdoor. We also wished we could have rewired the inside of the display we were using to output power through the usb ports on the back <u>without</u> needing a USB uplink. Looking back on the project now, I also wish we would have documented more of the progress we made, commented/cleaned up more of our code, and made it more readable.</p>
+                                    <p>&emsp;All in all, it was a very fun project to work on, and I'm very proud of the final result we came out with. You can view the GitHub repository for the project <a href="https://github.com/Salavin/PiHeads" target="_blank">here</a>!</p>
+                                    <div style="text-align: center">
+                                        <div class="card" style="width: 50%; display: inline-block">
+                                            <img src="img/smartDisplayGroup.jpg" alt="Picture of project group." class="card-img-top">
+                                            <div class="card-body">
+                                                <p class="card-text">A picture of our project group and the Smart Display in action.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingTwo">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" id="websiteCard">
+                                        samlav.in
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                <div class="card-body">
+                                    <p>&emsp;Ever since I started web development at ISU WebDev, I have always wanted to host my own website specifically for future employers to get to know me better. I wanted to write the entire thing myself, and not use sites that build a website for you. So one day, I registered this domain name, and attempted to get started on building this site. However, I was trying to use Laravel on the same Raspberry Pi Zero WH that I had used from the Smart Display project above, and Laravel was <u>not</u> having it. Basically, Laravel apparently requires more than 512MB of RAM to run, which is all the little Pi Zero had. So, I instead went out and rented some server space with a little more RAM, and attempted to start again. It was at this point that I learned Laravel was quite different from ZF2 (the framework that we used at WebDev), and I didn't have much time or motivation to ride that learning curve. On top of that, the company that I was renting server space from kept corrupting my OS, and so eventually this project was put on the backburner.</p>
+                                    <p>&emsp;Eventually, I realized that I didn't need an entire framework to do what I want. Instead, I can literally return a single html page that uses Bootstrap's navs to switch between pages. And so Spring break 2020, I sat down and wrote out this entire site in a matter of a couple days.</p>
+                                    <p>&emsp;This site runs purely off of HTML, CSS, and JavaScript. In conjunction with that, I am also using <a href="http://getbootstrap.com" target="_blank">Bootstrap</a> to help design the site, <a href="http://fontawesome.com" target="_blank">Font Awesome</a> for a few icons, and <a href="https://darkmodejs.learn.uno/" target="_blank">Darkmode.js</a> for an easy to implement darkmode (because <b>everything</b> should have a darkmode option). If you haven't figured out how to use it yet, just click the little <i class="fas fa-moon"></i> icon on the far right of the navbar above!</p>
+                                    <p>&emsp;Getting the site on the World Wide Web was relatively simple. I already owned the domain name, so I just had to do a fresh install of Raspbian for my Raspberry Pi Zero, get Apache set up, pull the repository, change a few configs, get an SSL certificate from <a href="https://letsencrypt.org/" target="_blank">Let's Encrypt</a>, and then point my domain to the Raspberry Pi Zero. </p>
+                                    <p>&emsp;This project was incredibly fun for me to do. I've spent around 35-40 hours on it now, and I'm very proud of what the final product looks like. If you notice anything that could be improved (like something isn't working correctly, a typo on a page, or in general something that could be better), <u>please</u> let me know either by messaging me personally (my email is below!), or by creating a pull request on my <a href="https://github.com/Salavin/samlav" target="_blank">GitHub repository</a>!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingThree">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" id="otherCard">
+                                        Other smaller projects
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                                <div class="card-body">
+                                    <h3>Mailbox Sensor</h3>
+                                    <p>&emsp;The first project I ever did that involved physical components involved a Raspberry Pi B+, an RF transmitter/receiver pair from <a href="http://lowpowerlab.com">lowpowerlab</a>, and a tiny OLED display. Put simply, the motion detector sat our in our mailbox, and when it detected motion, would send a signal to the RF receiver that was in the house. This would communicate to the Raspberry Pi over FTDI to let it know that the mail had arrived. The Raspberry Pi would then send a text message using Python to everyone in our house, and also display a mail icon on the OLED display. Then, when the sensor detected motion again, it would send another text letting us know that someone got the mail, and turn off the OLED display.</p>
+                                    <p>&emsp;While this project was good for me in the sense that it introduced me to a <u>lot</u> of new concepts, it was quite over my head, and not exactly the most fun to try and figure out. It was fun at the very end when I finally got it all working, however the sensor was too sensitive and would send many false-positives. Thinking about it now, I easily should have been able to tinker with the sensitivity of the sensor. Unfortunately, it became untrustworthy and I eventually took it down so I could use the Raspberry Pi for other things.</p>
+                                    <div style="text-align: center">
+                                        <div class="card" style="width: 50%; display: inline-block">
+                                            <img src="img/motionSensor.png" alt="Picture of motion sensor." class="card-img-top">
+                                            <div class="card-body">
+                                                <p class="card-text">The motion sensor/transmitter that was in the mailbox.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <h3>Marble Sorter</h3>
+                                    <p>&emsp;Sophomore year of high school, I took the Project Lead the Way class Principles of Engineering. One of the first things we did in the class was build a robotic marble sorter. This sorter had to take 20 marbles, and sort them into 5 different types: wood, metal, clear, rose gold, and opaque. This was done using a combination of moving robotic parts (all programmed in Robot C), a controllable magnet to pull out the magnetic marbles, and a light sensor. You can find a video of the project in action below:</p>
+                                    <video width="100%" height="auto" controls>
+                                        <source src="vid/marbleSorterLow.mp4" type="video/mp4">
+                                        Unfortunately, your browser does not support MP4 videos.
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingFour">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" id="webDevCard">
+                                        Fun things I did at ISU WebDev
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                                <div class="card-body">
+                                    <p>&emsp;While at ISU WebDev, I had some downtime to work on challenging myself and my
+                                        JavaScript skills. So, I found a website that had a bunch of challenges on it, and worked on
+                                        all of them until I got them right.</p>
+                                    <p>&emsp;I also made two fun pages that you can visit: a <a href="rainbow.html">rainbow</a> page that's really fun to explore if you have an infinite scrolling mouse, and a <a href="wordClock.html">word clock</a>.</p>
+                                    <hr>
+                                    <p>Challenges are from <a
+                                            href="https://medium.com/coderbyte/the-5-hardest-code-challenges-for-beginners-e410da4474b"
+                                            target="_blank">this</a> site.</p>
+
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-xs-2">
+                                                        <h4>Challenge 1 </h4>
+                                                    </div>
+                                                    <div class="col">
+                                                        <a class="btn btn-link btn-sm" data-toggle="collapse" href="#challengeOneCode" role="button" aria-expanded="false" aria-controls="challengeOneCode">View code</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="collapse" id="challengeOneCode">
+                                                <iframe src="exportToHTML/challengeOne.html" class="challengeCode"></iframe>
+                                            </div>
+                                            <p>Take an input string parameter and determine if exactly 3 question marks exist
+                                                between every pair of numbers that add up to 10. If so, return true, otherwise
+                                                return false. Some test cases are below:</p>
+                                            <button type="button" class="btn btn-success firstButton">arrb6???4xxbl5???eee5
+                                            </button>
+                                            <button type="button" class="btn btn-success firstButton">acc?7??sss?3rr1??????5
+                                            </button>
+                                            <button type="button" class="btn btn-danger firstButton">
+                                                5??aaaaaaaaaaaaaaaaaaa?5?5
+                                            </button>
+                                            <button type="button" class="btn btn-success firstButton">9???1???9???1???9</button>
+                                            <button type="button" class="btn btn-danger firstButton">aa6?9</button>
+                                        </div>
+                                        <div class="card-footer">
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-xs-1">
+                                                        <i class="fas fa-2x" id="firstIcon"></i>
+                                                    </div>
+                                                    <div class="col">
+                                                        <label for="firstInput">Enter a string of numbers with some question marks scattered throughout:</label><input type="text" id="firstInput" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-xs-2">
+                                                        <h4>Challenge 2 </h4>
+                                                    </div>
+                                                    <div class="col">
+                                                        <a class="btn btn-link btn-sm" data-toggle="collapse" href="#challengeTwoCode" role="button" aria-expanded="false" aria-controls="challengeTwoCode">View code</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="collapse" id="challengeTwoCode">
+                                                <iframe src="exportToHTML/challengeTwo.html" class="challengeCode"></iframe>
+                                            </div>
+                                            <p>Take an input 2D matrix of some arbitrary size filled with letters from the
+                                                alphabet, and determine if a 2x2 square composed entirely of vowels exists in
+                                                the matrix. If a 2x2 square of vowels is found, your program should
+                                                return the top-left position (row-column) of the square. Some test cases are
+                                                below:</p>
+                                            <div class="container-fluid">
+                                                <div class="row" style="font-family: Consolas,serif">
+                                                    <div class="col-sm-1">
+                                                        <button type="button" class="btn btn-success secondButton"
+                                                                style="white-space: pre-line; display: inline-flex">abcd
+                                                            eikr
+                                                            oufj
+                                                        </button>
+                                                    </div>
+                                                    <div class="col-sm-1">
+                                                        <button type="button" class="btn btn-success secondButton"
+                                                                style="white-space: pre-line; display: inline-flex">aqrst
+                                                            ukaei
+                                                            ffooo
+                                                        </button>
+                                                    </div>
+                                                    <div class="col-sm-1">
+                                                        <button type="button" class="btn btn-danger secondButton"
+                                                                style="white-space: pre-line; display: inline-flex">gg
+                                                            ff
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer">
+                                            <div class="form-group" id="secondInputGroup">
+                                                <label for="secondInput">Enter an array of text separated by newlines:</label><textarea id="secondInput" class="form-control" rows="3"
+                                                                                                                                        style="font-family: Consolas,serif"></textarea>
+                                            </div>
+                                            <div class="alert" role="alert" id="secondAlert" style="display: none"></div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-xs-2">
+                                                        <h4>Challenge 3 </h4>
+                                                    </div>
+                                                    <div class="col">
+                                                        <a class="btn btn-link btn-sm" data-toggle="collapse" href="#challengeThreeCode" role="button" aria-expanded="false" aria-controls="challengeThreeCode">View code</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="collapse" id="challengeThreeCode">
+                                                <iframe src="exportToHTML/challengeThree.html" class="challengeCode"></iframe>
+                                            </div>
+                                            <p>Take an input of two elements, the first being the two positive integer weights
+                                                on a balance scale (left and right sides) and the second element being a list of
+                                                available weights as positive integers. Your goal is to determine
+                                                if you can balance the scale by using the least amount of weights from the list,
+                                                but using at most only 2 weights. Return a comma separated string of the weights
+                                                that were used from the list in ascending order. Some test cases
+                                                are below:</p>
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-sm-1">
+                                                        <button type="button" class="btn btn-success thirdButton"
+                                                                style="white-space: pre-line; display: inline-flex">5,9
+                                                            1,2,6,7
+                                                        </button>
+                                                    </div>
+                                                    <div class="col-sm-1">
+                                                        <button type="button" class="btn btn-success thirdButton"
+                                                                style="white-space: pre-line; display: inline-flex">3,4
+                                                            1,2,7,7
+                                                        </button>
+                                                    </div>
+                                                    <div class="col-sm-1">
+                                                        <button type="button" class="btn btn-success thirdButton"
+                                                                style="white-space: pre-line; display: inline-flex">13,4
+                                                            1,2,3,6,14
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer">
+                                            <div class="form-group" id="thirdInputGroup">
+                                                <label for="thirdInput">Enter an array of text separated by newlines:</label><textarea id="thirdInput" class="form-control has-success" rows="2"></textarea>
+                                            </div>
+                                            <div class="alert" role="alert" id="thirdAlert" style="display: none"></div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-xs-2">
+                                                        <h4>Challenge 4 </h4>
+                                                    </div>
+                                                    <div class="col">
+                                                        <a class="btn btn-link btn-sm" data-toggle="collapse" href="#challengeFourCode" role="button" aria-expanded="false" aria-controls="challengeFourCode">View code</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="collapse" id="challengeFourCode">
+                                                <iframe src="exportToHTML/challengeFour.html" class="challengeCode"></iframe>
+                                            </div>
+                                            <p>Take an input string parameter, which will represent the movements made in a 5x5
+                                                grid of cells starting from the top left position. The characters in the input
+                                                string will be entirely composed of: r, l, u, d, ?. Each of
+                                                the characters stand for the direction to take within the grid, for example: r =
+                                                right, l = left, u = up, d = down. Your goal is to determine what characters the
+                                                question marks should be in order for a path to be created to go from the top
+                                                left of the grid all the way to the bottom right without touching previously
+                                                travelled on cells in the grid. Some test cases are below:</p>
+                                            <button type="button" class="btn btn-success forthButton">r?d?drdd</button>
+                                            <button type="button" class="btn btn-success forthButton">???rrurdr?</button>
+                                            <button type="button" class="btn btn-success forthButton">drdr??rrddd?</button>
+                                            <button type="button" class="btn btn-success forthButton">?rrrdlllldrrrrdlllldrrr?</button>
+                                            <button type="button" class="btn btn-success forthButton">?rrrddllllddrrr?</button>
+                                            <button type="button" class="btn btn-danger forthButton" data-toggle="tooltip"
+                                                    title="Warning: takes a long time to parse, and page will be unresponsive until finished.">?????????
+                                            </button>
+                                            <button type="button" class="btn btn-warning forthRandom" data-toggle="tooltip"
+                                                    data-placement="right"
+                                                    title="Randomize a string between 8 and 20 characters. Warning: likely will crash the page.">Random
+                                            </button>
+                                        </div>
+                                        <div class="card-footer">
+                                            <div class="row">
+                                                <div class="col-sm-10">
+                                                    <div class="form-group" id="forthInputGroup">
+                                                        <label class="control-label" for="forthInput" id="forthText"></label>
+                                                        <input type="text" id="forthInput" class="form-control"/>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-2">
+                                                    <table class="maize" id="maize">
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-xs-2">
+                                                        <h4>Challenge 5 </h4>
+                                                    </div>
+                                                    <div class="col">
+                                                        <a class="btn btn-link btn-sm" data-toggle="collapse" href="#challengeFiveCode" role="button" aria-expanded="false" aria-controls="challengeFiveCode">View code</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="collapse" id="challengeFiveCode">
+                                                <iframe src="exportToHTML/challengeFive.html" class="challengeCode"></iframe>
+                                            </div>
+                                            <p>Take an input 2D matrix of some arbitrary size that contains only the integers 1,
+                                                0, or 2. Then from the position in the matrix where a 1 is, return the number of
+                                                spaces either left, right, down, or up you must move to reach
+                                                an enemy which is represented by a 2. You are able to wrap around one side of
+                                                the matrix to the other as well. The array will contain any number of 0's and
+                                                2's, but only a single 1. It may not contain any 2's at all as well, where in
+                                                that case your program should return a 0. Some test cases are below:</p>
+                                            <div class="container-fluid">
+                                                <div class="row" style="font-family: Consolas,serif">
+                                                    <div class="col-sm-1">
+                                                        <button type="button" class="btn btn-success fifthButton"
+                                                                style="white-space: pre-line; display: inline-flex">0000
+                                                            1000
+                                                            0002
+                                                            0002
+                                                        </button>
+                                                    </div>
+                                                    <div class="col-sm-1">
+                                                        <button type="button" class="btn btn-success fifthButton"
+                                                                style="white-space: pre-line; display: inline-flex">000
+                                                            100
+                                                            200
+                                                        </button>
+                                                    </div>
+                                                    <div class="col-sm-1">
+                                                        <button type="button" class="btn btn-success fifthButton"
+                                                                style="white-space: pre-line; display: inline-flex">0000
+                                                            2010
+                                                            0000
+                                                            2002
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer">
+                                            <div class="form-group" id="fifthInputGroup">
+                                                <label for="fifthInput">Enter an array of numbers separated by newlines:</label><textarea id="fifthInput" class="form-control" rows="4"
+                                                                                                                                          style="font-family: Consolas,serif"></textarea>
+                                            </div>
+                                            <div class="alert" role="alert" id="fifthAlert" style="display: none"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingFive">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive" id="ethicsCard">
+                                        Ethics Essay
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+                                <div class="card-body">
+                                    <span style="text-align: center"><h3>Ethics in the Engineering World</h3></span>
+                                    <br>
+                                    <p>&emsp;Ethics have a huge impact in the engineering world. Look around you right now. Almost everything you see was created by a team of engineers. There is a surprising amount of power in this. As engineers, we have the power to change the world. In this situation, there is a Spiderman quote that is horrendously overused: “With great power comes great responsibility”. However, it has a lot of truth to it, and that is why we, as engineers, need a sort of guideline of ethics to follow. Not only that, but engineers come from all sorts of backgrounds from all over the world, and different parts of the world have different ethics associated with their society. Because of this, we need to come together and set a guideline of ethics that we can all agree on. Then, later on down the line if we have an ethical disagreement, instead of the problem coming down to cultural ethical differences, both sides can look to the same agreed-upon guidelines.</p>
+                                    <p>&emsp;When looking to solve an ethical situation, the first thing I personally do is think about all the people involved in the situation. I try to put myself in everyone’s shoes for a moment, and think about what decision would be in the best interest of everyone involved. Then, I look at my own set of ethics that I have developed over the course of my lifetime, and attempt to make the best decision I possibly can for everyone involved. I also try to take myself out of the equation as much as I possibly can as well to remove any bias I might have on my own decision.</p>
+                                    <p>&emsp;In our Computer Engineering 394 class, we discussed a handful of ethical dilemmas in the engineering world. The first described an issue where Volkswagen installed software on their vehicles that allowed them to pass emissions tests, but then produce more-than-acceptable amounts of nitrogen oxide in the real world. The second issue talked about the Ford Pinto: a car that was to be under 2,000 pounds and under $2,000. In order to achieve this, the company had to cut many corners, but ended up cutting a few too many. In doing so, they risked the lives of millions by overlooking many life-threatening problems in their cars, and lying on crash test results. The third issue we discussed talked about whether or not data from today’s smart speakers should be used in court. The final issue was a theoretical, though very realistic, situation in which a programmer was asked to work with a dataset containing lots of personal information about people that was not obtained with the proper means and measures.</p>
+                                    <p>&emsp;In our class discussions, we all generally agreed with each other on the points we discussed. In the Big Data issue (the last one I mentioned in the previous paragraph), I brought up the point that there should be an open line of communication between the programmer and upper-management in which the programmer should feel safe to bring up any issues they might come across. My classmates agreed, stating that both parties should always be supportive of each other, and that regardless of rank or title, all parties can always stand to learn from each other. One classmate did point out a very good issue: even if the programmer followed all the advice I had mentioned and talked to his boss about how they don't feel comfortable working with this data, they can still be easily replaced. With the growing number of programmers in the job market, the company could easily keep swapping people in and out of that role until they find someone that will comply with what they want. My response would be this: while this is certainly true, and most definitely happening in many companies in the world today, the only thing the programmer can do is follow their own personal code of ethics and not do what the company was asking of them. If they are removed from the company, then they know that the company is not following ethical standards, and can report the company to the authorities. By doing this, they hopefully will remove the people in management that are abusing their power, and bring in new people who are following the ethical standards we are learning about in class.</p>
+                                    <p>&emsp;In class, we discussed six virtues that make up Virtue Ethics. These virtues are integrity, honesty, fidelity, charity, responsibility, and self-discipline. If I were to choose three of these that most reflect upon the Big Data issue, they would be integrity, fidelity, and self-discipline. I chose integrity because integrity is “exercising good and ethical judgement in your field of practice.” In this issue, the programmer should exercise this ethical judgement to realize that the data they were given was not legal or ethical for them to use. I chose fidelity because fidelity is a sort of faithfulness and loyalty. The programmer should have fidelity to the people that were in the illegal dataset that was given to him by choosing not to use their data illegally, and to his career by not allowing the company to pressure them into using this data illegally. Finally, I chose self-discipline because the boss that originally ordered the programmer to use this data should understand that what they are doing is illegal and unethical, and should have the self-discipline to realize this.</p>
+                                    <p>&emsp;In reality, all 6 of these Virtue Ethics could be applied towards the Big Data issue. I just chose the 3 that I believed applied the most. One of these virtues that could very much be applied towards another one of the issues we discussed in class is honesty. This mostly applies to the Volkswagen and Ford Pinto issues, in which the engineers involved in these situations should have been honest about the cars they were working on. The Volkswagen engineers should have been honest about the nitrogen oxide outputs of their vehicles, and the Ford engineers working on the Pinto should have been honest about the dangers of the car they were building, and the results of the crash tests.</p>
+                                    <p>&emsp;These ethics activities that we have done in class have made me realize how important it is for us to learn about them. By teaching us proper ethics, Iowa State University is minimizing the amount of people that will abuse their powers as an engineer in the future. Obviously, there will still be people out there who will disregard these ethics despite being taught about them. However, after taking this class, I know that personally I will take my ethical responsibility seriously.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
                     <h2>PDF versions</h2>
                 </div>
                 <div class="card-body">
                     <p>Written using LaTeX from <a href="https://github.com/sb2nov/resume" target="_blank">this template</a>. Repository for these resumes can be found <a href="https://github.com/Salavin/Resume" target="_blank">here</a>.</p>
-                    <div class="list-group list-group-horizontal">
-                        <a href="https://drive.google.com/file/d/1WA-qnDsAukQDXoKMofbpwki3L8MWgdPQ/view?usp=sharing" target="_blank" class="list-group-item download-item list-group-item-action list-group-item-success" download>Audio Engineering Resume</a>
-                        <a href="https://drive.google.com/file/d/16sIQsbIQdWbE4E1BXiJUvF2hkgYABFDN/view?usp=sharing" target="_blank" class="list-group-item download-item list-group-item-action list-group-item-success" download>Computer Engineering Resume</a>
+                    <div class="list-group list-group-horizontal" style="text-align: center">
+                        <a href="https://drive.google.com/file/d/1WA-qnDsAukQDXoKMofbpwki3L8MWgdPQ/view?usp=sharing" target="_blank" class="list-group-item download-item list-group-item-action list-group-item-success" download>Audio Engineering Resume <i class="fas fa-download"></i></a>
+                        <a href="https://drive.google.com/file/d/16sIQsbIQdWbE4E1BXiJUvF2hkgYABFDN/view?usp=sharing" target="_blank" class="list-group-item download-item list-group-item-action list-group-item-success" download>Computer Engineering Resume <i class="fas fa-download"></i></a>
                     </div>
                 </div>
             </div>
@@ -304,475 +773,7 @@
     </div>
     <div class="tab-pane fade" id="nav-projects" role="tabcard" aria-labelledby="nav-projects-tab">
         <div class="tab-body">
-            <div class="accordion" id="accordion">
-                <div class="card">
-                    <div class="card-header" id="headingOne">
-                        <h2 class="mb-0">
-                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" id="smartDisplayCard">
-                                Raspberry Pi Smart Display
-                            </button>
-                        </h2>
-                    </div>
-                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                        <div class="card-body">
-                            <p>&emsp;Imagine that you're me, getting ready in the morning for classes, probably in a rush because you woke up late. You go to open the MyState app to see when the next bus is coming, only to be signed out of the app by some unknown bug. By the time you get signed in again, you see that you are too late for the bus, and will have to wait until the next one.</p>
-                            <p>&emsp;These frustrations are what prompted me to design a smart display. This smart display would be something you can look at quickly in the morning to find out when your next bus is, what the weather will be like for the day, and more.</p>
-                            <p>&emsp;I worked on this project in my CprE 186 class along with 2 others. We decided to use Python as the backbone for the project as we could install many third-party packages that would allow us to interface with the outside world (more specifically, the Internet of Things).</p>
-                            <p>&emsp;The smart display would physically consist of only a few items: a Raspberry Pi WH to drive the display, a $5 monitor we found at the Surplus Store, and all the necessary cables to connect the two. On the display, we would display three different screens that each would have their own purpose. Those screens included:</p>
-                            <ol>
-                                <li>A CyRide bus prediction screen,</li>
-                                <li>A weather screen,</li>
-                                <li>And a multi-user Google Calendar page that also displayed what roommates are home based on their phone's location.</li>
-                            </ol>
-                            <p>&emsp;The GUI powering these screens would be TkInter. While this wasn't the most preferable choice, we didn't have much overhead or storage space to download a different GUI module, and TkInter is included with Python. Now, let's dive into each of these different screens. Unfortunately, none of us thought to grab screenshots of these in production, and getting the project to work now will be a massive pain as the API I used to grab CyRide data is now discontinued. However, I can do my best to describe them.</p>
-                            <hr>
-                            <h3>CyRide</h3>
-                            <p>&emsp;The CyRide screen was essentially my part of the project (along with getting TkInter to work for our project). For this, I used the public CyRide API at the time to request an XML file, parse through that file, and grab the prediction times until the next bus for a certain stop. The bus stop itself was hard-coded in, however I could have programmed it to use a constant for the bus stop ID, and then by simply changing that constant, it could show different predictions.</p>
-                            <p>&emsp;Here is an example of what this screen would have looked like:</p>
-                            <div style="text-align: center">
-                                <div class="card bg-dark card-darkmode-ignore darkmode-ignore border-light"
-                                     style="display: inline-block">
-                                    <div class="card-body"
-                                         style="text-align: center; font-family: 'Helvetica', serif; color: white">
-                                        <p style="font-size: 2.5em">CyRide Predictions at Coover Hall:</p>
-                                        <p class="busFont" style="color: red">21 Cardinal:</p>
-                                        <p class="timeFont">2m 55s</p>
-                                        <p class="busFont" style="color: yellow">25 Gold:</p>
-                                        <p class="timeFont">2m 42s</p>
-                                        <p class="busFont" style="color: green">2 Green:</p>
-                                        <p class="timeFont">0m 55s</p>
-                                        <p class="busFont" style="color: brown">6 Brown:</p>
-                                        <p class="timeFont">1m 02s</p>
-                                        <p class="busFont" style="color: blue">3 Blue:</p>
-                                        <p class="timeFont">0m 26s</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <h3>Weather</h3>
-                            <p>&emsp;Next in the lineup is the weather screen. This screen showed the current temperature, the high and low for the day, an hourly forecast from the current hour, and a 5 day forecast. We had also planned to implement a temperature sensor onto a couple of the Raspberry Pi's GPIO pins, however we ended up running out of time before we could get to that. </p>
-                            <p>&emsp;Unfortunately, I can't provide an example of what this screen looked like due to the fact that I am not as familiar with this screen as I didn't work on it, and also because from what I remember, the GUI for this screen was quite complex.</p>
-                            <h3>Google Calendar</h3>
-                            <p>&emsp;The last piece of our trilogy here is the Google Calendar. This screen displayed all of each user's upcoming events for the day (to help you plan for the day), and also showed whether each user was home or not. The latter was achieved by using a combination of IFTTT and Adafruit.io. Basically, whenever one of the users entered or left a geofenced area, IFTTT would send some data to a dashboard that we set up on Adafruit.io updating whether or not they were home. Then, our program would check that data and update the screen accordingly.</p>
-                            <p>&emsp;I helped a little bit with the design of this last component, so I can give a rough idea of what it ended up looking like. Basically, there were 3 columns (for each of the 'roommates'), a header that had the user's name and whether they were home or not, and then the rest of the column was dedicated to any events the user had for the day. You can see a blurry version of what this screen looked like in the picture below!</p>
-                            <hr>
-                            <p>&emsp;Overall, we learned a lot through this project. The biggest things we learned about were:</p>
-                            <ul>
-                                <li>How to use different packages with Python.</li>
-                                <li>How to use XML and ElementTree.</li>
-                                <li>How to use Python Objectively.</li>
-                                <li>How to use Git and collaborate with each other.</li>
-                            </ul>
-                            <p>&emsp;There are also some things we <em>definitely</em> could have improved on. I already mentioned improving how the bus stop was hard-coded, and also adding a temperature sensor for reporting indoor temperature along with the outdoor. We also wished we could have rewired the inside of the display we were using to output power through the usb ports on the back <u>without</u> needing a USB uplink. Looking back on the project now, I also wish we would have documented more of the progress we made, commented/cleaned up more of our code, and made it more readable.</p>
-                            <p>&emsp;All in all, it was a very fun project to work on, and I'm very proud of the final result we came out with. You can view the GitHub repository for the project <a href="https://github.com/Salavin/PiHeads" target="_blank">here</a>!</p>
-                            <div style="text-align: center">
-                                <div class="card" style="width: 50%; display: inline-block">
-                                    <img src="img/smartDisplayGroup.jpg" alt="Picture of project group." class="card-img-top">
-                                    <div class="card-body">
-                                        <p class="card-text">A picture of our project group and the Smart Display in action.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header" id="headingTwo">
-                        <h2 class="mb-0">
-                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" id="websiteCard">
-                                samlav.in
-                            </button>
-                        </h2>
-                    </div>
-                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                        <div class="card-body">
-                            <p>&emsp;Ever since I started web development at ISU WebDev, I have always wanted to host my own website specifically for future employers to get to know me better. I wanted to write the entire thing myself, and not use sites that build a website for you. So one day, I registered this domain name, and attempted to get started on building this site. However, I was trying to use Laravel on the same Raspberry Pi Zero WH that I had used from the Smart Display project above, and Laravel was <u>not</u> having it. Basically, Laravel apparently requires more than 512MB of RAM to run, which is all the little Pi Zero had. So, I instead went out and rented some server space with a little more RAM, and attempted to start again. It was at this point that I learned Laravel was quite different from ZF2 (the framework that we used at WebDev), and I didn't have much time or motivation to ride that learning curve. On top of that, the company that I was renting server space from kept corrupting my OS, and so eventually this project was put on the backburner.</p>
-                            <p>&emsp;Eventually, I realized that I didn't need an entire framework to do what I want. Instead, I can literally return a single html page that uses Bootstrap's navs to switch between pages. And so Spring break 2020, I sat down and wrote out this entire site in a matter of a couple days.</p>
-                            <p>&emsp;This site runs purely off of HTML, CSS, and JavaScript. In conjunction with that, I am also using <a href="http://getbootstrap.com" target="_blank">Bootstrap</a> to help design the site, <a href="http://fontawesome.com" target="_blank">Font Awesome</a> for a few icons, and <a href="https://darkmodejs.learn.uno/" target="_blank">Darkmode.js</a> for an easy to implement darkmode (because <b>everything</b> should have a darkmode option). If you haven't figured out how to use it yet, just click the little <i class="fas fa-moon"></i> icon on the far right of the navbar above!</p>
-                            <p>&emsp;Getting the site on the World Wide Web was relatively simple. I already owned the domain name, so I just had to do a fresh install of Raspbian for my Raspberry Pi Zero, get Apache set up, pull the repository, change a few configs, get an SSL certificate from <a href="https://letsencrypt.org/" target="_blank">Let's Encrypt</a>, and then point my domain to the Raspberry Pi Zero. </p>
-                            <p>&emsp;This project was incredibly fun for me to do. I've spent around 35-40 hours on it now, and I'm very proud of what the final product looks like. If you notice anything that could be improved (like something isn't working correctly, a typo on a page, or in general something that could be better), <u>please</u> let me know either by messaging me personally (my email is below!), or by creating a pull request on my <a href="https://github.com/Salavin/samlav" target="_blank">GitHub repository</a>!</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header" id="headingThree">
-                        <h2 class="mb-0">
-                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" id="otherCard">
-                                Other smaller projects
-                            </button>
-                        </h2>
-                    </div>
-                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                        <div class="card-body">
-                            <h3>Mailbox Sensor</h3>
-                            <p>&emsp;The first project I ever did that involved physical components involved a Raspberry Pi B+, an RF transmitter/receiver pair from <a href="http://lowpowerlab.com">lowpowerlab</a>, and a tiny OLED display. Put simply, the motion detector sat our in our mailbox, and when it detected motion, would send a signal to the RF receiver that was in the house. This would communicate to the Raspberry Pi over FTDI to let it know that the mail had arrived. The Raspberry Pi would then send a text message using Python to everyone in our house, and also display a mail icon on the OLED display. Then, when the sensor detected motion again, it would send another text letting us know that someone got the mail, and turn off the OLED display.</p>
-                            <p>&emsp;While this project was good for me in the sense that it introduced me to a <u>lot</u> of new concepts, it was quite over my head, and not exactly the most fun to try and figure out. It was fun at the very end when I finally got it all working, however the sensor was too sensitive and would send many false-positives. Thinking about it now, I easily should have been able to tinker with the sensitivity of the sensor. Unfortunately, it became untrustworthy and I eventually took it down so I could use the Raspberry Pi for other things.</p>
-                            <div style="text-align: center">
-                                <div class="card" style="width: 50%; display: inline-block">
-                                    <img src="img/motionSensor.png" alt="Picture of motion sensor." class="card-img-top">
-                                    <div class="card-body">
-                                        <p class="card-text">The motion sensor/transmitter that was in the mailbox.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <hr>
-                            <h3>Marble Sorter</h3>
-                            <p>&emsp;Sophomore year of high school, I took the Project Lead the Way class Principles of Engineering. One of the first things we did in the class was build a robotic marble sorter. This sorter had to take 20 marbles, and sort them into 5 different types: wood, metal, clear, rose gold, and opaque. This was done using a combination of moving robotic parts (all programmed in Robot C), a controllable magnet to pull out the magnetic marbles, and a light sensor. You can find a video of the project in action below:</p>
-                            <video width="100%" height="auto" controls>
-                                <source src="vid/marbleSorterLow.mp4" type="video/mp4">
-                                Unfortunately, your browser does not support MP4 videos.
-                            </video>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header" id="headingFour">
-                        <h2 class="mb-0">
-                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" id="webDevCard">
-                                Fun things I did at ISU WebDev
-                            </button>
-                        </h2>
-                    </div>
-                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
-                        <div class="card-body">
-                            <p>&emsp;While at ISU WebDev, I had some downtime to work on challenging myself and my
-                            JavaScript skills. So, I found a website that had a bunch of challenges on it, and worked on
-                            all of them until I got them right.</p>
-                            <p>&emsp;I also made two fun pages that you can visit: a <a href="rainbow.html">rainbow</a> page that's really fun to explore if you have an infinite scrolling mouse, and a <a href="wordClock.html">word clock</a>.</p>
-                            <hr>
-                            <p>Challenges are from <a
-                                    href="https://medium.com/coderbyte/the-5-hardest-code-challenges-for-beginners-e410da4474b"
-                                    target="_blank">this</a> site.</p>
-
-                            <div class="card">
-                                <div class="card-header">
-                                    <div class="container-fluid">
-                                        <div class="row">
-                                            <div class="col-xs-2">
-                                                <h4>Challenge 1 </h4>
-                                            </div>
-                                            <div class="col">
-                                                <a class="btn btn-link btn-sm" data-toggle="collapse" href="#challengeOneCode" role="button" aria-expanded="false" aria-controls="challengeOneCode">View code</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="collapse" id="challengeOneCode">
-                                        <iframe src="exportToHTML/challengeOne.html" class="challengeCode"></iframe>
-                                    </div>
-                                    <p>Take an input string parameter and determine if exactly 3 question marks exist
-                                        between every pair of numbers that add up to 10. If so, return true, otherwise
-                                        return false. Some test cases are below:</p>
-                                    <button type="button" class="btn btn-success firstButton">arrb6???4xxbl5???eee5
-                                    </button>
-                                    <button type="button" class="btn btn-success firstButton">acc?7??sss?3rr1??????5
-                                    </button>
-                                    <button type="button" class="btn btn-danger firstButton">
-                                        5??aaaaaaaaaaaaaaaaaaa?5?5
-                                    </button>
-                                    <button type="button" class="btn btn-success firstButton">9???1???9???1???9</button>
-                                    <button type="button" class="btn btn-danger firstButton">aa6?9</button>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="container-fluid">
-                                        <div class="row">
-                                            <div class="col-xs-1">
-                                                <i class="fas fa-2x" id="firstIcon"></i>
-                                            </div>
-                                            <div class="col">
-                                                <label for="firstInput">Enter a string of numbers with some question marks scattered throughout:</label><input type="text" id="firstInput" class="form-control">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <br>
-                            <div class="card">
-                                <div class="card-header">
-                                    <div class="container-fluid">
-                                        <div class="row">
-                                            <div class="col-xs-2">
-                                                <h4>Challenge 2 </h4>
-                                            </div>
-                                            <div class="col">
-                                                <a class="btn btn-link btn-sm" data-toggle="collapse" href="#challengeTwoCode" role="button" aria-expanded="false" aria-controls="challengeTwoCode">View code</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="collapse" id="challengeTwoCode">
-                                        <iframe src="exportToHTML/challengeTwo.html" class="challengeCode"></iframe>
-                                    </div>
-                                    <p>Take an input 2D matrix of some arbitrary size filled with letters from the
-                                        alphabet, and determine if a 2x2 square composed entirely of vowels exists in
-                                        the matrix. If a 2x2 square of vowels is found, your program should
-                                        return the top-left position (row-column) of the square. Some test cases are
-                                        below:</p>
-                                    <div class="container-fluid">
-                                        <div class="row" style="font-family: Consolas,serif">
-                                            <div class="col-sm-1">
-                                                <button type="button" class="btn btn-success secondButton"
-                                                        style="white-space: pre-line; display: inline-flex">abcd
-eikr
-oufj
-                                                </button>
-                                            </div>
-                                            <div class="col-sm-1">
-                                                <button type="button" class="btn btn-success secondButton"
-                                                        style="white-space: pre-line; display: inline-flex">aqrst
-ukaei
-ffooo
-                                                </button>
-                                            </div>
-                                            <div class="col-sm-1">
-                                                <button type="button" class="btn btn-danger secondButton"
-                                                        style="white-space: pre-line; display: inline-flex">gg
-ff
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="form-group" id="secondInputGroup">
-                                        <label for="secondInput">Enter an array of text separated by newlines:</label><textarea id="secondInput" class="form-control" rows="3"
-                                                                                   style="font-family: Consolas,serif"></textarea>
-                                    </div>
-                                    <div class="alert" role="alert" id="secondAlert" style="display: none"></div>
-                                </div>
-                            </div>
-                            <br>
-                            <div class="card">
-                                <div class="card-header">
-                                    <div class="container-fluid">
-                                        <div class="row">
-                                            <div class="col-xs-2">
-                                                <h4>Challenge 3 </h4>
-                                            </div>
-                                            <div class="col">
-                                                <a class="btn btn-link btn-sm" data-toggle="collapse" href="#challengeThreeCode" role="button" aria-expanded="false" aria-controls="challengeThreeCode">View code</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="collapse" id="challengeThreeCode">
-                                        <iframe src="exportToHTML/challengeThree.html" class="challengeCode"></iframe>
-                                    </div>
-                                    <p>Take an input of two elements, the first being the two positive integer weights
-                                        on a balance scale (left and right sides) and the second element being a list of
-                                        available weights as positive integers. Your goal is to determine
-                                        if you can balance the scale by using the least amount of weights from the list,
-                                        but using at most only 2 weights. Return a comma separated string of the weights
-                                        that were used from the list in ascending order. Some test cases
-                                        are below:</p>
-                                    <div class="container-fluid">
-                                        <div class="row">
-                                            <div class="col-sm-1">
-                                                <button type="button" class="btn btn-success thirdButton"
-                                                        style="white-space: pre-line; display: inline-flex">5,9
-1,2,6,7
-                                                </button>
-                                            </div>
-                                            <div class="col-sm-1">
-                                                <button type="button" class="btn btn-success thirdButton"
-                                                        style="white-space: pre-line; display: inline-flex">3,4
-1,2,7,7
-                                                </button>
-                                            </div>
-                                            <div class="col-sm-1">
-                                                <button type="button" class="btn btn-success thirdButton"
-                                                        style="white-space: pre-line; display: inline-flex">13,4
-1,2,3,6,14
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="form-group" id="thirdInputGroup">
-                                        <label for="thirdInput">Enter an array of text separated by newlines:</label><textarea id="thirdInput" class="form-control has-success" rows="2"></textarea>
-                                    </div>
-                                    <div class="alert" role="alert" id="thirdAlert" style="display: none"></div>
-                                </div>
-                            </div>
-                            <br>
-                            <div class="card">
-                                <div class="card-header">
-                                    <div class="container-fluid">
-                                        <div class="row">
-                                            <div class="col-xs-2">
-                                                <h4>Challenge 4 </h4>
-                                            </div>
-                                            <div class="col">
-                                                <a class="btn btn-link btn-sm" data-toggle="collapse" href="#challengeFourCode" role="button" aria-expanded="false" aria-controls="challengeFourCode">View code</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="collapse" id="challengeFourCode">
-                                        <iframe src="exportToHTML/challengeFour.html" class="challengeCode"></iframe>
-                                    </div>
-                                    <p>Take an input string parameter, which will represent the movements made in a 5x5
-                                        grid of cells starting from the top left position. The characters in the input
-                                        string will be entirely composed of: r, l, u, d, ?. Each of
-                                        the characters stand for the direction to take within the grid, for example: r =
-                                        right, l = left, u = up, d = down. Your goal is to determine what characters the
-                                        question marks should be in order for a path to be created to go from the top
-                                        left of the grid all the way to the bottom right without touching previously
-                                        travelled on cells in the grid. Some test cases are below:</p>
-                                    <button type="button" class="btn btn-success forthButton">r?d?drdd</button>
-                                    <button type="button" class="btn btn-success forthButton">???rrurdr?</button>
-                                    <button type="button" class="btn btn-success forthButton">drdr??rrddd?</button>
-                                    <button type="button" class="btn btn-success forthButton">?rrrdlllldrrrrdlllldrrr?</button>
-                                    <button type="button" class="btn btn-success forthButton">?rrrddllllddrrr?</button>
-                                    <button type="button" class="btn btn-danger forthButton" data-toggle="tooltip"
-                                            title="Warning: takes a long time to parse, and page will be unresponsive until finished.">?????????
-                                    </button>
-                                    <button type="button" class="btn btn-warning forthRandom" data-toggle="tooltip"
-                                            data-placement="right"
-                                            title="Randomize a string between 8 and 20 characters. Warning: likely will crash the page.">Random
-                                    </button>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="row">
-                                        <div class="col-sm-10">
-                                            <div class="form-group" id="forthInputGroup">
-                                                <label class="control-label" for="forthInput" id="forthText"></label>
-                                                <input type="text" id="forthInput" class="form-control"/>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-2">
-                                            <table class="maize" id="maize">
-                                                <tr>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                </tr>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <br>
-                            <div class="card">
-                                <div class="card-header">
-                                    <div class="container-fluid">
-                                        <div class="row">
-                                            <div class="col-xs-2">
-                                                <h4>Challenge 5 </h4>
-                                            </div>
-                                            <div class="col">
-                                                <a class="btn btn-link btn-sm" data-toggle="collapse" href="#challengeFiveCode" role="button" aria-expanded="false" aria-controls="challengeFiveCode">View code</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="collapse" id="challengeFiveCode">
-                                        <iframe src="exportToHTML/challengeFive.html" class="challengeCode"></iframe>
-                                    </div>
-                                    <p>Take an input 2D matrix of some arbitrary size that contains only the integers 1,
-                                        0, or 2. Then from the position in the matrix where a 1 is, return the number of
-                                        spaces either left, right, down, or up you must move to reach
-                                        an enemy which is represented by a 2. You are able to wrap around one side of
-                                        the matrix to the other as well. The array will contain any number of 0's and
-                                        2's, but only a single 1. It may not contain any 2's at all as well, where in
-                                        that case your program should return a 0. Some test cases are below:</p>
-                                    <div class="container-fluid">
-                                        <div class="row" style="font-family: Consolas,serif">
-                                            <div class="col-sm-1">
-                                                <button type="button" class="btn btn-success fifthButton"
-                                                        style="white-space: pre-line; display: inline-flex">0000
-1000
-0002
-0002
-                                                </button>
-                                            </div>
-                                            <div class="col-sm-1">
-                                                <button type="button" class="btn btn-success fifthButton"
-                                                        style="white-space: pre-line; display: inline-flex">000
-100
-200
-                                                </button>
-                                            </div>
-                                            <div class="col-sm-1">
-                                                <button type="button" class="btn btn-success fifthButton"
-                                                        style="white-space: pre-line; display: inline-flex">0000
-2010
-0000
-2002
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="form-group" id="fifthInputGroup">
-                                        <label for="fifthInput">Enter an array of numbers separated by newlines:</label><textarea id="fifthInput" class="form-control" rows="4"
-                                                                                  style="font-family: Consolas,serif"></textarea>
-                                    </div>
-                                    <div class="alert" role="alert" id="fifthAlert" style="display: none"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header" id="headingFive">
-                        <h2 class="mb-0">
-                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive" id="ethicsCard">
-                                Ethics Essay
-                            </button>
-                        </h2>
-                    </div>
-                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
-                        <div class="card-body">
-                            <span style="text-align: center"><h3>Ethics in the Engineering World</h3></span>
-                            <br>
-                            <p>&emsp;Ethics have a huge impact in the engineering world. Look around you right now. Almost everything you see was created by a team of engineers. There is a surprising amount of power in this. As engineers, we have the power to change the world. In this situation, there is a Spiderman quote that is horrendously overused: “With great power comes great responsibility”. However, it has a lot of truth to it, and that is why we, as engineers, need a sort of guideline of ethics to follow. Not only that, but engineers come from all sorts of backgrounds from all over the world, and different parts of the world have different ethics associated with their society. Because of this, we need to come together and set a guideline of ethics that we can all agree on. Then, later on down the line if we have an ethical disagreement, instead of the problem coming down to cultural ethical differences, both sides can look to the same agreed-upon guidelines.</p>
-                            <p>&emsp;When looking to solve an ethical situation, the first thing I personally do is think about all the people involved in the situation. I try to put myself in everyone’s shoes for a moment, and think about what decision would be in the best interest of everyone involved. Then, I look at my own set of ethics that I have developed over the course of my lifetime, and attempt to make the best decision I possibly can for everyone involved. I also try to take myself out of the equation as much as I possibly can as well to remove any bias I might have on my own decision.</p>
-                            <p>&emsp;In our Computer Engineering 394 class, we discussed a handful of ethical dilemmas in the engineering world. The first described an issue where Volkswagen installed software on their vehicles that allowed them to pass emissions tests, but then produce more-than-acceptable amounts of nitrogen oxide in the real world. The second issue talked about the Ford Pinto: a car that was to be under 2,000 pounds and under $2,000. In order to achieve this, the company had to cut many corners, but ended up cutting a few too many. In doing so, they risked the lives of millions by overlooking many life-threatening problems in their cars, and lying on crash test results. The third issue we discussed talked about whether or not data from today’s smart speakers should be used in court. The final issue was a theoretical, though very realistic, situation in which a programmer was asked to work with a dataset containing lots of personal information about people that was not obtained with the proper means and measures.</p>
-                            <p>&emsp;In our class discussions, we all generally agreed with each other on the points we discussed. In the Big Data issue (the last one I mentioned in the previous paragraph), I brought up the point that there should be an open line of communication between the programmer and upper-management in which the programmer should feel safe to bring up any issues they might come across. My classmates agreed, stating that both parties should always be supportive of each other, and that regardless of rank or title, all parties can always stand to learn from each other. One classmate did point out a very good issue: even if the programmer followed all the advice I had mentioned and talked to his boss about how they don't feel comfortable working with this data, they can still be easily replaced. With the growing number of programmers in the job market, the company could easily keep swapping people in and out of that role until they find someone that will comply with what they want. My response would be this: while this is certainly true, and most definitely happening in many companies in the world today, the only thing the programmer can do is follow their own personal code of ethics and not do what the company was asking of them. If they are removed from the company, then they know that the company is not following ethical standards, and can report the company to the authorities. By doing this, they hopefully will remove the people in management that are abusing their power, and bring in new people who are following the ethical standards we are learning about in class.</p>
-                            <p>&emsp;In class, we discussed six virtues that make up Virtue Ethics. These virtues are integrity, honesty, fidelity, charity, responsibility, and self-discipline. If I were to choose three of these that most reflect upon the Big Data issue, they would be integrity, fidelity, and self-discipline. I chose integrity because integrity is “exercising good and ethical judgement in your field of practice.” In this issue, the programmer should exercise this ethical judgement to realize that the data they were given was not legal or ethical for them to use. I chose fidelity because fidelity is a sort of faithfulness and loyalty. The programmer should have fidelity to the people that were in the illegal dataset that was given to him by choosing not to use their data illegally, and to his career by not allowing the company to pressure them into using this data illegally. Finally, I chose self-discipline because the boss that originally ordered the programmer to use this data should understand that what they are doing is illegal and unethical, and should have the self-discipline to realize this.</p>
-                            <p>&emsp;In reality, all 6 of these Virtue Ethics could be applied towards the Big Data issue. I just chose the 3 that I believed applied the most. One of these virtues that could very much be applied towards another one of the issues we discussed in class is honesty. This mostly applies to the Volkswagen and Ford Pinto issues, in which the engineers involved in these situations should have been honest about the cars they were working on. The Volkswagen engineers should have been honest about the nitrogen oxide outputs of their vehicles, and the Ford engineers working on the Pinto should have been honest about the dangers of the car they were building, and the results of the crash tests.</p>
-                            <p>&emsp;These ethics activities that we have done in class have made me realize how important it is for us to learn about them. By teaching us proper ethics, Iowa State University is minimizing the amount of people that will abuse their powers as an engineer in the future. Obviously, there will still be people out there who will disregard these ethics despite being taught about them. However, after taking this class, I know that personally I will take my ethical responsibility seriously.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
+            <div class="card">
                     <div class="card-header" id="headingSix">
                         <h2 class="mb-0">
                             <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix" id="musicArrangements">
@@ -864,7 +865,6 @@ ff
                         </div>
                     </div>
                 </div>
-            </div>
         </div>
     </div>
 </div>

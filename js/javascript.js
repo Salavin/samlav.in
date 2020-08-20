@@ -14,13 +14,12 @@ let websiteCard = $("#websiteCard");
 let otherCard = $("#otherCard");
 let webDevCard = $("#webDevCard");
 let ethicsCard = $("#ethicsCard");
-let musicArrangementsCard = $("#musicArrangements");
+let card = $(".card");
 let collapseOne = $("#collapseOne");
 let collapseTwo = $("#collapseTwo");
 let collapseThree = $("#collapseThree");
 let collapseFour = $("#collapseFour");
 let collapseFive = $("#collapseFive");
-let collapseSix = $("#collapseSix");
 
 function scrollDown()
 {
@@ -69,11 +68,18 @@ $(window).on('load', function()
                 break;
             case "2":
                 resumeTab.tab('show');
-                scrollDown();
+                if (sessionStorage.getItem("scrollToCard") === "true")
+                {
+                    openCard();
+                }
+                else
+                {
+                    scrollDown();
+                }
                 break;
             case "3":
                 projectsTab.tab('show');
-                openCard();
+                scrollDown();
                 break;
         }
         $("#footer").show();
@@ -156,7 +162,6 @@ projectsTab.click(function ()
 smartDisplayCard.click(function()
 {
     sessionStorage.setItem("selectedCard", "1");
-    sessionStorage.setItem("scrollToCard", "false");
     $('html, body').animate({
         scrollTop: smartDisplayCard.offset().top - 74
     }, 500);
@@ -165,7 +170,6 @@ smartDisplayCard.click(function()
 websiteCard.click(function ()
 {
     sessionStorage.setItem("selectedCard", "2");
-    sessionStorage.setItem("scrollToCard", "false");
     $('html, body').animate({
         scrollTop: smartDisplayCard.offset().top - 6
     }, 500);
@@ -174,7 +178,6 @@ websiteCard.click(function ()
 otherCard.click(function ()
 {
     sessionStorage.setItem("selectedCard", "3");
-    sessionStorage.setItem("scrollToCard", "false");
     $('html, body').animate({
         scrollTop: smartDisplayCard.offset().top + 62
     }, 500);
@@ -183,7 +186,6 @@ otherCard.click(function ()
 webDevCard.click(function ()
 {
     sessionStorage.setItem("selectedCard", "4");
-    sessionStorage.setItem("scrollToCard", "false");
     $('html, body').animate({
         scrollTop: smartDisplayCard.offset().top + 130
     }, 500);
@@ -192,85 +194,60 @@ webDevCard.click(function ()
 ethicsCard.click(function ()
 {
     sessionStorage.setItem("selectedCard", "5");
-    sessionStorage.setItem("scrollToCard", "false");
     $('html, body').animate({
         scrollTop: smartDisplayCard.offset().top + 198
     }, 500);
 });
 
-musicArrangementsCard.click(function ()
+card.on('shown.bs.collapse', function()
 {
-    sessionStorage.setItem("selectedCard", "6");
+    sessionStorage.setItem("scrollToCard", "true");
+})
+
+card.on('hidden.bs.collapse', function()
+{
     sessionStorage.setItem("scrollToCard", "false");
-    $('html, body').animate({
-        scrollTop: smartDisplayCard.offset().top + 266
-    }, 500);
-});
+})
 
 function openCard()
 {
     let tmp = sessionStorage.getItem("scrollValue"); //This value changes once we start showing the card, so we need to get it now
-    sessionStorage.setItem("scrollToCard", "true");
+    //sessionStorage.setItem("scrollToCard", "true");
     switch (sessionStorage.getItem("selectedCard"))
     {
         case "1":
             collapseOne.collapse('show');
             collapseOne.on("shown.bs.collapse", function()
             {
-                if (sessionStorage.getItem("scrollToCard") === "true")
-                {
-                    $(document).scrollTop(tmp);
-                }
+                $(document).scrollTop(tmp)
             });
             break;
         case "2":
             collapseTwo.collapse('show');
             collapseTwo.on("shown.bs.collapse", function()
             {
-                if (sessionStorage.getItem("scrollToCard") === "true")
-                {
-                    $(document).scrollTop(tmp);
-                }
+                $(document).scrollTop(tmp)
             });
             break;
         case "3":
             collapseThree.collapse('show');
             collapseThree.on("shown.bs.collapse", function()
             {
-                if (sessionStorage.getItem("scrollToCard") === "true")
-                {
-                    $(document).scrollTop(tmp);
-                }
+                $(document).scrollTop(tmp)
             });
             break;
         case "4":
             collapseFour.collapse('show');
             collapseFour.on("shown.bs.collapse", function()
             {
-                if (sessionStorage.getItem("scrollToCard") === "true")
-                {
-                    $(document).scrollTop(tmp);
-                }
+                $(document).scrollTop(tmp)
             });
             break;
         case "5":
             collapseFive.collapse('show');
             collapseFive.on("shown.bs.collapse", function()
             {
-                if (sessionStorage.getItem("scrollToCard") === "true")
-                {
-                    $(document).scrollTop(tmp);
-                }
-            });
-            break;
-        case "6":
-            collapseSix.collapse('show');
-            collapseSix.on("shown.bs.collapse", function()
-            {
-                if (sessionStorage.getItem("scrollToCard") === "true")
-                {
-                    $(document).scrollTop(tmp);
-                }
+                $(document).scrollTop(tmp)
             });
             break;
     }
