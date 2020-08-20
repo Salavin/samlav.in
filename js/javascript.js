@@ -8,7 +8,7 @@ let carousel = $("#carousel");
 const darkmode = new Darkmode();
 let aboutMeTab = $("#nav-about-me-tab");
 let resumeTab = $("#nav-resume-tab");
-let projectsTab = $("#nav-projects-tab");
+let musicTab = $("#nav-music-tab");
 let smartDisplayCard = $("#smartDisplayCard");
 let websiteCard = $("#websiteCard");
 let otherCard = $("#otherCard");
@@ -78,7 +78,7 @@ $(window).on('load', function()
                 }
                 break;
             case "3":
-                projectsTab.tab('show');
+                musicTab.tab('show');
                 scrollDown();
                 break;
         }
@@ -154,7 +154,7 @@ resumeTab.click(function ()
     sessionStorage.setItem("selectedTab", "2");
 });
 
-projectsTab.click(function ()
+musicTab.click(function ()
 {
     sessionStorage.setItem("selectedTab", "3");
 });
