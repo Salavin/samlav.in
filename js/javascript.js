@@ -3,9 +3,41 @@ $(function () {
     $('[data-toggle="tooltip"]').tooltip();
 });
 
-let darkModeButton = $("#darkMode");
+const options = {
+    bottom: '32px', // default: '32px'
+    right: '32px', // default: '32px'
+    left: 'unset', // default: 'unset'
+    time: '0.5s', // default: '0.3s'
+    mixColor: '#fff', // default: '#fff'
+    backgroundColor: '#fff',  // default: '#fff'
+    buttonColorDark: '#100f2c',  // default: '#100f2c'
+    buttonColorLight: '#fff', // default: '#fff'
+    saveInCookies: true, // default: true,
+    label: '🌓', // default: ''
+    autoMatchOsTheme: true // default: true
+}
+
+const darkmode = new Darkmode(options);
+darkmode.showWidget();
+
+const observer = new MutationObserver(function ()
+{
+    if (darkmode.isActivated())
+    {
+        $(".card").addClass("text-white bg-dark");
+        $(".list-group-item").addClass("list-group-item-dark");
+        $(".download-item").removeClass("list-group-item-dark");
+    }
+    else
+    {
+        $(".card").removeClass("text-white bg-dark");
+        $(".card-darkmode-ignore").addClass("text-white bg-dark");
+        $(".list-group-item").removeClass("list-group-item-dark");
+    }
+});
+observer.observe(document.body, {attributes: true, childList: false, subtree: false});
+
 let carousel = $("#carousel");
-const darkmode = new Darkmode();
 let aboutMeTab = $("#nav-about-me-tab");
 let resumeTab = $("#nav-resume-tab");
 let musicTab = $("#nav-music-tab");
@@ -30,9 +62,6 @@ $(document).ready(function ()
 {
     if (darkmode.isActivated())
     {
-        darkModeButton.addClass("btn-light");
-        darkModeButton.removeClass("btn-dark");
-        darkModeButton.css("color", "black");
         $(".card").addClass("text-white bg-dark");
         $(".list-group-item").addClass("list-group-item-dark");
         $(".download-item").removeClass("list-group-item-dark");
@@ -51,11 +80,6 @@ $(window).on('load', function()
     if ($(window).width() < $(window).height())
     {
         carousel.carousel('pause');
-    }
-
-    if ($(window).width() < 400)
-    {
-        darkModeButton.addClass("float");
     }
 
     if (window.sessionStorage.getItem("selectedTab") !== null)
@@ -94,25 +118,6 @@ $(window).on('scroll', function()
 $("#dontShowAgain").click(function()
 {
     localStorage.setItem("modal", "false");
-});
-
-darkModeButton.click(function ()
-{
-    darkmode.toggle();
-    darkModeButton.toggleClass("btn-light");
-    darkModeButton.toggleClass("btn-dark");
-    if (darkmode.isActivated())
-    {
-        darkModeButton.css("color", "black");
-    }
-    else
-    {
-        darkModeButton.css("color", "white");
-    }
-    $(".card").toggleClass("text-white bg-dark");
-    $(".card-darkmode-ignore").toggleClass("text-white bg-dark");
-    $(".list-group-item").toggleClass("list-group-item-dark");
-    $(".download-item").removeClass("list-group-item-dark");
 });
 
 $(window).resize(function ()

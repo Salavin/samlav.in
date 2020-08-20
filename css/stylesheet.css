@@ -15,7 +15,7 @@
 
 #navbar
 {
-    background-color: rgba(32, 38, 44, .95);
+    background-color: #2c3137;
 }
 
 .tab-body
@@ -27,7 +27,7 @@
 
 #footer
 {
-    background-color: rgba(32, 38, 44, .95);
+    background-color: #2c3137;
     display: none;
     color: slategrey;
     margin-top: 28px;
