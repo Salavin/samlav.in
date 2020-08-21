@@ -109,6 +109,12 @@
     height: 50vh;
 }
 
-body .darkmode-toggle {
+body .darkmode-toggle
+{
     z-index: 100;
+}
+
+.btn-link
+{
+    text-align: left;
 }
