@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/ecfdd87cbf.js" crossorigin="anonymous"></script>
+    <title>Midi Tester</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row" style="margin-left: .2em">
+            <h1>
+                <a href="index.html"><i class="fas fa-arrow-circle-left"></i></a>
+                MIDI Input Tester
+            </h1>
+        </div>
+        <div class="row">
+            <div class="col-8 inputData" style="display:none;">
+                <table class="table" id="table">
+                    <tr>
+                        <th scope="col">Timestamp:</th>
+                        <th scope="col">Raw Input:</th>
+                        <th scope="col">Input type:</th>
+                        <th scope="col">Data:</th>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-4">
+                <div id="nav" style="position: fixed; top: 0; right: unset; bottom: unset; left: unset; margin: 1rem">
+                    <label for="midiIn" style="display: none">Input:</label>
+                    <h2>Input Select:</h2>
+                    <select id="midiIn" class="custom-select">
+                        <option value='0'>No inputs detected!</option>
+                    </select>
+                    <br><br>
+                    <div class="inputData" style="display: none">
+                        <h2>Filters:
+                            <div class="btn-group btn-group-sm" role="group">
+                                <button type="button" class="btn btn-outline-primary" id="allon">All On</button>
+                                <button type="button" class="btn btn-outline-primary" id="alloff">All Off</button>
+                            </div>
+                        </h2>
+
+                        <label style="display: none" for="activesensingcheck">Active Sensing</label>
+                        <input type="checkbox" id="activesensingcheck" name="activesensingcheck" class="custom-checkbox filters" checked> - Active Sensing
+                        <br>
+
+                        <label style="display: none" for="channelaftertouchcheck">Channel Aftertouch</label>
+                        <input type="checkbox" id="channelaftertouchcheck" name="channelaftertouchcheck" class="custom-checkbox filters" checked> - Channel Aftertouch
+                        <br>
+
+                        <label style="display: none" for="channelmodecheck">Channel Mode</label>
+                        <input type="checkbox" id="channelmodecheck" name="channelmodecheck" class="custom-checkbox filters" checked> - Channel Mode
+                        <br>
+
+                        <label style="display: none" for="clockcheck">Clock</label>
+                        <input type="checkbox" id="clockcheck" name="clockcheck" class="custom-checkbox filters" checked> - Clock
+                        <br>
+
+                        <label style="display: none" for="continuecheck">Continue</label>
+                        <input type="checkbox" id="continuecheck" name="continuecheck" class="custom-checkbox filters" checked> - Continue
+                        <br>
+
+                        <label style="display: none" for="controlchangecheck">Control Change</label>
+                        <input type="checkbox" id="controlchangecheck" name="controlchangecheck" class="custom-checkbox filters" checked> - Control Change
+                        <br>
+
+                        <label style="display: none" for="keyaftertouchcheck">Key Aftertouch</label>
+                        <input type="checkbox" id="keyaftertouchcheck" name="keyaftertouchcheck" class="custom-checkbox filters" checked> - Key Aftertouch
+                        <br>
+
+                        <label style="display: none" for="noteoffcheck">Note Off</label>
+                        <input type="checkbox" id="noteoffcheck" name="noteoffcheck" class="custom-checkbox filters" checked> - Note Off
+                        <br>
+
+                        <label style="display: none" for="noteoncheck">Note On</label>
+                        <input type="checkbox" id="noteoncheck" name="noteoncheck" class="custom-checkbox filters" checked> - Note On
+                        <br>
+
+                        <label style="display: none" for="nrpncheck">NRPN</label>
+                        <input type="checkbox" id="nrpncheck" name="nrpncheck" class="custom-checkbox filters" checked> - NRPN
+                        <br>
+
+                        <label style="display: none" for="pitchbendcheck">Pitch Bend</label>
+                        <input type="checkbox" id="pitchbendcheck" name="pitchbendcheck" class="custom-checkbox filters" checked> - Pitch Bend
+                        <br>
+
+                        <label style="display: none" for="programchangecheck">Program Change</label>
+                        <input type="checkbox" id="programchangecheck" name="programchangecheck" class="custom-checkbox filters" checked> - Program Change
+                        <br>
+
+                        <label style="display: none" for="resetcheck">Reset</label>
+                        <input type="checkbox" id="resetcheck" name="resetcheck" class="custom-checkbox filters" checked> - Reset
+                        <br>
+
+                        <label style="display: none" for="songpositioncheck">Song Position</label>
+                        <input type="checkbox" id="songpositioncheck" name="songpositioncheck" class="custom-checkbox filters" checked> - Song Position
+                        <br>
+
+                        <label style="display: none" for="songselectcheck">Song Select</label>
+                        <input type="checkbox" id="songselectcheck" name="songselectcheck" class="custom-checkbox filters" checked> - Song Select
+                        <br>
+
+                        <label style="display: none" for="startcheck">Start</label>
+                        <input type="checkbox" id="startcheck" name="startcheck" class="custom-checkbox filters" checked> - Start
+                        <br>
+
+                        <label style="display: none" for="stopcheck">Stop</label>
+                        <input type="checkbox" id="stopcheck" name="stopcheck" class="custom-checkbox filters" checked> - Stop
+                        <br>
+
+                        <label style="display: none" for="sysexcheck">System Exclusive Message</label>
+                        <input type="checkbox" id="sysexcheck" name="sysexcheck" class="custom-checkbox filters" checked> - System Exclusive Message
+                        <br>
+
+                        <label style="display: none" for="timecodecheck">Timecode</label>
+                        <input type="checkbox" id="timecodecheck" name="timecodecheck" class="custom-checkbox filters" checked> - Timecode
+                        <br>
+
+                        <label style="display: none" for="tuningrequestcheck">Tuning Request</label>
+                        <input type="checkbox" id="tuningrequestcheck" name="tuningrequestcheck" class="custom-checkbox filters" checked> - Tuning Request
+                        <br>
+
+                        <label style="display: none" for="unknownsystemmessagecheck">Unknown System Message</label>
+                        <input type="checkbox" id="unknownsystemmessagecheck" name="unknownsystemmessagecheck" class="custom-checkbox filters" checked> - Unknown System Message
+                        <br><hr>
+
+                        <button type="button" class="btn btn-outline-primary btn-sm" id="toTop">To Top</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery-3.1.0.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/webmidi"></script>
+    <script src="js/midi.js"></script>
+</body>
+</html>
