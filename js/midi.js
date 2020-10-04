@@ -191,216 +191,222 @@ WebMidi.enable(function (err)
     function onEvent(e)
     {
         let html;
+        let bytes = '';
+        e.data.forEach((element) =>
+        {
+            bytes += element.toString(16).toUpperCase();
+        });
+        let data = '<ul><li>Dec: ' + e.data + '</li><li>' + 'Hex: <code>' + bytes + '</code></li></ul>';
         switch (e.type)
         {
             case "activesensing":
                 if (activesensingcheck.is(":checked"))
                 {
-                    html = '<tr class="activesensing"><td><code>' + Math.round(e.timestamp).toString() + '</code></td><td><code>' + e.data + '</code></td><td>Active Sensing</td><td><em>None</em></td></tr>';
+                    html = '<tr class="activesensing"><td>' + Math.round(e.timestamp).toString() + '</td><td>' + data + '</td><td>Active Sensing</td><td><em>None</em></td></tr>';
                 }
                 else
                 {
-                    html = '<tr class="activesensing" style="display: none"><td><code>' + e.timestamp + '</code></td><td><code>' + e.data + '</code></td><td>Active Sensing</td><td><em>None</em></td>';
+                    html = '<tr class="activesensing" style="display: none"><td>' + Math.round(e.timestamp).toString() + '</td><td>' + data + '</td><td>Active Sensing</td><td><em>None</em></td></tr>';
                 }
                 break;
             case "channelaftertouch":
-                if (channelaftertouchcheck.val === true)
+                if (channelaftertouchcheck.is(":checked"))
                 {
-                    html = '<td class="channelaftertouch"><code>' + e.timestamp + '</code></td><td><code>' + e.data + '</code></td><td>Channel Aftertouch</td><td><ul><li>Channel: ' + e.channel + '</li><li>Value (0 to 1): ' + e.value + '</li></ul></td>';
+                    html = '<tr class="channelaftertouch"><td>' + Math.round(e.timestamp).toString() + '</td><td>' + data + '</td><td>Channel Aftertouch</td><td><ul><li>Channel: ' + e.channel + '</li><li>Value (0 to 1): ' + e.value + '</li></ul></td></tr>';
                 }
                 else
                 {
-                    html = '<td class="channelaftertouch" style="display: none"><code>' + e.timestamp + '</code></td><td><code>' + e.data + '</code></td><td>Channel Aftertouch</td><td><ul><li>Channel: ' + e.channel + '</li><li>Value (0 to 1): ' + e.value + '</li></ul></td>';
+                    html = '<tr class="channelaftertouch" style="display: none"><td>' + Math.round(e.timestamp).toString() + '</td><td>' + data + '</td><td>Channel Aftertouch</td><td><ul><li>Channel: ' + e.channel + '</li><li>Value (0 to 1): ' + e.value + '</li></ul></td></tr>';
                 }
                 break;
             case "channelmode":
-                if (channelmodecheck.val === true)
+                if (channelmodecheck.is(":checked"))
                 {
-                    html = '<td class="channelmode"><code' + e.timestamp + '</code></td><td><code' + e.data + '</code></td><td>Channel Mode</td><td><ul><li>Channel: ' + e.channel + '</li><li>Controller:<ul><li>Number: ' + e.controller.number + '</li><li>Name: ' + e.controller.name + '</li></ul></li><li>Value (0 to 127): ' + e.value + '</li></ul></td>';
+                    html = '<tr class="channelmode"><td>' + Math.round(e.timestamp).toString() + '</td><td>' + data + '</td><td>Channel Mode</td><td><ul><li>Channel: ' + e.channel + '</li><li>Controller:<ul><li>Number: ' + e.controller.number + '</li><li>Name: ' + e.controller.name + '</li></ul></li><li>Value (0 to 127): ' + e.value + '</li></ul></td></tr>';
                 }
                 else
                 {
-                    html = '<td class="channelmode" style="display: none"><code' + e.timestamp + '</code></td><td><code' + e.data + '</code></td><td>Channel Mode</td><td><ul><li>Channel: ' + e.channel + '</li><li>Controller:<ul><li>Number: ' + e.controller.number + '</li><li>Name: ' + e.controller.name + '</li></ul></li><li>Value (0 to 127): ' + e.value + '</li></ul></td>';
+                    html = '<tr class="channelmode" style="display: none"><td>' + Math.round(e.timestamp).toString() + '</td><td>' + data + '</td><td>Channel Mode</td><td><ul><li>Channel: ' + e.channel + '</li><li>Controller:<ul><li>Number: ' + e.controller.number + '</li><li>Name: ' + e.controller.name + '</li></ul></li><li>Value (0 to 127): ' + e.value + '</li></ul></td></tr>';
                 }
                 break;
             case "clock":
-                if (clockcheck.val === true)
+                if (clockcheck.is(":checked"))
                 {
-                    html = '<td class="clock"><code>' + e.timestamp + '</code></td><td><code>' + e.data + '</code></td><td>Clock</td><td><em>None</em></td>';
+                    html = '<tr class="clock"><td>' + Math.round(e.timestamp).toString() + '</td><td>' + data + '</td><td>Clock</td><td><em>None</em></td></tr>';
                 }
                 else
                 {
-                    html = '<td class="clock" style="display: none"><code>' + e.timestamp + '</code></td><td><code>' + e.data + '</code></td><td>Clock</td><td><em>None</em></td>';
+                    html = '<tr class="clock" style="display: none"><td>' + Math.round(e.timestamp).toString() + '</td><td>' + data + '</td><td>Clock</td><td><em>None</em></td></tr>';
                 }
                 break;
             case "continue":
-                if (continuecheck.val === true)
+                if (continuecheck.is(":checked"))
                 {
-                    html = '<td class="continue"><code>' + e.timestamp + '</code></td><td><code>' + e.data + '</code></td><td>Continue</td><td><em>None</em></td>';
+                    html = '<tr class="continue"><td>' + Math.round(e.timestamp).toString() + '</td><td>' + data + '</td><td>Continue</td><td><em>None</em></td></tr>';
                 }
                 else
                 {
-                    html = '<td class="continue" style="display: none"><code>' + e.timestamp + '</code></td><td><code>' + e.data + '</code></td><td>Continue</td><td><em>None</em></td>';
+                    html = '<tr class="continue" style="display: none"><td>' + Math.round(e.timestamp).toString() + '</td><td>' + data + '</td><td>Continue</td><td><em>None</em></td></tr>';
                 }
                 break;
             case "controlchange":
-                if (controlchangecheck.val === true)
+                if (controlchangecheck.is(":checked"))
                 {
-                    html = '<td class="controlchange"><code' + e.timestamp + '</code></td><td><code' + e.data + '</code></td><td>Control Change</td><td><ul><li>Channel: ' + e.channel + '</li><li>Controller:<ul><li>Number: ' + e.controller.number + '</li><li>Name: ' + e.controller.name + '</li></ul></li><li>Value (0 to 127): ' + e.value + '</li></ul></td>';
+                    html = '<tr class="controlchange"><td>' + Math.round(e.timestamp).toString() + '</td><td>' + data + '</td><td>Control Change</td><td><ul><li>Channel: ' + e.channel + '</li><li>Controller:<ul><li>Number: ' + e.controller.number + '</li><li>Name: ' + e.controller.name + '</li></ul></li><li>Value (0 to 127): ' + e.value + '</li></ul></td></tr>';
                 }
                 else
                 {
-                    html = '<td class="controlchange" style="display: none"><code' + e.timestamp + '</code></td><td><code' + e.data + '</code></td><td>Control Change</td><td><ul><li>Channel: ' + e.channel + '</li><li>Controller:<ul><li>Number: ' + e.controller.number + '</li><li>Name: ' + e.controller.name + '</li></ul></li><li>Value (0 to 127): ' + e.value + '</li></ul></td>';
+                    html = '<tr class="controlchange" style="display: none"><td>' + Math.round(e.timestamp).toString() + '</td><td>' + data + '</td><td>Control Change</td><td><ul><li>Channel: ' + e.channel + '</li><li>Controller:<ul><li>Number: ' + e.controller.number + '</li><li>Name: ' + e.controller.name + '</li></ul></li><li>Value (0 to 127): ' + e.value + '</li></ul></td></tr>';
                 }
                 break;
             case "keyaftertouch":
-                if (keyaftertouchcheck.val === true)
+                if (keyaftertouchcheck.is(":checked"))
                 {
-                    html = '<td class="keyaftertouch"><code' + e.timestamp + '</code></td><td><code' + e.data + '</code></td><td>Key Aftertouch</td><td><ul><li>Channel: ' + e.channel + '</li><li>Note:<ul><li>Number: ' + e.note.number + '</li><li>Name: ' + e.note.name + '</li><li>Octave (-2 to 8): ' + e.note.octave + '</li></ul></li><li>Value (0 to 1): ' + e.value + '</li></ul></td>';
+                    html = '<tr class="keyaftertouch"><td>' + Math.round(e.timestamp).toString() + '</td><td>' + data + '</td><td>Key Aftertouch</td><td><ul><li>Channel: ' + e.channel + '</li><li>Note:<ul><li>Number: ' + e.note.number + '</li><li>Name: ' + e.note.name + '</li><li>Octave (-2 to 8): ' + e.note.octave + '</li></ul></li><li>Value (0 to 1): ' + e.value + '</li></ul></td></tr>';
                 }
                 else
                 {
-                    html = '<td class="keyaftertouch" style="display: none"><code' + e.timestamp + '</code></td><td><code' + e.data + '</code></td><td>Key Aftertouch</td><td><ul><li>Channel: ' + e.channel + '</li><li>Note:<ul><li>Number: ' + e.note.number + '</li><li>Name: ' + e.note.name + '</li><li>Octave (-2 to 8): ' + e.note.octave + '</li></ul></li><li>Value (0 to 1): ' + e.value + '</li></ul></td>';
+                    html = '<tr class="keyaftertouch" style="display: none"><td>' + Math.round(e.timestamp).toString() + '</td><td>' + data + '</td><td>Key Aftertouch</td><td><ul><li>Channel: ' + e.channel + '</li><li>Note:<ul><li>Number: ' + e.note.number + '</li><li>Name: ' + e.note.name + '</li><li>Octave (-2 to 8): ' + e.note.octave + '</li></ul></li><li>Value (0 to 1): ' + e.value + '</li></ul></td></tr>';
                 }
                 break;
             case "noteoff":
-                if (noteoffcheck.val === true)
+                if (noteoffcheck.is(":checked"))
                 {
-                    html = '<td class="noteoff"><code' + e.timestamp + '</code></td><td><code' + e.data + '</code></td><td>Note Off</td><td><ul><li>Channel: ' + e.channel + '</li><li>Note:<ul><li>Number: ' + e.note.number + '</li><li>Name: ' + e.note.name + '</li><li>Octave (-2 to 8): ' + e.note.octave + '</li></ul></li><li>Velocity (0 to 1): ' + e.value + '</li><li>Raw Velocity (0 to 127): ' + e.rawVelocity + '</li></ul></td>';
+                    html = '<tr class="noteoff"><td>' + Math.round(e.timestamp).toString() + '</td><td>' + data + '</td><td>Note Off</td><td><ul><li>Channel: ' + e.channel + '</li><li>Note:<ul><li>Number: ' + e.note.number + '</li><li>Name: ' + e.note.name + '</li><li>Octave (-2 to 8): ' + e.note.octave + '</li></ul></li><li>Velocity (0 to 127): ' + e.rawVelocity + '</li></ul></td></tr>';
                 }
                 else
                 {
-                    html = '<td class="noteoff" style="display: none"><code' + e.timestamp + '</code></td><td><code' + e.data+ '</code></td><td>Note Off</td><td><ul><li>Channel: ' + e.channel + '</li><li>Note:<ul><li>Number: ' + e.note.number + '</li><li>Name: ' + e.note.name + '</li><li>Octave (-2 to 8): ' + e.note.octave + '</li></ul></li><li>Velocity (0 to 1): ' + e.value + '</li><li>Raw Velocity (0 to 127): ' + e.rawVelocity + '</li></ul></td>';
+                    html = '<tr class="noteoff" style="display: none"><td>' + Math.round(e.timestamp).toString() + '</td><td><code>' + data+ '</code></td><td>Note Off</td><td><ul><li>Channel: ' + e.channel + '</li><li>Note:<ul><li>Number: ' + e.note.number + '</li><li>Name: ' + e.note.name + '</li><li>Octave (-2 to 8): ' + e.note.octave + '</li></ul></li><li>Velocity (0 to 127): ' + e.rawVelocity + '</li></ul></td></tr>';
                 }
                 break;
             case "noteon":
-                if (noteoncheck.val === true)
+                if (noteoncheck.is(":checked"))
                 {
-                    html = '<td class="noteon"><code' + e.timestamp + '</code></td><td><code' + e.data + '</code></td><td>Note On</td><td><ul><li>Channel: ' + e.channel + '</li><li>Note:<ul><li>Number: ' + e.note.number + '</li><li>Name: ' + e.note.name + '</li><li>Octave (-2 to 8): ' + e.note.octave + '</li></ul></li><li>Velocity (0 to 1): ' + e.value + '</li><li>Raw Velocity (0 to 127): ' + e.rawVelocity + '</li></ul></td>';
+                    html = '<tr class="noteon"><td>' + Math.round(e.timestamp).toString() + '</td><td>' + data + '</td><td>Note On</td><td><ul><li>Channel: ' + e.channel + '</li><li>Note:<ul><li>Number: ' + e.note.number + '</li><li>Name: ' + e.note.name + '</li><li>Octave (-2 to 8): ' + e.note.octave + '</li></ul></li><li>Velocity (0 to 127): ' + e.rawVelocity + '</li></ul></td></tr>';
                 }
                 else
                 {
-                    html = '<td class="noteon" style="display: none"><code' + e.timestamp + '</code></td><td><code' + e.data+ '</code></td><td>Note On</td><td><ul><li>Channel: ' + e.channel + '</li><li>Note:<ul><li>Number: ' + e.note.number + '</li><li>Name: ' + e.note.name + '</li><li>Octave (-2 to 8): ' + e.note.octave + '</li></ul></li><li>Velocity (0 to 1): ' + e.value + '</li><li>Raw Velocity (0 to 127): ' + e.rawVelocity + '</li></ul></td>';
+                    html = '<tr class="noteon" style="display: none"><td>' + Math.round(e.timestamp).toString() + '</td><td><code>' + data+ '</code></td><td>Note On</td><td><ul><li>Channel: ' + e.channel + '</li><li>Note:<ul><li>Number: ' + e.note.number + '</li><li>Name: ' + e.note.name + '</li><li>Octave (-2 to 8): ' + e.note.octave + '</li></ul></li><li>Velocity (0 to 127): ' + e.rawVelocity + '</li></ul></td></tr>';
                 }
                 break;
             case "nrpn":
-                if (nrpncheck.val === true)
+                if (nrpncheck.is(":checked"))
                 {
-                    html = '<td class="nrpn"><code' + e.timestamp + '</code></td><td><code' + e.data + '</code></td><td>NRPN</td><td><ul><li>Channel: ' + e.channel + '</li><li>Controller:<ul><li>Number: ' + e.controller.number + '</li><li>Name: ' + e.controller.name + '</li></ul></li><li>Value (0 to 65535): ' + e.value + '</li></ul></td>';
+                    html = '<tr class="nrpn"><td>' + Math.round(e.timestamp).toString() + '</td><td>' + data + '</td><td>NRPN</td><td><ul><li>Channel: ' + e.channel + '</li><li>Controller:<ul><li>Number: ' + e.controller.number + '</li><li>Name: ' + e.controller.name + '</li></ul></li><li>Value (0 to 65535): ' + e.value + '</li></ul></td></tr>';
                 }
                 else
                 {
-                    html = '<td class="nrpn" style="display: none"><code' + e.timestamp+ '</code></td><td><code' + e.data+ '</code></td><td>NRPN</td><td><ul><li>Channel: '+ e.channel + '</li><li>Controller:<ul><li>Number: ' + e.controller.number + '</li><li>Name: ' + e.controller.name+ '</li></ul></li><li>Value (0 to 65535): ' + e.value + '</li></ul></td>';
+                    html = '<tr class="nrpn" style="display: none"><td><code>' + e.timestamp+ '</code></td><td><code>' + data+ '</code></td><td>NRPN</td><td><ul><li>Channel: '+ e.channel + '</li><li>Controller:<ul><li>Number: ' + e.controller.number + '</li><li>Name: ' + e.controller.name+ '</li></ul></li><li>Value (0 to 65535): ' + e.value + '</li></ul></td></tr>';
                 }
                 break;
             case "pitchbend":
-                if (pitchbendcheck.val === true)
+                if (pitchbendcheck.is(":checked"))
                 {
-                    html = '<td class="pitchbend"><code>' + e.timestamp + '</code></td><td><code>' + e.data + '</code></td><td>Pitch Bend</td><td><ul><li>Channel: ' + e.channel + '</li><li>Value (-1 to 1): ' + e.value + '</li></ul></td>';
+                    html = '<tr class="pitchbend"><td>' + Math.round(e.timestamp).toString() + '</td><td>' + data + '</td><td>Pitch Bend</td><td><ul><li>Channel: ' + e.channel + '</li><li>Value (-1 to 1): ' + e.value + '</li></ul></td></tr>';
                 }
                 else
                 {
-                    html = '<td class="pitchbend" style="display: none"><code>' + e.timestamp + '</code></td><td><code>' + e.data + '</code></td><td>Pitch Bend</td><td><ul><li>Channel: ' + e.channel + '</li><li>Value (-1 to 1): ' + e.value + '</li></ul></td>';
+                    html = '<tr class="pitchbend" style="display: none"><td>' + Math.round(e.timestamp).toString() + '</td><td>' + data + '</td><td>Pitch Bend</td><td><ul><li>Channel: ' + e.channel + '</li><li>Value (-1 to 1): ' + e.value + '</li></ul></td></tr>';
                 }
                 break;
             case "programchange":
-                if (programchangecheck.val === true)
+                if (programchangecheck.is(":checked"))
                 {
-                    html = '<td class="programchange"><code>' + e.timestamp + '</code></td><td><code>' + e.data + '</code></td><td>Program Change</td><td><ul><li>Channel: ' + e.channel + '</li><li>Value (0 to 127): ' + e.value + '</li></ul></td>';
+                    html = '<tr class="programchange"><td>' + Math.round(e.timestamp).toString() + '</td><td>' + data + '</td><td>Program Change</td><td><ul><li>Channel: ' + e.channel + '</li><li>Value (0 to 127): ' + e.value + '</li></ul></td></tr>';
                 }
                 else
                 {
-                    html = '<td class="programchange" style="display: none"><code>' + e.timestamp + '</code></td><td><code>' + e.data + '</code></td><td>Program Change</td><td><ul><li>Channel: ' + e.channel + '</li><li>Value (0 to 127): ' + e.value + '</li></ul></td>';
+                    html = '<tr class="programchange" style="display: none"><td>' + Math.round(e.timestamp).toString() + '</td><td>' + data + '</td><td>Program Change</td><td><ul><li>Channel: ' + e.channel + '</li><li>Value (0 to 127): ' + e.value + '</li></ul></td></tr>';
                 }
                 break;
             case "reset":
-                if (resetcheck.val === true)
+                if (resetcheck.is(":checked"))
                 {
-                    html = '<td class="reset"><code>' + e.timestamp + '</code></td><td><code>' + e.data + '</code></td><td>Reset</td><td><em>None</em></td>';
+                    html = '<tr class="reset"><td>' + Math.round(e.timestamp).toString() + '</td><td>' + data + '</td><td>Reset</td><td><em>None</em></td></tr>';
                 }
                 else
                 {
-                    html = '<td class="reset" style="display: none"><code>' + e.timestamp + '</code></td><td><code>' + e.data + '</code></td><td>Reset</td><td><em>None</em></td>';
+                    html = '<tr class="reset" style="display: none"><td>' + Math.round(e.timestamp).toString() + '</td><td>' + data + '</td><td>Reset</td><td><em>None</em></td></tr>';
                 }
                 break;
             case "songposition":
-                if (songpositioncheck.val === true)
+                if (songpositioncheck.is(":checked"))
                 {
-                    html = '<td class="songposition"><code>' + e.timestamp + '</code></td><td><code>' + e.data + '</code></td><td>Song Position</td><td><em>None</em></td>';
+                    html = '<tr class="songposition"><td>' + Math.round(e.timestamp).toString() + '</td><td>' + data + '</td><td>Song Position</td><td><em>None</em></td></tr>';
                 }
                 else
                 {
-                    html = '<td class="songposition" style="display: none"><code>' + e.timestamp + '</code></td><td><code>' + e.data + '</code></td><td>Song Position</td><td><em>None</em></td>';
+                    html = '<tr class="songposition" style="display: none"><td>' + Math.round(e.timestamp).toString() + '</td><td>' + data + '</td><td>Song Position</td><td><em>None</em></td></tr>';
                 }
                 break;
             case "songselect":
-                if (songselectcheck.val === true)
+                if (songselectcheck.is(":checked"))
                 {
-                    html = '<td class="songselect"><code>' + e.timestamp + '</code></td><td><code>' + e.data + '</code></td><td>Song Select</td><td><ul><li>Song: ' + e.song + '</li></ul></td>';
+                    html = '<tr class="songselect"><td>' + Math.round(e.timestamp).toString() + '</td><td>' + data + '</td><td>Song Select</td><td><ul><li>Song: ' + e.song + '</li></ul></td></tr>';
                 }
                 else
                 {
-                    html = '<td class="songselect" style="display: none"><code>' + e.timestamp + '</code></td><td><code>' + e.data + '</code></td><td>Song Select</td><td><ul><li>Song: ' + e.song + '</li></ul></td>';
+                    html = '<tr class="songselect" style="display: none"><td>' + Math.round(e.timestamp).toString() + '</td><td>' + data + '</td><td>Song Select</td><td><ul><li>Song: ' + e.song + '</li></ul></td></tr>';
                 }
                 break;
             case "start":
-                if (startcheck.val === true)
+                if (startcheck.is(":checked"))
                 {
-                    html = '<td class="start"><code>' + e.timestamp + '</code></td><td><code>' + e.data + '</code></td><td>Start</td><td><em>None</em></td>';
+                    html = '<tr class="start"><td>' + Math.round(e.timestamp).toString() + '</td><td>' + data + '</td><td>Start</td><td><em>None</em></td></tr>';
                 }
                 else
                 {
-                    html = '<td class="start" style="display: none"><code>' + e.timestamp + '</code></td><td><code>' + e.data + '</code></td><td>Start</td><td><em>None</em></td>';
+                    html = '<tr class="start" style="display: none"><td>' + Math.round(e.timestamp).toString() + '</td><td>' + data + '</td><td>Start</td><td><em>None</em></td></tr>';
                 }
                 break;
             case "stop":
-                if (stopcheck.val === true)
+                if (stopcheck.is(":checked"))
                 {
-                    html = '<td class="stop"><code>' + e.timestamp + '</code></td><td><code>' + e.data + '</code></td><td>Stop</td><td><em>None</em></td>';
+                    html = '<tr class="stop"><td>' + Math.round(e.timestamp).toString() + '</td><td>' + data + '</td><td>Stop</td><td><em>None</em></td></tr>';
                 }
                 else
                 {
-                    html = '<td class="stop" style="display: none"><code>' + e.timestamp + '</code></td><td><code>' + e.data + '</code></td><td>Stop</td><td><em>None</em></td>';
+                    html = '<tr class="stop" style="display: none"><td>' + Math.round(e.timestamp).toString() + '</td><td>' + data + '</td><td>Stop</td><td><em>None</em></td></tr>';
                 }
                 break;
             case "sysex":
-                if (sysexcheck.val === true)
+                if (sysexcheck.is(":checked"))
                 {
-                    html = '<td class="sysex"><code>' + e.timestamp + '</code></td><td><code>' + e.data + '</code></td><td>System Exclusive Message</td><td><em>None</em></td>';
+                    html = '<tr class="sysex"><td>' + Math.round(e.timestamp).toString() + '</td><td>' + data + '</td><td>System Exclusive Message</td><td><em>None</em></td></tr>';
                 }
                 else
                 {
-                    html = '<td class="sysex" style="display: none"><code>' + e.timestamp + '</code></td><td><code>' + e.data + '</code></td><td>System Exclusive Message</td><td><em>None</em></td>';
+                    html = '<tr class="sysex" style="display: none"><td>' + Math.round(e.timestamp).toString() + '</td><td>' + data + '</td><td>System Exclusive Message</td><td><em>None</em></td></tr>';
                 }
                 break;
             case "timecode":
-                if (timecodecheck.val === true)
+                if (timecodecheck.is(":checked"))
                 {
-                    html = '<td class="timecode"><code>' + e.timestamp + '</code></td><td><code>' + e.data + '</code></td><td>Timecode</td><td><em>None</em></td>';
+                    html = '<tr class="timecode"><td>' + Math.round(e.timestamp).toString() + '</td><td>' + data + '</td><td>Timecode</td><td><em>None</em></td></tr>';
                 }
                 else
                 {
-                    html = '<td class="timecode" style="display: none"><code>' + e.timestamp + '</code></td><td><code>' + e.data + '</code></td><td>Timecode</td><td><em>None</em></td>';
+                    html = '<tr class="timecode" style="display: none"><td>' + Math.round(e.timestamp).toString() + '</td><td>' + data + '</td><td>Timecode</td><td><em>None</em></td></tr>';
                 }
                 break;
             case "tuningrequest":
-                if (tuningrequrestcheck.val === true)
+                if (tuningrequrestcheck.is(":checked"))
                 {
-                    html = '<td class="tuningrequest"><code>' + e.timestamp + '</code></td><td><code>' + e.data + '</code></td><td>Tuning Request</td><td><em>None</em></td>';
+                    html = '<tr class="tuningrequest"><td>' + Math.round(e.timestamp).toString() + '</td><td>' + data + '</td><td>Tuning Request</td><td><em>None</em></td></tr>';
                 }
                 else
                 {
-                    html = '<td class="tuningrequest" style="display: none"><code>' + e.timestamp + '</code></td><td><code>' + e.data + '</code></td><td>Tuning Request</td><td><em>None</em></td>';
+                    html = '<tr class="tuningrequest" style="display: none"><td>' + Math.round(e.timestamp).toString() + '</td><td>' + data + '</td><td>Tuning Request</td><td><em>None</em></td></tr>';
                 }
                 break;
             case "unknownsystemmessage":
-                if (unknownsystemmessagecheck.val === true)
+                if (unknownsystemmessagecheck.is(":checked"))
                 {
-                    html = '<td class="unknownsystemmessage"><code>' + e.timestamp + '</code></td><td><code>' + e.data + '</code></td><td>Unknown System Message</td><td><em>None</em></td>';
+                    html = '<tr class="unknownsystemmessage"><td>' + Math.round(e.timestamp).toString() + '</td><td>' + data + '</td><td>Unknown System Message</td><td><em>None</em></td></tr>';
                 }
                 else
                 {
-                    html = '<td class="unknownsystemmessage" style="display: none"><code>' + e.timestamp + '</code></td><td><code>' + e.data + '</code></td><td>Unknown System Message</td><td><em>None</em></td>';
+                    html = '<tr class="unknownsystemmessage" style="display: none"><td>' + Math.round(e.timestamp).toString() + '</td><td>' + data + '</td><td>Unknown System Message</td><td><em>None</em></td></tr>';
                 }
                 break;
         }
@@ -414,15 +420,180 @@ let checkboxes = $(".filters");
 $("#allon").click(function ()
 {
     checkboxes.prop("checked", true);
+    for (let i = 0; i < sessionStorage.length; i++)
+    {
+        sessionStorage.setItem(sessionStorage.key(i), "true");
+    }
+    updateFilters();
 })
 $("#alloff").click(function ()
 {
     checkboxes.prop("checked", false);
+    sessionStorage.setItem("activesensingcheck", "false");
+    sessionStorage.setItem("channelaftertouchcheck", "false");
+    sessionStorage.setItem("channelmodecheck", "false");
+    sessionStorage.setItem("clockcheck", "false");
+    sessionStorage.setItem("continuecheck", "false");
+    sessionStorage.setItem("controlchangecheck", "false");
+    sessionStorage.setItem("keyaftertouchcheck", "false");
+    sessionStorage.setItem("noteoffcheck", "false");
+    sessionStorage.setItem("noteoncheck", "false");
+    sessionStorage.setItem("nrpncheck", "false");
+    sessionStorage.setItem("pitchbendcheck", "false");
+    sessionStorage.setItem("programchangecheck", "false");
+    sessionStorage.setItem("resetcheck", "false");
+    sessionStorage.setItem("songpositioncheck", "false");
+    sessionStorage.setItem("songselectcheck", "false");
+    sessionStorage.setItem("startcheck", "false");
+    sessionStorage.setItem("stopcheck", "false");
+    sessionStorage.setItem("sysexcheck", "false");
+    sessionStorage.setItem("timecodecheck", "false");
+    sessionStorage.setItem("tuningrequestcheck", "false");
+    sessionStorage.setItem("unknownsystemmessagecheck", "false");
+
+    updateFilters();
 })
+
+$(document).ready()
+{
+    for (let i = 0; i < sessionStorage.length; i++)
+    {
+        console.log(sessionStorage.key(i));
+        console.log(sessionStorage.getItem(sessionStorage.key(i)));
+        $("#" + sessionStorage.key(i)).prop("checked", sessionStorage.getItem(sessionStorage.key(i)) === "true");
+    }
+    updateFilters();
+}
 
 activesensingcheck.click(function ()
 {
-    if (activesensingcheck.val() === true)
+    updateFilters();
+    sessionStorage.setItem("activesensingcheck", activesensingcheck.is(":checked"));
+});
+
+channelaftertouchcheck.click(function ()
+{
+    updateFilters();
+    sessionStorage.setItem("channelaftertouchcheck", channelaftertouchcheck.is(":checked"));
+});
+
+channelmodecheck.click(function ()
+{
+    updateFilters();
+    sessionStorage.setItem("channelmodecheck", channelmodecheck.is(":checked"));
+});
+
+clockcheck.click(function ()
+{
+    updateFilters();
+    sessionStorage.setItem("clockcheck", clockcheck.is(":checked"));
+});
+
+continuecheck.click(function ()
+{
+    updateFilters();
+    sessionStorage.setItem("continuecheck", continuecheck.is(":checked"));
+});
+
+controlchangecheck.click(function ()
+{
+    updateFilters();
+    sessionStorage.setItem("controlchangecheck", controlchangecheck.is(":checked"));
+});
+
+keyaftertouchcheck.click(function ()
+{
+    updateFilters();
+    sessionStorage.setItem("keyaftertouchcheck", keyaftertouchcheck.is(":checked"));
+});
+
+noteoffcheck.click(function ()
+{
+    updateFilters();
+    sessionStorage.setItem("noteoffcheck", noteoffcheck.is(":checked"));
+});
+
+noteoncheck.click(function ()
+{
+    updateFilters();
+    sessionStorage.setItem("noteoncheck", noteoncheck.is(":checked"));
+});
+
+nrpncheck.click(function ()
+{
+    updateFilters();
+    sessionStorage.setItem("nrpncheck", nrpncheck.is(":checked"));
+});
+
+pitchbendcheck.click(function ()
+{
+    updateFilters();
+    sessionStorage.setItem("pitchbendcheckcheck", activesensingcheck.is(":checked"));
+});
+
+programchangecheck.click(function ()
+{
+    updateFilters();
+    sessionStorage.setItem("programchangecheck", programchangecheck.is(":checked"));
+});
+
+resetcheck.click(function ()
+{
+    updateFilters();
+    sessionStorage.setItem("resetcheck", resetcheck.is(":checked"));
+});
+
+songpositioncheck.click(function ()
+{
+    updateFilters();
+    sessionStorage.setItem("songpositioncheck", songpositioncheck.is(":checked"));
+});
+
+songselectcheck.click(function ()
+{
+    updateFilters();
+    sessionStorage.setItem("songselectcheck", songselectcheck.is(":checked"));
+});
+
+startcheck.click(function ()
+{
+    updateFilters();
+    sessionStorage.setItem("startcheck", startcheck.is(":checked"));
+});
+
+stopcheck.click(function ()
+{
+    updateFilters();
+    sessionStorage.setItem("stopcheck", stopcheck.is(":checked"));
+});
+
+sysexcheck.click(function ()
+{
+    updateFilters();
+    sessionStorage.setItem("sysexcheck", sysexcheck.is(":checked"));
+});
+
+timecodecheck.click(function ()
+{
+    updateFilters();
+    sessionStorage.setItem("timecodecheck", timecodecheck.is(":checked"));
+});
+
+tuningrequrestcheck.click(function ()
+{
+    updateFilters();
+    sessionStorage.setItem("tuningrequestcheck", tuningrequrestcheck.is(":checked"));
+});
+
+unknownsystemmessagecheck.click(function ()
+{
+    updateFilters();
+    sessionStorage.setItem("unknownsystemmessagecheck", unknownsystemmessagecheck.is(":checked"));
+});
+
+function updateFilters()
+{
+    if (activesensingcheck.is(":checked"))
     {
         $(".activesensing").show();
     }
@@ -430,11 +601,8 @@ activesensingcheck.click(function ()
     {
         $(".activesensing").hide();
     }
-});
 
-channelaftertouchcheck.click(function ()
-{
-    if (channelaftertouchcheck.val() === true)
+    if (channelaftertouchcheck.is(":checked"))
     {
         $(".chanelaftertouch").show();
     }
@@ -442,11 +610,8 @@ channelaftertouchcheck.click(function ()
     {
         $(".channelaftertouch").hide();
     }
-});
 
-channelmodecheck.click(function ()
-{
-    if (channelmodecheck.val() === true)
+    if (channelmodecheck.is(":checked"))
     {
         $(".channelmode").show();
     }
@@ -454,11 +619,8 @@ channelmodecheck.click(function ()
     {
         $(".channelmode").hide();
     }
-});
 
-clockcheck.click(function ()
-{
-    if (clockcheck.val() === true)
+    if (clockcheck.is(":checked"))
     {
         $(".clock").show();
     }
@@ -466,11 +628,8 @@ clockcheck.click(function ()
     {
         $(".clock").hide();
     }
-});
 
-continuecheck.click(function ()
-{
-    if (continuecheck.val() === true)
+    if (continuecheck.is(":checked"))
     {
         $(".continue").show();
     }
@@ -478,11 +637,8 @@ continuecheck.click(function ()
     {
         $(".continue").hide();
     }
-});
 
-controlchangecheck.click(function ()
-{
-    if (controlchangecheck.val() === true)
+    if (controlchangecheck.is(":checked"))
     {
         $(".controlchange").show();
     }
@@ -490,11 +646,8 @@ controlchangecheck.click(function ()
     {
         $(".controlchange").hide();
     }
-});
 
-keyaftertouchcheck.click(function ()
-{
-    if (keyaftertouchcheck.val() === true)
+    if (keyaftertouchcheck.is(":checked"))
     {
         $(".keyaftertouch").show();
     }
@@ -502,11 +655,8 @@ keyaftertouchcheck.click(function ()
     {
         $(".keyaftertouch").hide();
     }
-});
 
-noteoffcheck.click(function ()
-{
-    if (noteoffcheck.val() === true)
+    if (noteoffcheck.is(":checked"))
     {
         $(".noteoff").show();
     }
@@ -514,11 +664,8 @@ noteoffcheck.click(function ()
     {
         $(".noteoff").hide();
     }
-});
 
-noteoncheck.click(function ()
-{
-    if (noteoncheck.val() === true)
+    if (noteoncheck.is(":checked"))
     {
         $(".noteon").show();
     }
@@ -526,11 +673,8 @@ noteoncheck.click(function ()
     {
         $(".noteon").hide();
     }
-});
 
-nrpncheck.click(function ()
-{
-    if (nrpncheck.val() === true)
+    if (nrpncheck.is(":checked"))
     {
         $(".nrpn").show();
     }
@@ -538,11 +682,8 @@ nrpncheck.click(function ()
     {
         $(".nrpn").hide();
     }
-});
 
-pitchbendcheck.click(function ()
-{
-    if (pitchbendcheck.val() === true)
+    if (pitchbendcheck.is(":checked"))
     {
         $(".pitchbend").show();
     }
@@ -550,11 +691,8 @@ pitchbendcheck.click(function ()
     {
         $(".pitchbend").hide();
     }
-});
 
-programchangecheck.click(function ()
-{
-    if (programchangecheck.val() === true)
+    if (programchangecheck.is(":checked"))
     {
         $(".programchange").show();
     }
@@ -562,11 +700,8 @@ programchangecheck.click(function ()
     {
         $(".programchange").hide();
     }
-});
 
-resetcheck.click(function ()
-{
-    if (resetcheck.val() === true)
+    if (resetcheck.is(":checked"))
     {
         $(".reset").show();
     }
@@ -574,11 +709,8 @@ resetcheck.click(function ()
     {
         $(".reset").hide();
     }
-});
 
-songpositioncheck.click(function ()
-{
-    if (songpositioncheck.val() === true)
+    if (songpositioncheck.is(":checked"))
     {
         $(".songposition").show();
     }
@@ -586,11 +718,8 @@ songpositioncheck.click(function ()
     {
         $(".songposition").hide();
     }
-});
 
-songselectcheck.click(function ()
-{
-    if (songselectcheck.val() === true)
+    if (songselectcheck.is(":checked"))
     {
         $(".songselect").show();
     }
@@ -598,11 +727,8 @@ songselectcheck.click(function ()
     {
         $(".songselect").hide();
     }
-});
 
-startcheck.click(function ()
-{
-    if (startcheck.val() === true)
+    if (startcheck.is(":checked"))
     {
         $(".start").show();
     }
@@ -610,11 +736,8 @@ startcheck.click(function ()
     {
         $(".start").hide();
     }
-});
 
-stopcheck.click(function ()
-{
-    if (stopcheck.val() === true)
+    if (stopcheck.is(":checked"))
     {
         $(".stop").show();
     }
@@ -622,11 +745,8 @@ stopcheck.click(function ()
     {
         $(".stop").hide();
     }
-});
 
-sysexcheck.click(function ()
-{
-    if (sysexcheck.val() === true)
+    if (sysexcheck.is(":checked"))
     {
         $(".sysex").show();
     }
@@ -634,11 +754,8 @@ sysexcheck.click(function ()
     {
         $(".sysex").hide();
     }
-});
 
-timecodecheck.click(function ()
-{
-    if (timecodecheck.val() === true)
+    if (timecodecheck.is(":checked"))
     {
         $(".timecode").show();
     }
@@ -646,11 +763,8 @@ timecodecheck.click(function ()
     {
         $(".timecode").hide();
     }
-});
 
-tuningrequrestcheck.click(function ()
-{
-    if (tuningrequrestcheck.val() === true)
+    if (tuningrequrestcheck.is(":checked"))
     {
         $(".tuningrequest").show();
     }
@@ -658,11 +772,8 @@ tuningrequrestcheck.click(function ()
     {
         $(".tuningrequest").hide();
     }
-});
 
-unknownsystemmessagecheck.click(function ()
-{
-    if (unknownsystemmessagecheck.val() === true)
+    if (unknownsystemmessagecheck.is(":checked"))
     {
         $(".unknownsystemmessage").show();
     }
@@ -670,4 +781,9 @@ unknownsystemmessagecheck.click(function ()
     {
         $(".unknownsystemmessage").hide();
     }
-});
+}
+
+$("#toTop").click(function()
+{
+    $("html, body").animate({scrollTop: 0}, 250);
+})
