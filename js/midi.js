@@ -411,7 +411,6 @@ WebMidi.enable(function (err)
                 break;
         }
         $('#table > tbody > tr').eq(0).after(html);
-        // $('#table').append('<tr>' + html + '</tr>');
     }
 }, true);
 
