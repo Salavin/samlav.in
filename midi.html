@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/midi.css">
     <script src="https://kit.fontawesome.com/ecfdd87cbf.js" crossorigin="anonymous"></script>
     <title>Midi Tester</title>
 </head>
@@ -21,7 +22,7 @@
                         <th scope="col">Timestamp:</th>
                         <th scope="col">Raw Input:</th>
                         <th scope="col">Input type:</th>
-                        <th scope="col">Data:</th>
+                        <th scope="col"><span style="text-align: left">Data:</span><span style="float: right"><button type="button" class="btn btn-outline-primary btn-sm" id="toTop">To Top</button></span></th>
                     </tr>
                 </table>
             </div>
@@ -124,16 +125,15 @@
                         <label style="display: none" for="unknownsystemmessagecheck">Unknown System Message</label>
                         <input type="checkbox" id="unknownsystemmessagecheck" name="unknownsystemmessagecheck" class="custom-checkbox filters" checked> - Unknown System Message
                         <br><hr>
-
-                        <button type="button" class="btn btn-outline-primary btn-sm" id="toTop">To Top</button>
-                        <form>
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <button class="btn btn-outline-secondary" type="button" id="button-addon1">Update</button>
-                                </div>
-                                <input type="number" min="1" max="500" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1" id="purgeNum" required>
+                        <div class="input-group mb-3 input-group-sm">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-sm">Purge Amount:</span>
                             </div>
-                        </form>
+                            <label for="purgeNum" style="display: none">Purge Amount:</label><input value=256 type="number" min="1" max="500" class="form-control" placeholder="Purge amount" id="purgeNum" required>
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-primary" type="button" id="purgeSet">Set!</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
