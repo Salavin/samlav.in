@@ -1,5 +1,6 @@
 let midiIn = $("#midiIn");
 let inputData = $(".inputData");
+let purgeNum = $("#purgeNum");
 let curInput;
 let input;
 let activesensingcheck = $("#activesensingcheck");
@@ -23,6 +24,8 @@ let sysexcheck = $("#sysexcheck");
 let timecodecheck = $("#timecodecheck");
 let tuningrequrestcheck = $("#tuningrequestcheck");
 let unknownsystemmessagecheck = $("#unknownsystemmessagecheck");
+let purgeAmt = 256;
+let table = $("#table");
 
 WebMidi.enable(function (err)
 {
@@ -117,7 +120,6 @@ WebMidi.enable(function (err)
 
         input.addListener("noteon", "all", function(e)
         {
-            console.log("Note!");
             onEvent(e);
         });
 
@@ -411,6 +413,10 @@ WebMidi.enable(function (err)
                 break;
         }
         $('#table > tbody > tr').eq(0).after(html);
+        if ($("#table tr").length > purgeAmt)
+        {
+            $("#table tr:last").remove();
+        }
     }
 }, true);
 
@@ -457,8 +463,6 @@ $(document).ready()
 {
     for (let i = 0; i < sessionStorage.length; i++)
     {
-        console.log(sessionStorage.key(i));
-        console.log(sessionStorage.getItem(sessionStorage.key(i)));
         $("#" + sessionStorage.key(i)).prop("checked", sessionStorage.getItem(sessionStorage.key(i)) === "true");
     }
     updateFilters();
@@ -785,4 +789,14 @@ function updateFilters()
 $("#toTop").click(function()
 {
     $("html, body").animate({scrollTop: 0}, 250);
+})
+
+$("#purgeSet").click(function()
+{
+    purgeAmt = Math.max(1, purgeNum.val()) + 1;
+    purgeNum.val(purgeAmt - 1);
+    while ($("#table tr").length > purgeAmt)
+    {
+        $("#table tr:last").remove();
+    }
 })
