@@ -101,6 +101,11 @@
      color: #0e76a8;
  }
 
+.discord:hover
+ {
+     color: #7289DA;
+ }
+
 .busFont
 {
     font-size: 1.875em;
