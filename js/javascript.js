@@ -10,8 +10,8 @@ window.mobileCheck = function() {
 };
 
 const options = {
-    bottom: '32px', // default: '32px'
-    right: '32px', // default: '32px'
+    bottom: 'unset', // default: '32px'
+    right: '8px', // default: '32px'
     left: 'unset', // default: 'unset'
     time: '0.5s', // default: '0.3s'
     mixColor: '#fff', // default: '#fff'
@@ -147,15 +147,6 @@ $(window).resize(function ()
     {
         carousel.carousel('cycle');
     }
-    if ($(window).width() < 400)
-    {
-        darkModeButton.addClass("float");
-    }
-    else
-    {
-        darkModeButton.removeClass("float");
-    }
-
 });
 
 $(".nav-item").click(function ()

@@ -1,32 +1,19 @@
-.background
+html, body
 {
-    width: 100%;
-    height: calc(100vh - 56px);
-    object-fit: cover;
-    z-index: 101;
-    position: relative;
+    height: 100%;
 }
 
-.carousel-caption
-{
-    z-index: 102;
-}
-
-.outline
-{
-    color: white;
-    text-shadow:
-        -1px -1px 0 #000,
-        1px -1px 0 #000,
-        -1px 1px 0 #000,
-        1px 1px 0 #000;
-}
 
 #sticky
 {
     position: sticky;
     top:0;
     z-index: 101;
+}
+
+.whiteText
+{
+    color: white;
 }
 
 #navbar
@@ -40,6 +27,8 @@
     margin-left: 10vw;
     margin-right: 10vw;
     margin-top: 28px;
+    position: relative;
+    min-height: 71%;
 }
 
 #footerMobile, #footerDesktop
@@ -125,33 +114,6 @@
 {
     z-index: 0;
 }
-
-.maize td
-{
-    width: 1em;
-    height: 1em;
-    font-family: Consolas monospace;
-    vertical-align: middle;
-    text-align: center;
-    border: 1px solid black;
-}
-
-.maize
-{
-    width: 5em;
-    height: 5em;
-}
-
-.challengeCode
-{
-    width: 100%;
-    height: 50vh;
-}
-
-/*body .darkmode-toggle*/
-/*{*/
-/*    z-index: 100;*/
-/*}*/
 
 .darkmode-toggle
 {
