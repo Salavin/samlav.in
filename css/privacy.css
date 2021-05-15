@@ -29,6 +29,7 @@ html, body
     margin-top: 28px;
     position: relative;
     min-height: 71%;
+    z-index: -1;
 }
 
 #footerMobile, #footerDesktop
@@ -40,7 +41,6 @@ html, body
     margin-left: 0;
     margin-right: 0;
     font-size: .75rem;
-    z-index: 101;
 }
 
 .footerSticky
@@ -108,11 +108,6 @@ html, body
 {
     color: white;
     border-radius: 50%;
-}
-
-.darkmode-toggle
-{
-    z-index: 0;
 }
 
 .darkmode-toggle

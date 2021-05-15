@@ -20,19 +20,6 @@ const options = {
 const darkmode = new Darkmode(options);
 darkmode.showWidget();
 
-const observer = new MutationObserver(function () // Not sure why I had to do this
-{
-    if (darkmode.isActivated())
-    {
-        $(".tab-body").addClass("whiteText");
-    }
-    else
-    {
-        $(".tab-body").removeClass("whiteText");
-    }
-});
-observer.observe(document.body, {attributes: true, childList: false, subtree: false});
-
 $(window).on('load', function()
 {
     if (window.mobileCheck() === true)
