@@ -52,16 +52,15 @@
     margin-right: 0;
     font-size: .75rem;
     z-index: 101;
-    position: relative;
 }
 
-/*#footerList*/
-/*{*/
-/*    list-style: none;*/
-/*    margin-left: 0;*/
-/*    padding-left: 1em;*/
-/*    text-indent: -1em;*/
-/*}*/
+.footerSticky
+{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
 
 .footer ul {
 	position: relative;
@@ -149,9 +148,14 @@
     height: 50vh;
 }
 
-body .darkmode-toggle
+/*body .darkmode-toggle*/
+/*{*/
+/*    z-index: 100;*/
+/*}*/
+
+.darkmode-toggle
 {
-    z-index: 100;
+    top: 64px;
 }
 
 .btn-link
