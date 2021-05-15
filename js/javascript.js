@@ -47,9 +47,11 @@ let carousel = $("#carousel");
 let aboutMeTab = $("#nav-about-me-tab");
 let resumeTab = $("#nav-resume-tab");
 let musicTab = $("#nav-music-tab");
+let LFTCard = $("#LFTCard");
 let smartDisplayCard = $("#smartDisplayCard");
 let websiteCard = $("#websiteCard");
 let otherCard = $("#otherCard");
+let olderCard = $("#olderCard");
 let webDevCard = $("#webDevCard");
 let ethicsCard = $("#ethicsCard");
 let card = $(".card");
@@ -58,6 +60,8 @@ let collapseTwo = $("#collapseTwo");
 let collapseThree = $("#collapseThree");
 let collapseFour = $("#collapseFour");
 let collapseFive = $("#collapseFive");
+let collapseSix = $("#collapseSix");
+let collapseSeven = $("#collapseSeven");
 
 function scrollDown()
 {
@@ -184,43 +188,68 @@ musicTab.click(function ()
     sessionStorage.setItem("selectedTab", "3");
 });
 
-smartDisplayCard.click(function()
+// Separate variable declarations here to make this easier in the future hopefully
+let firstCard = LFTCard;
+let secondCard = smartDisplayCard;
+let thirdCard = websiteCard;
+let fourthCard = otherCard;
+let fifthCard = webDevCard;
+let sixthCard = olderCard;
+let seventhCard = ethicsCard;
+
+firstCard.click(function ()
 {
     sessionStorage.setItem("selectedCard", "1");
     $('html, body').animate({
-        scrollTop: smartDisplayCard.offset().top - 74
-    }, 500);
-});
+        scrollTop: firstCard.offset().top - 74
+    }, 500)
+})
 
-websiteCard.click(function ()
+secondCard.click(function ()
 {
     sessionStorage.setItem("selectedCard", "2");
     $('html, body').animate({
-        scrollTop: smartDisplayCard.offset().top - 6
+        scrollTop: firstCard.offset().top - 6 // Each of these offsets has to be in relation to the first card
     }, 500);
 });
 
-otherCard.click(function ()
+thirdCard.click(function ()
 {
     sessionStorage.setItem("selectedCard", "3");
     $('html, body').animate({
-        scrollTop: smartDisplayCard.offset().top + 62
+        scrollTop: firstCard.offset().top + 62
     }, 500);
 });
 
-webDevCard.click(function ()
+fourthCard.click(function ()
 {
     sessionStorage.setItem("selectedCard", "4");
     $('html, body').animate({
-        scrollTop: smartDisplayCard.offset().top + 130
+        scrollTop: firstCard.offset().top + 130
     }, 500);
 });
 
-ethicsCard.click(function ()
+fifthCard.click(function ()
 {
     sessionStorage.setItem("selectedCard", "5");
     $('html, body').animate({
-        scrollTop: smartDisplayCard.offset().top + 198
+        scrollTop: firstCard.offset().top + 198
+    }, 500);
+});
+
+sixthCard.click(function ()
+{
+    sessionStorage.setItem("selectedCard", "6");
+    $('html, body').animate({
+        scrollTop: firstCard.offset().top + 266
+    }, 500);
+})
+
+seventhCard.click(function ()
+{
+    sessionStorage.setItem("selectedCard", "7");
+    $('html, body').animate({
+        scrollTop: firstCard.offset().top + 334
     }, 500);
 });
 
@@ -271,6 +300,20 @@ function openCard()
         case "5":
             collapseFive.collapse('show');
             collapseFive.on("shown.bs.collapse", function()
+            {
+                $(document).scrollTop(tmp)
+            });
+            break;
+        case "6":
+            collapseSix.collapse('show');
+            collapseSix.on("shown.bs.collapse", function()
+            {
+                $(document).scrollTop(tmp)
+            });
+            break;
+        case "7":
+            collapseSeven.collapse('show');
+            collapseSeven.on("shown.bs.collapse", function()
             {
                 $(document).scrollTop(tmp)
             });
