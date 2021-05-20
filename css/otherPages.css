@@ -1,6 +1,6 @@
 html, body
 {
-    height: 100%;
+    /*height: 100%;*/
 }
 
 
@@ -28,7 +28,7 @@ html, body
     margin-right: 10vw;
     margin-top: 28px;
     position: relative;
-    min-height: 71%;
+    /*min-height: 71%;*/
     z-index: -1;
 }
 
