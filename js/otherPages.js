@@ -31,3 +31,20 @@ $(window).on('load', function()
         $("#footerDesktop").show();
     }
 });
+
+const observer = new MutationObserver(function ()
+{
+    if (darkmode.isActivated())
+    {
+        $(".card").addClass("text-white bg-dark");
+        $(".list-group-item").addClass("list-group-item-dark");
+        $(".download-item").removeClass("list-group-item-dark");
+    }
+    else
+    {
+        $(".card").removeClass("text-white bg-dark");
+        $(".card-darkmode-ignore").addClass("text-white bg-dark");
+        $(".list-group-item").removeClass("list-group-item-dark");
+    }
+});
+observer.observe(document.body, {attributes: true, childList: false, subtree: false});
