@@ -27,9 +27,13 @@ html, body
     margin-left: 10vw;
     margin-right: 10vw;
     margin-top: 28px;
-    position: relative;
     /*min-height: 71%;*/
-    z-index: -1;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #footerMobile, #footerDesktop
