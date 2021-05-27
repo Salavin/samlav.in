@@ -77,6 +77,19 @@ function mouseWheelEvent()
         $('html, body').animate({
         scrollTop: $("#navbar").offset().top
         }, 1000);
+        footerCheck()
+    }
+}
+
+function footerCheck()
+{
+    if (window.mobileCheck() === true)
+    {
+        $("#footerMobile").show();
+    }
+    else
+    {
+        $("#footerDesktop").show();
     }
 }
 
@@ -128,14 +141,7 @@ $(window).on('load', function()
                 scrollDown();
                 break;
         }
-        if (window.mobileCheck() === true)
-        {
-            $("#footerMobile").show();
-        }
-        else
-        {
-            $("#footerDesktop").show();
-        }
+        footerCheck()
     }
 });
 
