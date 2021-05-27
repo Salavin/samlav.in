@@ -175,14 +175,7 @@ $(window).resize(function ()
 
 $(".nav-item").click(function ()
 {
-    if (window.mobileCheck() === true)
-    {
-        $("#footerMobile").show();
-    }
-    else
-    {
-        $("#footerDesktop").show();
-    }
+    footerCheck()
     $('html, body').animate({
         scrollTop: $("#nav-tabContent").offset().top - 56
     }, 500);
