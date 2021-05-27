@@ -68,6 +68,18 @@ function scrollDown()
     $(document).scrollTop(sessionStorage.getItem("scrollValue"));
 }
 
+function mouseWheelEvent()
+{
+    if ((sessionStorage.getItem("selectedTab") == null) && ($(window).scrollTop() + $(window).height() === $(document).height()))
+    {
+        aboutMeTab.tab('show');
+        sessionStorage.setItem("selectedTab", "1")
+        $('html, body').animate({
+        scrollTop: $("#navbar").offset().top
+        }, 1000);
+    }
+}
+
 $(document).ready(function ()
 {
     if (darkmode.isActivated())
@@ -130,7 +142,13 @@ $(window).on('load', function()
 $(window).on('scroll', function()
 {
     sessionStorage.setItem("scrollValue", $(document).scrollTop())
+    mouseWheelEvent()
 });
+
+$(window).on('wheel', function()
+{
+    mouseWheelEvent()
+})
 
 $("#dontShowAgain").click(function()
 {
