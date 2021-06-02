@@ -37,7 +37,7 @@ $(window).on('load', function()
     }
 
     const urlParams = new URLSearchParams(window.location.search);
-    const myParam = urlParams.get('myParam');
+    const myParam = urlParams.get('post');
     if (myParam != null)
     {
         $('html, body').animate({
