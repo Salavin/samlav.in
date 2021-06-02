@@ -250,70 +250,43 @@ musicTab.click(function ()
     sessionStorage.setItem("selectedTab", "3");
 });
 
-// Separate variable declarations here to make this easier in the future hopefully
 let firstCard = LFTCard;
-let secondCard = smartDisplayCard;
-let thirdCard = websiteCard;
-let fourthCard = otherCard;
-let fifthCard = webDevCard;
-let sixthCard = olderCard;
-let seventhCard = ethicsCard;
+let sticky = $("#sticky")
 
-firstCard.click(function ()
+$(".collapseButton").click(function()
 {
-    sessionStorage.setItem("selectedCard", "1");
+    {
+    let id = 1;
+    switch ($(this).attr("id"))
+    {
+        case "LFTCard":
+            id = 1;
+            break;
+        case "smartDisplayCard":
+            id = 2;
+            break;
+        case "websiteCard":
+            id = 3;
+            break;
+        case "otherCard":
+            id = 4;
+            break;
+        case "webDevCard":
+            id = 5;
+            break;
+        case "olderCard":
+            id = 6;
+            break;
+        case "ethicsCard":
+            id = 7;
+            break;
+    }
+    sessionStorage.setItem("selectedCard", id.toString())
     $('html, body').animate({
-        scrollTop: firstCard.offset().top - 74
+        scrollTop: firstCard.closest(".card").offset().top - sticky.height() + (firstCard.closest(".card-header").outerHeight() * (id - 1))
     }, 500)
+    }
 })
-
-secondCard.click(function ()
-{
-    sessionStorage.setItem("selectedCard", "2");
-    $('html, body').animate({
-        scrollTop: firstCard.offset().top - 6 // Each of these offsets has to be in relation to the first card
-    }, 500);
-});
-
-thirdCard.click(function ()
-{
-    sessionStorage.setItem("selectedCard", "3");
-    $('html, body').animate({
-        scrollTop: firstCard.offset().top + 62
-    }, 500);
-});
-
-fourthCard.click(function ()
-{
-    sessionStorage.setItem("selectedCard", "4");
-    $('html, body').animate({
-        scrollTop: firstCard.offset().top + 130
-    }, 500);
-});
-
-fifthCard.click(function ()
-{
-    sessionStorage.setItem("selectedCard", "5");
-    $('html, body').animate({
-        scrollTop: firstCard.offset().top + 198
-    }, 500);
-});
-
-sixthCard.click(function ()
-{
-    sessionStorage.setItem("selectedCard", "6");
-    $('html, body').animate({
-        scrollTop: firstCard.offset().top + 266
-    }, 500);
-})
-
-seventhCard.click(function ()
-{
-    sessionStorage.setItem("selectedCard", "7");
-    $('html, body').animate({
-        scrollTop: firstCard.offset().top + 334
-    }, 500);
-});
 
 card.on('shown.bs.collapse', function()
 {
