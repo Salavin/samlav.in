@@ -156,9 +156,17 @@
 .darkmode-toggle
 {
     top: 64px;
+    z-index: 5;
 }
 
 .btn-link
 {
     text-align: left;
+}
+
+.centerText
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
