@@ -72,12 +72,7 @@ function mouseWheelEvent()
 {
     if ((sessionStorage.getItem("selectedTab") == null) && ($(window).scrollTop() + $(window).height() === $(document).height()))
     {
-        aboutMeTab.tab('show');
-        sessionStorage.setItem("selectedTab", "1")
-        $('html, body').animate({
-        scrollTop: $("#navbar").offset().top
-        }, 1000);
-        footerCheck()
+        showTab(aboutMeTab);
     }
 }
 
@@ -147,6 +142,25 @@ detectSwipe("sticky", (el, dir) => {
     if (dir === directions.DOWN) {mouseWheelEvent()}
 })
 
+function showTab(tab)
+{
+    tab.tab('show');
+    var selectedTab = "1";
+    if (tab === resumeTab)
+    {
+        selectedTab = "2";
+    }
+    else
+    {
+        selectedTab = "3";
+    }
+    sessionStorage.setItem("selectedTab", selectedTab)
+    $('html, body').animate({
+        scrollTop: $("#navbar").offset().top
+    }, 1000);
+    footerCheck()
+}
+
 $(document).ready(function ()
 {
     if (darkmode.isActivated())
@@ -196,6 +210,23 @@ $(window).on('load', function()
                 break;
         }
         footerCheck()
+    }
+    else
+    {
+        const urlParams = new URLSearchParams(window.location.search);
+        const tabParam = urlParams.get('tab');
+        switch (tabParam)
+        {
+            case "1":
+                showTab(aboutMeTab);
+                break;
+            case "2":
+                showTab(resumeTab);
+                break;
+            case "3":
+                showTab(musicTab);
+                break;
+        }
     }
 });
 

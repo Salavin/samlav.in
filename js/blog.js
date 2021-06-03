@@ -37,11 +37,11 @@ $(window).on('load', function()
     }
 
     const urlParams = new URLSearchParams(window.location.search);
-    const myParam = urlParams.get('post');
-    if (myParam != null)
+    const postParam = urlParams.get('post');
+    if (postParam != null)
     {
         $('html, body').animate({
-            scrollTop: $('#' + myParam).offset().top - $("#sticky").height()
+            scrollTop: $('#' + postParam).offset().top - $("#sticky").height()
         }, 500);
     }
 });
