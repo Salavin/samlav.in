@@ -72,7 +72,7 @@ function mouseWheelEvent()
 {
     if ((sessionStorage.getItem("selectedTab") == null) && ($(window).scrollTop() + $(window).height() === $(document).height()))
     {
-        showTab(aboutMeTab);
+        showTab(aboutMeTab, "1");
     }
 }
 
@@ -142,19 +142,10 @@ detectSwipe("sticky", (el, dir) => {
     if (dir === directions.DOWN) {mouseWheelEvent()}
 })
 
-function showTab(tab)
+function showTab(tab, id)
 {
     tab.tab('show');
-    var selectedTab = "1";
-    if (tab === resumeTab)
-    {
-        selectedTab = "2";
-    }
-    else
-    {
-        selectedTab = "3";
-    }
-    sessionStorage.setItem("selectedTab", selectedTab)
+    sessionStorage.setItem("selectedTab", id)
     $('html, body').animate({
         scrollTop: $("#navbar").offset().top
     }, 1000);
@@ -218,13 +209,13 @@ $(window).on('load', function()
         switch (tabParam)
         {
             case "1":
-                showTab(aboutMeTab);
+                showTab(aboutMeTab, "1");
                 break;
             case "2":
-                showTab(resumeTab);
+                showTab(resumeTab, "2");
                 break;
             case "3":
-                showTab(musicTab);
+                showTab(musicTab, "3");
                 break;
         }
     }
