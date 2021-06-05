@@ -35,6 +35,15 @@ $(window).on('load', function()
     {
         $("#footerDesktop").show();
     }
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const postParam = urlParams.get('post');
+    if (postParam != null)
+    {
+        $('html, body').animate({
+            scrollTop: $('#' + postParam).offset().top - $("#sticky").height()
+        }, 500);
+    }
 });
 
 const observer = new MutationObserver(function ()
@@ -56,7 +65,7 @@ observer.observe(document.body, {attributes: true, childList: false, subtree: fa
 
 $(".copyBlogLink").click(function()
 {
-    copyTextToClipboard("https://samlav.in/blog/#" + $(this).closest(".card").attr("id"))
+    copyTextToClipboard("https://samlav.in/blog?post=" + $(this).closest(".card").attr("id"))
 })
 
 function fallbackCopyTextToClipboard(text) {
