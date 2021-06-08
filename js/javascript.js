@@ -161,10 +161,10 @@ $(document).ready(function ()
         $(".download-item").removeClass("list-group-item-dark");
     }
 
-    if (localStorage.getItem("modal") !== "false")
-    {
-        $(".modal").modal();
-    }
+    // if (localStorage.getItem("modal") !== "false")
+    // {
+    //     $(".modal").modal();
+    // }
 });
 
 $(window).on('load', function()
@@ -232,10 +232,10 @@ $(window).on('wheel', function()
     mouseWheelEvent()
 })
 
-$("#dontShowAgain").click(function()
-{
-    localStorage.setItem("modal", "false");
-});
+// $("#dontShowAgain").click(function()
+// {
+//     localStorage.setItem("modal", "false");
+// });
 
 $(window).resize(function ()
 {

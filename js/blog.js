@@ -46,6 +46,16 @@ $(window).on('load', function()
     }
 });
 
+$(document).ready(function ()
+{
+    if (darkmode.isActivated())
+    {
+        $(".card").addClass("text-white bg-dark");
+        $(".list-group-item").addClass("list-group-item-dark");
+        $(".download-item").removeClass("list-group-item-dark");
+    }
+});
+
 const observer = new MutationObserver(function ()
 {
     if (darkmode.isActivated())
