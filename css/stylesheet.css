@@ -42,7 +42,7 @@
     margin-top: 28px;
 }
 
-#footer
+#footerMobile, #footerDesktop
 {
     background-color: #2c3137;
     display: none;
@@ -52,7 +52,26 @@
     margin-right: 0;
     font-size: .75rem;
     z-index: 101;
-    position: relative;
+}
+
+.footerSticky
+{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer ul {
+	position: relative;
+	list-style: none;
+	margin-left: 0;
+	padding-left: 1.2em;
+}
+.footer ul li:before {
+	content: "◈";
+	position: absolute;
+	left: 0;
 }
 
 .socialMedia, .fab
@@ -61,24 +80,29 @@
     color: white;
 }
 
-#instagram:hover
+.instagram:hover
 {
     color: mediumvioletred;
 }
 
-#facebook:hover
+.facebook:hover
 {
     color: #3b5998;
 }
 
-#github:hover
+.github:hover
 {
     color: black;
 }
 
-#linkedIn:hover
+.linkedIn:hover
  {
      color: #0e76a8;
+ }
+
+.discord:hover
+ {
+     color: #7289DA;
  }
 
 .busFont
@@ -124,12 +148,25 @@
     height: 50vh;
 }
 
-body .darkmode-toggle
+/*body .darkmode-toggle*/
+/*{*/
+/*    z-index: 100;*/
+/*}*/
+
+.darkmode-toggle
 {
-    z-index: 100;
+    top: 64px;
+    z-index: 5;
 }
 
 .btn-link
 {
     text-align: left;
+}
+
+.centerText
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
