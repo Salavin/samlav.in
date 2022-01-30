@@ -261,7 +261,7 @@ function start() {
   document.querySelectorAll('input[type=checkbox]').forEach(cb => cb.disabled = true);
   document.querySelectorAll('.starting.button').forEach(el => el.style.display = 'none');
   document.querySelector('.loading.button').style.display = 'block';
-  document.querySelector('.progress').style.display = 'block';
+  document.querySelector('.progress').style.display = 'table';
   loading = true;
 
   preloadImages().then(() => {
