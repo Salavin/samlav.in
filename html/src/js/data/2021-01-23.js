@@ -1,4 +1,4 @@
-dataSetVersion = "2020-01-23"; // Change this when creating a new data set version. YYYY-MM-DD format.
+dataSetVersion = "2021-01-23"; // Change this when creating a new data set version. YYYY-MM-DD format.
 dataSet[dataSetVersion] = {};
 
 dataSet[dataSetVersion].options = [
@@ -8,31 +8,31 @@ dataSet[dataSetVersion].options = [
         tooltip: "Check this if you want to filter out characters from certain games.",
         checked: true,
         sub: [
-            { name: "Tales of Phantasia", key: "ToP" },
-            { name: "Tales of Narikiri Dungeon", key: "ToND" },
-            { name: "Tales of Destiny", key: "ToD" },
-            { name: "Tales of Eternia", key: "ToE" },
-            { name: "Tales of Destiny 2", key: "ToD2" },
-            { name: "Tales of Symphonia", key: "ToS" },
-            { name: "Tales of Rebirth", key: "ToR" },
-            { name: "Tales of Legendia", key: "ToL" },
-            { name: "Tales of the Abyss", key: "TotA" },
-            { name: "Tales of the Tempest", key: "TotT" },
-            { name: "Tales of the World", key: "ToW" },
-            { name: "Tales of Innocence R", key: "ToIR" },
-            { name: "Tales of Symphonia: Dawn of the New World", key: "ToS:DotNW" },
-            { name: "Tales of Vesperia", key: "ToV" },
-            { name: "Tales of Hearts R", key: "ToHR" },
-            { name: "Tales of Graces f", key: "ToGf" },
-            { name: "Tales of Xillia", key: "ToX" },
-            { name: "Tales of Xillia 2", key: "ToX2" },
-            { name: "Tales of Link", key: "ToLink" },
-            { name: "Tales of Zestiria", key: "ToZ" },
-            { name: "Tales of Berseria", key: "ToB" },
-            { name: "Tales of the Rays", key: "ToRays" },
-            { name: "Tales of Crestoria", key: "ToC" },
-            { name: "Tales of Arise", key: "ToA" },
-            { name: "Tales of Luminaria", key: "ToLumi" }
+            {name: "Tales of Phantasia", key: "ToP"},
+            {name: "Tales of Narikiri Dungeon", key: "ToND"},
+            {name: "Tales of Destiny", key: "ToD"},
+            {name: "Tales of Eternia", key: "ToE"},
+            {name: "Tales of Destiny 2", key: "ToD2"},
+            {name: "Tales of Symphonia", key: "ToS"},
+            {name: "Tales of Rebirth", key: "ToR"},
+            {name: "Tales of Legendia", key: "ToL"},
+            {name: "Tales of the Abyss", key: "TotA"},
+            {name: "Tales of the Tempest", key: "TotT"},
+            {name: "Tales of the World", key: "ToW"},
+            {name: "Tales of Innocence R", key: "ToIR"},
+            {name: "Tales of Symphonia: Dawn of the New World", key: "ToS:DotNW"},
+            {name: "Tales of Vesperia", key: "ToV"},
+            {name: "Tales of Hearts R", key: "ToHR"},
+            {name: "Tales of Graces f", key: "ToGf"},
+            {name: "Tales of Xillia", key: "ToX"},
+            {name: "Tales of Xillia 2", key: "ToX2"},
+            {name: "Tales of Link", key: "ToLink"},
+            {name: "Tales of Zestiria", key: "ToZ"},
+            {name: "Tales of Berseria", key: "ToB"},
+            {name: "Tales of the Rays", key: "ToRays"},
+            {name: "Tales of Crestoria", key: "ToC"},
+            {name: "Tales of Arise", key: "ToA"},
+            {name: "Tales of Luminaria", key: "ToLumi"}
         ]
     },
     {
@@ -70,114 +70,128 @@ dataSet[dataSetVersion].options = [
         key: "female",
         tooltip: "Check this if you want to filter out female characters.",
         checked: false
+    },
+    {
+        name: "Filter summon spirits",
+        key: "ss",
+        tooltip: "Check this if you want to filter out summon spirits.",
+        checked: false
     }
 ];
 
 dataSet[dataSetVersion].characterData = [
-{
-    name: "Cress Albane",
-    img: "2VYXr4i.png",
-    opts: {
-        game: ["ToP"],
-        mc: true,
-        p: true,
-        a: false,
-        m: false,
-        male: true,
-        female: false
-    }
-},
-{
-    name: "Mint Adenade",
-    img: "cNumvFm.png",
-    opts: {
-        game: ["ToP"],
-        mc: false,
-        p: true,
-        a: false,
-        m: false,
-        male: false,
-        female: true
-    }
-},
-{
-    name: "Chester Burklight",
-    img: "GkjkWjw.png",
-    opts: {
-        game: ["ToP"],
-        mc: false,
-        p: true,
-        a: false,
-        m: false,
-        male: true,
-        female: false
-    }
-},
-{
-    name: "Claus F. Lester",
-    img: "IUrK5Ro.png",
-    opts: {
-        game: ["ToP"],
-        mc: false,
-        p: true,
-        a: false,
-        m: false,
-        male: true,
-        female: false
-    }
-},
-{
-    name: "Arche Klein",
-    img: "B6NUsHb.png",
-    opts: {
-        game: ["ToP"],
-        mc: false,
-        p: true,
-        a: false,
-        m: false,
-        male: false,
-        female: true
-    }
-},
-{
-    name: "Suzu Fujibayashi",
-    img: "pnWiAEc.png",
-    opts: {
-        game: ["ToP"],
-        mc: false,
-        p: true,
-        a: false,
-        m: false,
-        male: false,
-        female: true
-    }
-},
-{
-    name: "Dhaos",
-    img: "Rlp44ms.png",
-    opts: {
-        game: ["ToP"],
-        mc: false,
-        p: false,
-        a: true,
-        m: false,
-        male: true,
-        female: false
-    }
-},
-{
-    name: "Rondoline E. Effenberg",
-    img: "gJKKeA5.png",
-    opts: {
-        game: ["ToP", "ToND"],
-        mc: false,
-        p: true,
-        a: false,
-        m: false,
-        male: false,
-        female: true
-    }
-},
+    {
+        name: "Cress Albane",
+        img: "2VYXr4i.png",
+        opts: {
+            game: ["ToP"],
+            mc: true,
+            p: true,
+            a: false,
+            m: false,
+            male: true,
+            female: false,
+            ss: false
+        }
+    },
+    {
+        name: "Mint Adenade",
+        img: "cNumvFm.png",
+        opts: {
+            game: ["ToP"],
+            mc: false,
+            p: true,
+            a: false,
+            m: false,
+            male: false,
+            female: true,
+            ss: false
+        }
+    },
+    {
+        name: "Chester Burklight",
+        img: "GkjkWjw.png",
+        opts: {
+            game: ["ToP"],
+            mc: false,
+            p: true,
+            a: false,
+            m: false,
+            male: true,
+            female: false,
+            ss: false
+        }
+    },
+    {
+        name: "Claus F. Lester",
+        img: "IUrK5Ro.png",
+        opts: {
+            game: ["ToP"],
+            mc: false,
+            p: true,
+            a: false,
+            m: false,
+            male: true,
+            female: false,
+            ss: false
+        }
+    },
+    {
+        name: "Arche Klein",
+        img: "B6NUsHb.png",
+        opts: {
+            game: ["ToP"],
+            mc: false,
+            p: true,
+            a: false,
+            m: false,
+            male: false,
+            female: true,
+            ss: false
+        }
+    },
+    {
+        name: "Suzu Fujibayashi",
+        img: "pnWiAEc.png",
+        opts: {
+            game: ["ToP"],
+            mc: false,
+            p: true,
+            a: false,
+            m: false,
+            male: false,
+            female: true,
+            ss: false
+        }
+    },
+    {
+        name: "Dhaos",
+        img: "Rlp44ms.png",
+        opts: {
+            game: ["ToP"],
+            mc: false,
+            p: false,
+            a: true,
+            m: false,
+            male: true,
+            female: false,
+            ss: false
+        }
+    },
+    {
+        name: "Rondoline E. Effenberg",
+        img: "gJKKeA5.png",
+        opts: {
+            game: ["ToP", "ToND"],
+            mc: false,
+            p: true,
+            a: false,
+            m: false,
+            male: false,
+            female: true,
+            ss: false
+        }
+    },
     {
         name: "Dio",
         img: "WE3aKgU.png",
@@ -188,7 +202,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -201,7 +216,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -214,7 +230,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: true,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -227,7 +244,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -240,7 +258,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -253,7 +272,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -266,7 +286,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -279,7 +300,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -292,7 +314,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -305,7 +328,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -318,7 +342,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -331,7 +356,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -344,7 +370,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -357,7 +384,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -370,7 +398,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -383,7 +412,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -396,7 +426,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -409,7 +440,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -422,7 +454,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -435,7 +468,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -448,7 +482,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -461,7 +496,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -474,7 +510,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -487,7 +524,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -500,7 +538,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -513,7 +552,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -526,7 +566,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -539,7 +580,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -552,7 +594,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -565,7 +608,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -578,7 +622,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -591,7 +636,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -604,7 +650,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -617,7 +664,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -630,7 +678,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -643,7 +692,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -656,7 +706,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -669,11 +720,12 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
-        name: "Keeke Zeibel",
+        name: "Keele Zeibel",
         img: "5kdZpND.png",
         opts: {
             game: ["ToE"],
@@ -682,7 +734,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -695,7 +748,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -708,7 +762,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -721,7 +776,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -734,7 +790,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -747,7 +804,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -760,33 +818,36 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: true,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
         name: "Colette Brunel",
         img: "KUZtbWf.png",
         opts: {
-            game: ["ToS, ToS:DotNW"],
+            game: ["ToS", "ToS:DotNW"],
             mc: false,
             p: true,
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
         name: "Genis Sage",
         img: "zmS9ovH.png",
         opts: {
-            game: ["ToS, ToS:DotNW"],
+            game: ["ToS", "ToS:DotNW"],
             mc: false,
             p: true,
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -799,20 +860,22 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
         name: "Lloyd Irving",
         img: "zd4LDwC.png",
         opts: {
-            game: ["ToS, ToS:DotNW"],
+            game: ["ToS", "ToS:DotNW"],
             mc: true,
             p: true,
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -825,7 +888,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -838,59 +902,64 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
         name: "Presea Combatir",
         img: "MgunR32.png",
         opts: {
-            game: ["ToS, ToS:DotNW"],
+            game: ["ToS", "ToS:DotNW"],
             mc: false,
             p: true,
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
         name: "Raine Sage",
         img: "Kte29jG.png",
         opts: {
-            game: ["ToS, ToS:DotNW"],
+            game: ["ToS", "ToS:DotNW"],
             mc: false,
             p: true,
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
         name: "Regal Bryant",
         img: "e9hy3y3.png",
         opts: {
-            game: ["ToS, ToS:DotNW"],
+            game: ["ToS", "ToS:DotNW"],
             mc: false,
             p: true,
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
         name: "Sheena Fujibayashi",
         img: "0CDczyk.png",
         opts: {
-            game: ["ToS, ToS:DotNW"],
+            game: ["ToS", "ToS:DotNW"],
             mc: false,
             p: true,
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -903,20 +972,22 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
         name: "Zelos Wilder",
         img: "B8ozqYO.png",
         opts: {
-            game: ["ToS, ToS:DotNW"],
+            game: ["ToS", "ToS:DotNW"],
             mc: false,
             p: true,
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -929,7 +1000,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: true,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -942,7 +1014,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -955,7 +1028,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -968,7 +1042,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -981,7 +1056,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -994,7 +1070,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -1007,7 +1084,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -1020,7 +1098,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -1033,7 +1112,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: true,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -1046,7 +1126,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -1059,7 +1140,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -1072,7 +1154,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -1085,7 +1168,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -1098,7 +1182,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -1111,7 +1196,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -1124,7 +1210,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -1137,11 +1224,12 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
-        name: "MilHaust Selkirk",
+        name: "Milhaust Selkirk",
         img: "T1m9Wvl.png",
         opts: {
             game: ["ToR"],
@@ -1150,7 +1238,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -1163,7 +1252,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -1176,11 +1266,12 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
-        name: "Walto",
+        name: "Waltu",
         img: "T63Qz8f.png",
         opts: {
             game: ["ToR"],
@@ -1189,12 +1280,13 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
         name: "Zapie",
-        img: "jJKEpno.png",
+        img: "0srzaFL.png",
         opts: {
             game: ["ToR"],
             mc: false,
@@ -1202,7 +1294,22 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: true,
             male: true,
-            female: false
+            female: false,
+            ss: false
+        }
+    },
+    {
+        name: "Zilva Madigan",
+        img: "jJKEpno.png",
+        opts: {
+            game: ["ToR"],
+            mc: false,
+            p: false,
+            a: true,
+            m: false,
+            male: false,
+            female: true,
+            ss: false
         }
     },
     {
@@ -1215,7 +1322,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -1228,7 +1336,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -1241,7 +1350,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -1254,7 +1364,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -1267,7 +1378,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -1280,7 +1392,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -1293,7 +1406,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -1306,7 +1420,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -1319,7 +1434,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -1332,7 +1448,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -1345,7 +1462,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -1358,7 +1476,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -1371,7 +1490,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: true,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -1384,7 +1504,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -1397,7 +1518,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -1410,7 +1532,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -1423,7 +1546,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: true,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -1436,7 +1560,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -1449,7 +1574,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -1462,7 +1588,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -1475,7 +1602,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -1488,7 +1616,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -1501,7 +1630,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -1514,7 +1644,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -1527,7 +1658,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -1540,7 +1672,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -1553,12 +1686,13 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
         name: "Jade Curtiss",
-        img: "303Mh6m.png",
+        img: "x4tlKMJ.png",
         opts: {
             game: ["TotA"],
             mc: false,
@@ -1566,7 +1700,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -1579,7 +1714,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -1592,7 +1728,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -1605,7 +1742,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -1618,7 +1756,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -1631,7 +1770,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -1644,7 +1784,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -1657,7 +1798,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -1670,7 +1812,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -1683,7 +1826,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: true,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -1696,7 +1840,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -1709,7 +1854,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -1722,7 +1868,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -1735,7 +1882,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -1748,7 +1896,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -1761,7 +1910,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -1774,7 +1924,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -1787,7 +1938,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -1800,7 +1952,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -1813,7 +1966,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -1826,7 +1980,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -1839,7 +1994,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
 
@@ -1853,7 +2009,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -1866,7 +2023,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -1879,7 +2037,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -1892,7 +2051,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -1905,7 +2065,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -1918,7 +2079,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -1931,7 +2093,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -1944,7 +2107,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -1957,7 +2121,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: true,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -1970,7 +2135,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -1983,7 +2149,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -1996,7 +2163,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -2009,7 +2177,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -2022,7 +2191,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -2035,7 +2205,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -2048,7 +2219,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -2061,7 +2233,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -2074,7 +2247,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -2087,7 +2261,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -2100,7 +2275,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -2113,7 +2289,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -2126,7 +2303,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -2139,7 +2317,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -2152,7 +2331,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -2165,7 +2345,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: true,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -2178,7 +2359,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -2191,7 +2373,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -2204,7 +2387,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -2217,7 +2401,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -2230,7 +2415,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -2243,7 +2429,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -2256,7 +2443,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -2269,7 +2457,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -2282,7 +2471,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -2295,7 +2485,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -2308,7 +2499,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -2321,7 +2513,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -2334,20 +2527,22 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
-        name: "Lithia Cattleya",
+        name: "Floura Spodumene",
         img: "VplHBNX.png",
         opts: {
             game: ["ToHR"],
             mc: false,
             p: false,
-            a: true,
+            a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -2360,7 +2555,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -2373,7 +2569,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -2386,7 +2583,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -2399,7 +2597,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -2408,11 +2607,12 @@ dataSet[dataSetVersion].characterData = [
         opts: {
             game: ["ToHR"],
             mc: false,
-            p: true,
+            p: false,
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -2425,7 +2625,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -2438,7 +2639,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -2451,7 +2653,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -2464,7 +2667,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: true,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -2477,7 +2681,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -2490,7 +2695,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -2503,7 +2709,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -2516,7 +2723,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -2529,7 +2737,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -2542,7 +2751,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -2555,7 +2765,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -2568,7 +2779,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -2581,7 +2793,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -2594,7 +2807,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -2607,98 +2821,106 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
         name: "Alvin",
         img: "4MNMAkB.png",
         opts: {
-            game: ["ToX, ToX2"],
+            game: ["ToX", "ToX2"],
             mc: false,
             p: true,
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
         name: "Elize Lutus",
         img: "zAROxsC.png",
         opts: {
-            game: ["ToX, ToX2"],
+            game: ["ToX", "ToX2"],
             mc: false,
             p: true,
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
         name: "Jude Mathis",
         img: "9XNiABA.png",
         opts: {
-            game: ["ToX, ToX2"],
+            game: ["ToX", "ToX2"],
             mc: true,
             p: true,
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
         name: "Leia Rolando",
         img: "gXhAL5O.png",
         opts: {
-            game: ["ToX, ToX2"],
+            game: ["ToX", "ToX2"],
             mc: false,
             p: true,
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
         name: "Milla Maxwell",
         img: "sRG9IEn.png",
         opts: {
-            game: ["ToX, ToX2"],
+            game: ["ToX", "ToX2"],
             mc: true,
             p: true,
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
         name: "Rowen J. Ilbert",
         img: "fFqQsvH.png",
         opts: {
-            game: ["ToX, ToX2"],
+            game: ["ToX", "ToX2"],
             mc: true,
             p: true,
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
         name: "Ivar",
         img: "GIni0oy.png",
         opts: {
-            game: ["ToX, ToX2"],
+            game: ["ToX", "ToX2"],
             mc: false,
             p: false,
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -2711,20 +2933,22 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
         name: "Muzét",
         img: "DzMVZEq.png",
         opts: {
-            game: ["ToX, ToX2"],
+            game: ["ToX", "ToX2"],
             mc: false,
             p: true,
             a: true,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -2737,7 +2961,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -2750,7 +2975,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -2763,11 +2989,12 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
-        name: "Giaus",
+        name: "Gaius",
         img: "ZnP7PmC.png",
         opts: {
             game: ["ToX"],
@@ -2776,7 +3003,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -2789,7 +3017,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -2802,7 +3031,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -2815,7 +3045,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
 
@@ -2829,7 +3060,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
 
@@ -2843,7 +3075,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
 
@@ -2857,7 +3090,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
 
@@ -2871,7 +3105,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: true,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
 
@@ -2885,7 +3120,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
 
@@ -2899,7 +3135,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
 
@@ -2913,7 +3150,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
 
@@ -2927,7 +3165,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
 
@@ -2941,7 +3180,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
 
@@ -2955,7 +3195,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
 
@@ -2969,13 +3210,14 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
 
     {
         name: "Eleanor Hume",
-        img: "PhJW9cv.png",
+        img: "5So2ARN.png",
         opts: {
             game: ["ToB"],
             mc: false,
@@ -2983,7 +3225,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
 
@@ -2997,7 +3240,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
 
@@ -3011,7 +3255,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
 
@@ -3025,7 +3270,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
 
@@ -3039,7 +3285,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: true,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
 
@@ -3053,7 +3300,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
 
@@ -3067,7 +3315,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
 
@@ -3081,7 +3330,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
 
@@ -3095,7 +3345,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
 
@@ -3109,7 +3360,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
 
@@ -3123,7 +3375,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -3136,7 +3389,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -3149,7 +3403,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -3162,7 +3417,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -3175,7 +3431,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -3188,7 +3445,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -3201,7 +3459,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -3214,7 +3473,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: true,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -3227,7 +3487,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -3240,11 +3501,12 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
-        name: "Synonne",
+        name: "Symonne",
         img: "xpKtKVk.png",
         opts: {
             game: ["ToZ"],
@@ -3253,7 +3515,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -3266,10 +3529,11 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
-{
+    {
         name: "Ix Nieves",
         img: "VJd4zl3.png",
         opts: {
@@ -3279,7 +3543,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
 
@@ -3293,7 +3558,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
 
@@ -3307,7 +3573,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
 
@@ -3321,7 +3588,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
 
@@ -3335,7 +3603,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
 
@@ -3349,7 +3618,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
 
@@ -3363,7 +3633,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
 
@@ -3377,7 +3648,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
 
@@ -3391,7 +3663,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
 
@@ -3405,7 +3678,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
 
@@ -3419,7 +3693,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
 
@@ -3433,7 +3708,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: true,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
 
@@ -3447,7 +3723,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: true,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
 
@@ -3461,7 +3738,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
 
@@ -3475,7 +3753,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
 
@@ -3489,7 +3768,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
 
@@ -3503,7 +3783,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
 
@@ -3517,7 +3798,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -3530,7 +3812,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -3543,7 +3826,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -3556,7 +3840,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -3569,7 +3854,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -3582,7 +3868,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -3595,7 +3882,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: true,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -3608,7 +3896,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -3621,7 +3910,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -3634,7 +3924,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -3647,7 +3938,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -3660,7 +3952,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -3673,7 +3966,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
 
@@ -3687,7 +3981,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
 
@@ -3701,13 +3996,14 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
 
     {
         name: "Law",
-        img: "PhJW9cv.png",
+        img: "jxHwEsX.png",
         opts: {
             game: ["ToA"],
             mc: false,
@@ -3715,7 +4011,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
 
@@ -3729,7 +4026,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
 
@@ -3743,7 +4041,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
 
@@ -3757,7 +4056,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: true,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
 
@@ -3771,7 +4071,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
 
@@ -3785,12 +4086,13 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
 
     {
-        name: "Cholran Igniseri",
+        name: "Vholran Igniseri",
         img: "Gxjp00f.png",
         opts: {
             game: ["ToA"],
@@ -3799,7 +4101,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
 
@@ -3813,7 +4116,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
 
@@ -3827,7 +4131,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
 
@@ -3841,7 +4146,8 @@ dataSet[dataSetVersion].characterData = [
             a: true,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
 
@@ -3855,7 +4161,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -3868,11 +4175,12 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
-        name: "Celia ARvier",
+        name: "Celia Arvier",
         img: "SL1yMWu.png",
         opts: {
             game: ["ToLumi"],
@@ -3881,7 +4189,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -3894,7 +4203,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -3907,7 +4217,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -3920,7 +4231,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -3933,7 +4245,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -3946,7 +4259,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -3959,7 +4273,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -3972,7 +4287,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -3985,7 +4301,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -3998,7 +4315,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -4011,7 +4329,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -4024,7 +4343,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -4037,7 +4357,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -4050,7 +4371,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -4063,7 +4385,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -4076,7 +4399,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -4089,7 +4413,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -4102,7 +4427,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
     {
@@ -4115,7 +4441,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -4128,7 +4455,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: false,
             male: true,
-            female: false
+            female: false,
+            ss: false
         }
     },
     {
@@ -4141,7 +4469,8 @@ dataSet[dataSetVersion].characterData = [
             a: false,
             m: true,
             male: false,
-            female: true
+            female: true,
+            ss: false
         }
     },
 ]
