@@ -47,6 +47,7 @@ let carousel = $("#carousel");
 let aboutMeTab = $("#nav-about-me-tab");
 let resumeTab = $("#nav-resume-tab");
 let musicTab = $("#nav-music-tab");
+let SDCard = $("#SDCard");
 let LFTCard = $("#LFTCard");
 let smartDisplayCard = $("#smartDisplayCard");
 let websiteCard = $("#websiteCard");
@@ -62,6 +63,7 @@ let collapseFour = $("#collapseFour");
 let collapseFive = $("#collapseFive");
 let collapseSix = $("#collapseSix");
 let collapseSeven = $("#collapseSeven");
+let collapseEight = $("#collapseEight");
 
 function scrollDown()
 {
@@ -281,26 +283,28 @@ $(".collapseButton").click(function()
     let id = 1;
     switch ($(this).attr("id"))
     {
-        case "LFTCard":
+        case "SDCard":
             id = 1;
-            break;
-        case "smartDisplayCard":
+        case "LFTCard":
             id = 2;
             break;
-        case "websiteCard":
+        case "smartDisplayCard":
             id = 3;
             break;
-        case "otherCard":
+        case "websiteCard":
             id = 4;
             break;
-        case "webDevCard":
+        case "otherCard":
             id = 5;
             break;
-        case "olderCard":
+        case "webDevCard":
             id = 6;
             break;
-        case "ethicsCard":
+        case "olderCard":
             id = 7;
+            break;
+        case "ethicsCard":
+            id = 8;
             break;
     }
     sessionStorage.setItem("selectedCard", id.toString())
@@ -371,6 +375,13 @@ function openCard()
         case "7":
             collapseSeven.collapse('show');
             collapseSeven.on("shown.bs.collapse", function()
+            {
+                $(document).scrollTop(tmp)
+            });
+            break;
+        case "8":
+            collapseEight.collapse('show');
+            collapseEight.on("shown.bs.collapse", function()
             {
                 $(document).scrollTop(tmp)
             });
