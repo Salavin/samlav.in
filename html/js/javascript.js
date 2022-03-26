@@ -55,6 +55,8 @@ let otherCard = $("#otherCard");
 let olderCard = $("#olderCard");
 let webDevCard = $("#webDevCard");
 let ethicsCard = $("#ethicsCard");
+let genEdCard = $("genEdCard");
+let reflectionCard = $("reflectionCard");
 let card = $(".card");
 let collapseOne = $("#collapseOne");
 let collapseTwo = $("#collapseTwo");
@@ -64,6 +66,8 @@ let collapseFive = $("#collapseFive");
 let collapseSix = $("#collapseSix");
 let collapseSeven = $("#collapseSeven");
 let collapseEight = $("#collapseEight");
+let collapseNine = $("collapseNine");
+let collapseTen = $("collapseTen");
 
 function scrollDown()
 {
@@ -306,6 +310,12 @@ $(".collapseButton").click(function()
         case "ethicsCard":
             id = 8;
             break;
+        case "genEdCard":
+            id = 9;
+            break;
+        case "reflectionCard":
+            id = 10;
+            break;
     }
     sessionStorage.setItem("selectedCard", id.toString())
     $('html, body').animate({
@@ -382,6 +392,20 @@ function openCard()
         case "8":
             collapseEight.collapse('show');
             collapseEight.on("shown.bs.collapse", function()
+            {
+                $(document).scrollTop(tmp)
+            });
+            break;
+        case "9":
+            collapseNine.collapse('show');
+            collapseNine.on("shown.bs.collapse", function()
+            {
+                $(document).scrollTop(tmp)
+            });
+            break;
+        case "10":
+            collapseTen.collapse('show');
+            collapseTen.on("shown.bs.collapse", function()
             {
                 $(document).scrollTop(tmp)
             });
