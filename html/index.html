@@ -285,21 +285,95 @@
                     <h2>Projects</h2>
                 </div>
                 <div class="card-body">
-                    <p>Ordered by importance/relevance, not chronologically.</p>
                     <div class="accordion" id="accordion">
 
                         <div class="card">
                             <div class="card-header" id="headingOne">
                                 <h2 class="mb-0">
                                     <button class="btn btn-link collapsed collapseButton" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" id="SDCard">
-                                        MIDI Guitar (Spring 2022)
+                                        A Collection of Android Apps/Discord Bots (2020 - 2022)
                                     </button>
                                 </h2>
                             </div>
                             <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                                 <div class="card-body">
-                                    <img src="img/Poster_Presentation.jpg" />
+                                    <div class="row">
+                                        <div class="col-sm-10">
+                                            <h3>Ear Trainer <a href="https://github.com/Salavin/Ear-Trainer" target="_blank" data-toggle="tooltip" title="View the repository for this project!"><i class="fab fa-github" style="color: black"></i></a></h3>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <img src="img/earTrainer.png" alt="Ear Trainer logo" title = "Logo" width="100" height="100" />
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <p>&emsp;App designed to train live sound engineers to be able to pick out frequencies quickly and accurately by ear. Uses a test with many customization options to fit the user’s learning style.</p>
+                                    <hr>
+
+                                    <div class="row">
+                                        <div class="col-sm-10">
+                                            <h3>Tuba Bot <a href="https://github.com/Salavin/Tuba-Bot" target="_blank" data-toggle="tooltip" title="View the repository for this project!"><i class="fab fa-github" style="color: black"></i></a></h3>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <img src="img/TubaBot.png" alt="Ear Trainer logo" title = "Logo" width="100" height="100" />
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <p>&emsp;This is a bot created for the 2022 I.S.U.T.U.B.A.S. Created using <a href="https://discord.js.org/#/" target="_blank">Discord.js</a>.</p>
+                                    <hr>
+
+                                    <div class="row">
+                                        <div class="col-sm-10">
+                                            <h3>RT Bot <a href="https://github.com/Salavin/RT-bot" target="_blank" data-toggle="tooltip" title="View the repository for this project!"><i class="fab fa-github" style="color: black"></i></a></h3>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <img src="img/RT_Logo.png" alt="RT logo" title = "Logo" width="100" height="100" />
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <p>&emsp;A bot made for the Runtime Terror Discord server. The purpose of the bot is to give users the ability to easily add/remove roles from themselves for classes and majors.</p>
+                                    <hr>
+
+                                    <div class="row">
+                                        <div class="col-sm-10">
+                                            <h3>Band Bot <a href="https://github.com/Salavin/band-bot" target="_blank" data-toggle="tooltip" title="View the repository for this project!"><i class="fab fa-github" style="color: black"></i></a></h3>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <img src="img/bandBot.png" alt="Band Bot logo" title = "Logo" width="100" height="100" />
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <p>&emsp;Fall of 2020 I created a Discord server for the I.S.U.C.F.V.M.B., as it was during the pandemic, and I felt like the band could use some more cross-section interactions. While making the server, I had the idea of adding a bot to the server that would respond to certain messages and keywords, much like Slackbot. However, when I made the bot, it turned into much more of a passion project, and I ended up adding a lot more functionality to it than I originally planned.</p>
+                                    <p>&emsp;This bot uses <a href="https://discordpy.readthedocs.io/en/stable/" target="_blank">discord.py</a>, a Discord API wrapper for Python. There wasn't much thought into choosing this specific wrapper (as opposed to discord.js), it just happened to be the first one I came across. Most of the bot's functions are fairly simple, but the most complex thing was the !generatememe command. This command in a nutshell will take whatever image you provide it, print text that you provide it on the bottom of that image, and then spit out the result. There are a few other ways you can use it as well. You can use it without an image, and it will use the last seen image in the server as the source image. If you use the command without an image after someone else runs the command, you can make another meme with their same image but with your text instead of theirs. Finally, if you mention a user, you can use their profile picture as the source image. This command took a ton of time to get working correctly, as python doesn't have a great way of writing text onto images, much less wrapping it.</p>
+                                    <hr>
+
+                                    <div class="row">
+                                        <div class="col-sm-10">
+                                            <h3>Color Finder <a href="https://github.com/Salavin/Color-Finder" target="_blank" data-toggle="tooltip" title="View the repository for this project!"><i class="fab fa-github" style="color: black"></i></a> <a href="https://play.google.com/store/apps/details?id=in.samlav.colorfinder" target="_blank" data-toggle="tooltip" title="View this app on the Play store!"><i class="fab fa-google-play"></i></a></h3>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <img src="img/colorFinder.png" alt="Color Finder app logo" title = "Logo" width="100" height="100" />
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <p>&emsp;This is a very simple app I went about creating in early Summer 2021. The reason I wanted an app like this was because in Oxygen OS you can set the accent color of the system to a custom color code. I change my wallpaper fairly frequently on my phone, and have always wanted a way to pick the accent color from my wallpapers much like Windows does. So, I set out to create this app. I used the old Material Design Palette library, which can take a bitmap image and find 6 color "swatches" from it. I then output these 6 colors and their respective color codes. I also added a way copy those color codes with or without the hashtag out in front. Finally, I added an app shortcut so you could grab the colors of your wallpaper directly from the homescreen.</p>
+                                    <p>&emsp;I am working on releasing this app on the Google Play store. I'm not necessarily expecting anyone to use it, but I kind of want the experience of going through the process of getting an app on the Play store. In order to release on the Play Store, Google requires that you have a public privacy policy. I have posted mine <a href="privacy.html">here</a>.</p>
+                                    <p><b>Update:</b> the app has gotten Play store approval and is now live on the Play store! You can find it by clicking the Google Play icon above.</p>
+                                    <hr>
+
+                                    <div class="row">
+                                        <div class="col-sm-10">
+                                            <h3>No BS QR Code Scanner <a href="https://github.com/Salavin/No-BS-QR-Code-Scanner" target="_blank" data-toggle="tooltip" title="View the repository for this project!"><i class="fab fa-github" style="color: black"></i></a></h3>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <img src="img/noBSQRCodeScanner.png" alt="No BS QR Code Scanner app logo" title = "Logo" width="100" height="100" />
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <p>&emsp;This was my first Android app I started working on in summer of 2020. My phone does not have a built-in QR code scanner in the camera app, and Google Lens requires an internet connection in order to function at all. This is a problem in some cases where say I might scan a QR code to connect to a device's WIFI network, and then scan a second code to go to a locally hosted page on that device's network. Since that device doesn't have access to the internet, Google Lens fails in this case. Instead of going and finding a QR code scanning app I liked, I decided to make my own because honestly, I didn't want to sort through all the bloatware that I'm sure has consumed this type of app.</p>
+                                    <p>&emsp;So that's what I set out to create: a QR code scanning app that does just that: scan QR codes. Nothing else. No ads, no bloat, no BS. Simple and effective. I also developed my own library for interpreting QR codes on Android devices, because it turns out reading different types of QR codes can be quite complicated.</p>
+                                    <p>&emsp;As of now, the app is in beta. You can view the repository above and download the beta version to help test it out. The app should be mostly functional, though there might be a few hiccups when reading certain types of QR codes. If you find any issues, please report them on the issues page. I also have yet to implement reading vCard and vEvent type QR codes, as those formats are quite complex and also can vary wildly.</p>
                                 </div>
+
                             </div>
                         </div>
                         
@@ -307,11 +381,58 @@
                             <div class="card-header" id="headingTwo">
                                 <h2 class="mb-0">
                                     <button class="btn btn-link collapsed collapseButton" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" id="LFTCard">
-                                        LFT (Fall 2020)
+                                        MIDI Guitar (2022)
                                     </button>
                                 </h2>
                             </div>
                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                <div class="card-body">
+                                    <p><a href="https://github.com/Salavin/SDDEC22-16-Microcontroller" target="_blank">GitHub repository for microcontroller code</a></p>
+                                    <p><a href="https://sddec22-16.sd.ece.iastate.edu/" target="_blank">Website</a></p>
+                                    <img src="img/Poster_Presentation.jpg" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header" id="headingThree">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link collapsed collapseButton" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" id="smartDisplayCard">
+                                        samlav.in (2020)
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                                <div class="card-body">
+                                    <strong>Description</strong>
+                                    <p>&emsp;A website for me to host all of my projects and information all in one place.</p>
+                                    <strong>My Role in the Project</strong>
+                                    <p>&emsp;This was a solo project, so I did everything myself.</p>
+                                    <strong>Skills/Knowledge Gained</strong>
+                                    <p>&emsp;I mostly gained a stronger understanding of web development as a whole. I was using knowledge that I already had, and was building on top of that knowledge to create this website. I did learn how SSL certificates work, and how to configure DNS settings in order to point a domain to a hosting service.</p>
+                                    <strong>Resources Used</strong>
+                                    <p>&emsp;Originally a Raspberry Pi to host the site, then GitHub Pages, and now Azure.</p>
+                                    <hr>
+                                    <p>&emsp;Ever since I started web development at ISU WebDev, I have always wanted to host my own website specifically for future employers to get to know me better. I wanted to write the entire thing myself, and not use sites that build a website for you. So one day, I registered this domain name, and attempted to get started on building this site. However, I was trying to use Laravel on the same Raspberry Pi Zero WH that I had used from the Smart Display project above, and Laravel was <u>not</u> having it. Basically, Laravel apparently requires more than 512MB of RAM to run, which is all the little Pi Zero had. So, I instead went out and rented some server space with a little more RAM, and attempted to start again. It was at this point that I learned Laravel was quite different from ZF2 (the framework that we used at WebDev), and I didn't have much time or motivation to ride that learning curve. On top of that, the company that I was renting server space from kept corrupting my OS, and so eventually this project was put on the backburner.</p>
+                                    <p>&emsp;Eventually, I realized that I didn't need an entire framework to do what I want. Instead, I can literally return a single html page that uses Bootstrap's navs to switch between pages. And so Spring break 2020, I sat down and wrote out this entire site in a matter of a couple days.</p>
+                                    <p>&emsp;This site runs purely off of HTML, CSS, and JavaScript. In conjunction with that, I am also using <a href="http://getbootstrap.com" target="_blank">Bootstrap</a> to help design the site, <a href="http://fontawesome.com" target="_blank">Font Awesome</a> for a few icons, and <a href="https://darkmodejs.learn.uno/" target="_blank">Darkmode.js</a> for an easy to implement a dark mode (because <b>everything</b> should have a dark mode option). If you haven't figured out how to use the dark mode yet, just click the little 🌓 icon in the top right!</p>
+                                    <p>&emsp;Getting the site on the World Wide Web was relatively simple. I already owned the domain name, so I just had to do a fresh install of Raspbian for my Raspberry Pi Zero, get Apache set up, pull the repository, change a few configs, get an SSL certificate from <a href="https://letsencrypt.org/" target="_blank">Let's Encrypt</a>, and then point my domain to the Raspberry Pi Zero. </p>
+                                    <p>&emsp;This project was incredibly fun for me to do. I've spent around 35-40 hours on it now, and I'm very proud of what the final product looks like. If you notice anything that could be improved (like something isn't working correctly, a typo on a page, or in general something that could be better), <u>please</u> let me know either by messaging me personally (my email is below!), or by creating a pull request on my <a href="https://github.com/Salavin/samlav" target="_blank">GitHub repository</a>!</p>
+                                    <p>&emsp;<strong>Update September 2020:</strong> I learned about GitHub pages, and have transferred this website to that instead of using a Raspberry Pi. This is much more reliable since I no longer have to worry about my public IP changing, and updating the website is as simple as pushing to the repository. I also no longer have to worry about running out of the small amount of storage I have on my Raspberry Pi.</p>
+                                    <p>&emsp;<strong>Update February 2022:</strong> Due to wanting to expand this domain to other things such as hosting a <a href="https://matrix.org/" target="_blank">Matrix</a> server, I have moved this website to an Azure host.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header" id="headingFour">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link collapsed collapseButton" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" id="websiteCard">
+                                        LFT (Fall 2020)
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
                                 <div class="card-body">
                                     <strong>Description</strong>
                                     <p>&emsp;This was a project that a group of four of us completed for the class COM S 309 at Iowa State University. It was an app where people could find other people play sports or games with other people. The app used a Java frontend and Spring Boot backend.</p>
@@ -331,14 +452,14 @@
                         </div>
 
                         <div class="card">
-                            <div class="card-header" id="headingThree">
+                            <div class="card-header" id="headingFive">
                                 <h2 class="mb-0">
-                                    <button class="btn btn-link collapsed collapseButton" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" id="smartDisplayCard">
+                                    <button class="btn btn-link collapsed collapseButton" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive" id="otherCard">
                                         Raspberry Pi Smart Display (Fall 2019)
                                     </button>
                                 </h2>
                             </div>
-                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
                                 <div class="card-body">
                                     <h3>Summary</h3>
                                     <strong>Description</strong>
@@ -417,113 +538,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <div class="card-header" id="headingFour">
-                                <h2 class="mb-0">
-                                    <button class="btn btn-link collapsed collapseButton" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" id="websiteCard">
-                                        samlav.in (2020)
-                                    </button>
-                                </h2>
-                            </div>
-                            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
-                                <div class="card-body">
-                                    <strong>Description</strong>
-                                    <p>&emsp;A website for me to host all of my projects and information all in one place.</p>
-                                    <strong>My Role in the Project</strong>
-                                    <p>&emsp;This was a solo project, so I did everything myself.</p>
-                                    <strong>Skills/Knowledge Gained</strong>
-                                    <p>&emsp;I mostly gained a stronger understanding of web development as a whole. I was using knowledge that I already had, and was building on top of that knowledge to create this website. I did learn how SSL certificates work, and how to configure DNS settings in order to point a domain to a hosting service.</p>
-                                    <strong>Resources Used</strong>
-                                    <p>&emsp;Originally a Raspberry Pi to host the site, then GitHub Pages, and now Azure.</p>
-                                    <hr>
-                                    <p>&emsp;Ever since I started web development at ISU WebDev, I have always wanted to host my own website specifically for future employers to get to know me better. I wanted to write the entire thing myself, and not use sites that build a website for you. So one day, I registered this domain name, and attempted to get started on building this site. However, I was trying to use Laravel on the same Raspberry Pi Zero WH that I had used from the Smart Display project above, and Laravel was <u>not</u> having it. Basically, Laravel apparently requires more than 512MB of RAM to run, which is all the little Pi Zero had. So, I instead went out and rented some server space with a little more RAM, and attempted to start again. It was at this point that I learned Laravel was quite different from ZF2 (the framework that we used at WebDev), and I didn't have much time or motivation to ride that learning curve. On top of that, the company that I was renting server space from kept corrupting my OS, and so eventually this project was put on the backburner.</p>
-                                    <p>&emsp;Eventually, I realized that I didn't need an entire framework to do what I want. Instead, I can literally return a single html page that uses Bootstrap's navs to switch between pages. And so Spring break 2020, I sat down and wrote out this entire site in a matter of a couple days.</p>
-                                    <p>&emsp;This site runs purely off of HTML, CSS, and JavaScript. In conjunction with that, I am also using <a href="http://getbootstrap.com" target="_blank">Bootstrap</a> to help design the site, <a href="http://fontawesome.com" target="_blank">Font Awesome</a> for a few icons, and <a href="https://darkmodejs.learn.uno/" target="_blank">Darkmode.js</a> for an easy to implement a dark mode (because <b>everything</b> should have a dark mode option). If you haven't figured out how to use the dark mode yet, just click the little 🌓 icon in the top right!</p>
-                                    <p>&emsp;Getting the site on the World Wide Web was relatively simple. I already owned the domain name, so I just had to do a fresh install of Raspbian for my Raspberry Pi Zero, get Apache set up, pull the repository, change a few configs, get an SSL certificate from <a href="https://letsencrypt.org/" target="_blank">Let's Encrypt</a>, and then point my domain to the Raspberry Pi Zero. </p>
-                                    <p>&emsp;This project was incredibly fun for me to do. I've spent around 35-40 hours on it now, and I'm very proud of what the final product looks like. If you notice anything that could be improved (like something isn't working correctly, a typo on a page, or in general something that could be better), <u>please</u> let me know either by messaging me personally (my email is below!), or by creating a pull request on my <a href="https://github.com/Salavin/samlav" target="_blank">GitHub repository</a>!</p>
-                                    <p>&emsp;<strong>Update September 2020:</strong> I learned about GitHub pages, and have transferred this website to that instead of using a Raspberry Pi. This is much more reliable since I no longer have to worry about my public IP changing, and updating the website is as simple as pushing to the repository. I also no longer have to worry about running out of the small amount of storage I have on my Raspberry Pi.</p>
-                                    <p>&emsp;<strong>Update February 2022:</strong> Due to wanting to expand this domain to other things such as hosting a <a href="https://matrix.org/" target="_blank">Matrix</a> server, I have moved this website to an Azure host.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <div class="card-header" id="headingFive">
-                                <h2 class="mb-0">
-                                    <button class="btn btn-link collapsed collapseButton" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive" id="otherCard">
-                                        Other smaller projects (2020-2022)
-                                    </button>
-                                </h2>
-                            </div>
-                            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-sm-10">
-                                            <h3>Ear Trainer <a href="https://github.com/Salavin/Ear-Trainer" target="_blank" data-toggle="tooltip" title="View the repository for this project!"><i class="fab fa-github" style="color: black"></i></a></h3>
-                                        </div>
-                                        <div class="col-sm-2">
-                                            <img src="img/earTrainer.png" alt="Ear Trainer logo" title = "Logo" width="100" height="100" />
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <p>&emsp;App designed to train live sound engineers to be able to pick out frequencies quickly and accurately by ear. Uses a test with many customization options to fit the user’s learning style.</p>
-                                    <hr>
-
-                                    <div class="row">
-                                        <div class="col-sm-10">
-                                            <h3>RT Bot <a href="https://github.com/Salavin/RT-bot" target="_blank" data-toggle="tooltip" title="View the repository for this project!"><i class="fab fa-github" style="color: black"></i></a></h3>
-                                        </div>
-                                        <div class="col-sm-2">
-                                            <img src="img/RT_Logo.png" alt="RT logo" title = "Logo" width="100" height="100" />
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <p>&emsp;A bot made for the Runtime Terror Discord server. The purpose of the bot is to give users the ability to easily add/remove roles from themselves for classes and majors.</p>
-                                    <hr>
-
-                                    <div class="row">
-                                        <div class="col-sm-10">
-                                            <h3>Band Bot <a href="https://github.com/Salavin/band-bot" target="_blank" data-toggle="tooltip" title="View the repository for this project!"><i class="fab fa-github" style="color: black"></i></a></h3>
-                                        </div>
-                                        <div class="col-sm-2">
-                                            <img src="img/bandBot.png" alt="Band Bot logo" title = "Logo" width="100" height="100" />
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <p>&emsp;Fall of 2020 I created a Discord server for the I.S.U.C.F.V.M.B., as it was during the pandemic, and I felt like the band could use some more cross-section interactions. While making the server, I had the idea of adding a bot to the server that would respond to certain messages and keywords, much like Slackbot. However, when I made the bot, it turned into much more of a passion project, and I ended up adding a lot more functionality to it than I originally planned.</p>
-                                    <p>&emsp;This bot uses <a href="https://discordpy.readthedocs.io/en/stable/" target="_blank">discord.py</a>, a Discord API wrapper for Python. There wasn't much thought into choosing this specific wrapper (as opposed to discord.js), it just happened to be the first one I came across. Most of the bot's functions are fairly simple, but the most complex thing was the !generatememe command. This command in a nutshell will take whatever image you provide it, print text that you provide it on the bottom of that image, and then spit out the result. There are a few other ways you can use it as well. You can use it without an image, and it will use the last seen image in the server as the source image. If you use the command without an image after someone else runs the command, you can make another meme with their same image but with your text instead of theirs. Finally, if you mention a user, you can use their profile picture as the source image. This command took a ton of time to get working correctly, as python doesn't have a great way of writing text onto images, much less wrapping it.</p>
-                                    <hr>
-
-                                    <div class="row">
-                                        <div class="col-sm-10">
-                                            <h3>Color Finder <a href="https://github.com/Salavin/Color-Finder" target="_blank" data-toggle="tooltip" title="View the repository for this project!"><i class="fab fa-github" style="color: black"></i></a> <a href="https://play.google.com/store/apps/details?id=in.samlav.colorfinder" target="_blank" data-toggle="tooltip" title="View this app on the Play store!"><i class="fab fa-google-play"></i></a></h3>
-                                        </div>
-                                        <div class="col-sm-2">
-                                            <img src="img/colorFinder.png" alt="Color Finder app logo" title = "Logo" width="100" height="100" />
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <p>&emsp;This is a very simple app I went about creating in early Summer 2021. The reason I wanted an app like this was because in Oxygen OS you can set the accent color of the system to a custom color code. I change my wallpaper fairly frequently on my phone, and have always wanted a way to pick the accent color from my wallpapers much like Windows does. So, I set out to create this app. I used the old Material Design Palette library, which can take a bitmap image and find 6 color "swatches" from it. I then output these 6 colors and their respective color codes. I also added a way copy those color codes with or without the hashtag out in front. Finally, I added an app shortcut so you could grab the colors of your wallpaper directly from the homescreen.</p>
-                                    <p>&emsp;I am working on releasing this app on the Google Play store. I'm not necessarily expecting anyone to use it, but I kind of want the experience of going through the process of getting an app on the Play store. In order to release on the Play Store, Google requires that you have a public privacy policy. I have posted mine <a href="privacy.html">here</a>.</p>
-                                    <p><b>Update:</b> the app has gotten Play store approval and is now live on the Play store! You can find it by clicking the Google Play icon above.</p>
-                                    <hr>
-
-                                    <div class="row">
-                                        <div class="col-sm-10">
-                                            <h3>No BS QR Code Scanner <a href="https://github.com/Salavin/No-BS-QR-Code-Scanner" target="_blank" data-toggle="tooltip" title="View the repository for this project!"><i class="fab fa-github" style="color: black"></i></a></h3>
-                                        </div>
-                                        <div class="col-sm-2">
-                                            <img src="img/noBSQRCodeScanner.png" alt="No BS QR Code Scanner app logo" title = "Logo" width="100" height="100" />
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <p>&emsp;This was my first Android app I started working on in summer of 2020. My phone does not have a built-in QR code scanner in the camera app, and Google Lens requires an internet connection in order to function at all. This is a problem in some cases where say I might scan a QR code to connect to a device's WIFI network, and then scan a second code to go to a locally hosted page on that device's network. Since that device doesn't have access to the internet, Google Lens fails in this case. Instead of going and finding a QR code scanning app I liked, I decided to make my own because honestly, I didn't want to sort through all the bloatware that I'm sure has consumed this type of app.</p>
-                                    <p>&emsp;So that's what I set out to create: a QR code scanning app that does just that: scan QR codes. Nothing else. No ads, no bloat, no BS. Simple and effective. I also developed my own library for interpreting QR codes on Android devices, because it turns out reading different types of QR codes can be quite complicated.</p>
-                                    <p>&emsp;As of now, the app is in beta. You can view the repository above and download the beta version to help test it out. The app should be mostly functional, though there might be a few hiccups when reading certain types of QR codes. If you find any issues, please report them on the issues page. I also have yet to implement reading vCard and vEvent type QR codes, as those formats are quite complex and also can vary wildly.</p>
                                 </div>
                             </div>
                         </div>
