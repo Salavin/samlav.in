@@ -11,6 +11,6 @@ jobs:
       with:
         host: ${{ secrets.IP }}
         username: ${{ secrets.USER }}
-        password: ${{ secrets.PRIVATE_KEY }}
+        key: ${{ secrets.PRIVATE_KEY }}
         script: |
           cd /var/www/samlav.in && git pull
