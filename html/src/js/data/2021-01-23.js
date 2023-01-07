@@ -2904,8 +2904,8 @@ dataSet[dataSetVersion].characterData = [
             p: true,
             a: false,
             m: false,
-            male: false,
-            female: true,
+            male: true,
+            female: false,
             ss: false
         }
     },
