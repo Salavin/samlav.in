@@ -14,5 +14,4 @@ jobs:
         password: ${{ secrets.PRIVATE_KEY }}
         port: 22
         script: |
-          cd /var/www/samlav.in
-          sudo git pull
+          cd /var/www/samlav.in && git pull
