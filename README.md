@@ -1,4 +1,4 @@
-<img src="html/img/Innovate_1_Crop_Circle.png" alt="Logo" title = "Logo" align="right" />
+<img src="html/img/Innovate_1_Crop_Circle.png" alt="Logo" title = "Logo" align="right" width="100" height="100" />
 
 # samlav.in
 ## About
