@@ -74,7 +74,7 @@
 	left: 0;
 }
 
-.socialMedia, .fab
+.socialMedia
 {
     text-decoration: none;
     color: white;
@@ -103,6 +103,11 @@
 .discord:hover
  {
      color: #7289DA;
+ }
+
+.youtube:hover
+ {
+     color: #FF0000;
  }
 
 .busFont
