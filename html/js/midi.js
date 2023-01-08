@@ -32,6 +32,7 @@ WebMidi.enable(function (err)
     if (err)
     {
         console.log("WebMidi not enabled.") //TODO: Redirect users
+        midiIn.html("<option value='0'>WebMidi not enabled.</option>");
     }
     else
     {
@@ -61,7 +62,10 @@ WebMidi.enable(function (err)
         else
         {
             midiIn.html("<option value='0'>No inputs detected!</option>");
-            input.removeListener();
+            if (input != undefined)
+            {
+                input.removeListener();
+            }
             curInput = 0;
             inputData.hide();
         }
