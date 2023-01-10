@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="refresh" content="7; url='https://bio.site/salavin'" />
+    <title>Title of the document</title>
   </head>
   <body>
     <p>Please follow <a href="https://bio.site/salavin">this link</a>.</p>
+    <script>
+      function redirectFunc() {
+        window.location.replace("https://bio.site/salavin");
+      }
+    //   setTimeout("redirectFunc()", 2000);
+    redirectFunc()
+    </script>
   </body>
 </html>
